@@ -690,6 +690,16 @@ pre code {
   max-width: 75%;
 }
 
+.circular {
+  margin: auto;
+  width: 200px;
+  height: 300px;
+  border-radius: 150px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  background: url(http://i.stack.imgur.com/S1ZCs.jpg) no-repeat;
+}
+
 .col-10 {
   flex: 0 0 83.3333333333%;
   max-width: 83.3333333333%;
@@ -6242,6 +6252,9 @@ button.bg-dark:focus {
   border-radius: 0.2rem !important;
 }
 
+.img-circle {
+    border-radius: 50%;
+}
 .rounded {
   border-radius: 0.25rem !important;
 }

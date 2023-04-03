@@ -4,7 +4,7 @@ layout: default
 
 <div class="row g-5 mb-5">
   <div class="col-md-6">
-    <h3 class="fw-bold">About</h3>
+    <h2 class="fw-bold">About</h2>
     {{ content }}
   </div>
   <div class="col-md-6">
@@ -13,22 +13,113 @@ layout: default
 </div>
 
 
+<hr class="m-0" />
+            <!-- Education-->
+            <section class="resume-section" id="education">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Education</h2>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Purdue University </h3>
+                            <div class="subheading mb-3">Doctor of Philosophy - Computer Science</div>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">August 2018 - Present</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Purdue University </h3>
+                            <div class="subheading mb-3">Masters of Science - Computer Science</div>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">August 2018 - August 2021 (expected)</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">University of Engineering & Technology, Lahore</h3>
+                            <div class="subheading mb-3">Bachelor of Science - Electrical Engineering</div>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">August 2010 - May 2015</span></div>
+                    </div>
+                </div>
+            </section>
+            <hr class="m-0" />
+
+
 <div class="row g-5 mb-5">
   <div class="col-md-12">
-    <h3 class="fw-bold border-bottom pb-3 mb-5">Interests</h3>
+    <h2 class="fw-bold border-bottom pb-3 mb-5">Experience</h2>
+<hr class="m-0" />
+            <!-- Experience-->
+            <section class="resume-section" id="experience">
+                <div class="resume-section-content">
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Senior Software Developer</h3>
+                            <div class="subheading mb-3">Mentor Graphics</div>
+                            <p>Worked on design and rework of <a href="https://www.mentor.com/embedded-software/nucleus/"> Nucleus RTOS </a> for Industry 4.0.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">Jul 2016 – Jul 2018</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Software Developer</h3>
+                            <div class="subheading mb-3">Mentor Graphics</div>
+                            <p>Worked on the design and development of <a href="https://www.mentor.com/embedded-software/hypervisor/">Mentor Embedded Hypervisor</a>.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">Jun 2015 – Jul 2016</span></div>
+                    </div>
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                        <div class="flex-grow-1">
+                            <h3 class="mb-0">Intern</h3>
+                            <div class="subheading mb-3">Al-Khwarizmi Institute of Computer Science (KICS)</div>
+                            <p>Developed POC for various systems mostly inclined to concentrated solar energy such as heliostats, parabolic troughs and fresnels</a>.</p>
+                        </div>
+                        <div class="flex-shrink-0"><span class="text-primary">Jul 2014 – Sep 2014</span></div>
+                    </div>
+
+                </div>
+            </section>
+
+	</div>
+</div>
+<hr class="m-0" />
+
+
+     
+
+{% include publications.html %}
+<!--
+<div class="row g-5 mb-5">
+  <div class="col-md-12">
+    <h2 class="fw-bold border-bottom pb-3 mb-5">Updates</h2>
+    {% for post in site.posts %}
+      <p><a href="{{ site.github.url }}/{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
+    {% endfor %}
+  </div>
+</div>
+-->
+<section class="resume-section" id="awards">
+                <div class="resume-section-content">
+                    <h2 class="mb-5">Awards & Certifications</h2>
+                    <ul class="fa-ul mb-0">
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            Recipient of <a target="_blank" href="https://www.purdue.edu/gradschool/fellowship/fellowship-resources-for-staff/managed-fellowships/recruitment-fellowships.html">Andrews Fellowship </a>
+                        </li>
+                        <li>
+                            <span class="fa-li"><i class="fas fa-trophy text-warning"></i></span>
+                            <b>ROLE MODEL </b> from Mentor Graphics during focal review of 2016
+
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+<div class="row g-5 mb-5">
+  <div class="col-md-12">
+    <h2 class="fw-bold border-bottom pb-3 mb-5">Interests</h2>
                     <p>Apart from being a security researcher, i like to travel and hike. I've visited most of Northeren Pakistan and various places around the US. When forced indoors, I like to play games (I have achieved ELO of 1700+ on Age Of Empires using unconventional methods), learn new instruments and play with synthesizers. Here's some music i've written over the years. </p>
                     <p align="center"> <iframe width="50%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/837738305&color=%23ab5a10&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/arslan_khan_8" title="arslan_khan_8" target="_blank" style="color: #cccccc; text-decoration: none;">arslan_khan_8</a> · <a href="https://soundcloud.com/arslan_khan_8/sets/arslan" title="Arslan" target="_blank" style="color: #cccccc; text-decoration: none;">Arslan</a></div> </p>
                     
   </div>
 </div>
 
-{% include publications.html %}
-
-<div class="row g-5 mb-5">
-  <div class="col-md-12">
-    <h3 class="fw-bold border-bottom pb-3 mb-5">Updates</h3>
-    {% for post in site.posts %}
-      <p><a href="{{ site.github.url }}/{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
-    {% endfor %}
-  </div>
-</div>

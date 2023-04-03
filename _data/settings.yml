@@ -1,7 +1,5 @@
 menu:
-- {name: 'people', url: '/people'}
 - {name: 'publications', url: '/publications'}
-- {name: 'courses', url: '/courses'}
 - {name: 'cv', url: '/cv'}
 - {name: 'contact', url: '/contact'}
 
@@ -16,10 +14,10 @@ courses:
 - {name: 'Stellar Structures', url: 'stellar-structures'}
 
 social:
-- {icon: 'github', link: 'https://github.com/LeNPaul'}
-- {icon: 'twitter', link: 'https://twitter.com/paululele'}
-- {icon: 'instagram', link: 'https://instagram.com/paululele'}
-- {icon: 'linkedin', link: 'https://linkedin.com/in/lenpaul'}
+- {icon: 'github', link: 'https://github.com/Arslan8'}
+- {icon: 'twitter', link: 'https://twitter.com/Arslan0o0'}
+- {icon: 'instagram', link: 'https://www.instagram.com/arslanisoninstragram/'}
+- {icon: 'linkedin', link: 'https://www.linkedin.com/in/arslankhan52/'}
 
 contacts:
-- {name: 'Dr. Academia', title: 'Professor', department: 'Physics & Astronomy', institution: 'Some University', institution_address: '1 Main Street, Canada', phone: '(000) 000-0000', email: 'hello@university.edu', office: 'Science Building 505', image: 'assets/img/contact.jpg'}
+- {name: 'Arslan Khan', title: 'Graduate Research Assistant', department: 'Computer Science', institution: 'Purdue University', institution_address: '305 N. University Street, West Lafayette, IN 47906', phone: '(765) 775 8891', email: 'khan253@purdue.edu', office: 'HAAS 274', image: 'assets/img/contact.jpg'}

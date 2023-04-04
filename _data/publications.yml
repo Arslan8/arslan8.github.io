@@ -1,11 +1,11 @@
 featured:
-- {name:'Arslan Khan, Dongyan Xu, and Dave Jing Tian. “EC: Embedded Systems
+- {name: 'Arslan Khan, Dongyan Xu, and Dave Jing Tian. “EC: Embedded Systems
 Compartmentalization via Intra-Kernel Isolation”. In: 2023 IEEE Symposium on Security and
 Privacy (S&P). 2023.'}
-- {name:'Arslan Khan, Dongyan Xu, and Dave Jing Tian. “Low-Cost Privilege Separation with Compile
+- {name: 'Arslan Khan, Dongyan Xu, and Dave Jing Tian. “Low-Cost Privilege Separation with Compile
 Time Compartmentalization for Embedded Systems”. In: 2023 IEEE Symposium on Security and
 Privacy (S&P). 2023.'}
-- {name:'Arslan Khan, Muqi Zou, Kyungtae Kim, Dongyan Xu, Antonio Bianchi, and Dave Jing Tian.
+- {name: 'Arslan Khan, Muqi Zou, Kyungtae Kim, Dongyan Xu, Antonio Bianchi, and Dave Jing Tian.
 “Fuzzing SGX Enclaves via Host Program Mutations”. In: 2023 IEEE 8th European Symposium
 on Security and Privacy (EuroS&P). 2023.'}
 - {name: 'Arslan Khan, Joseph I. Choi, Dave Jing Tian, Tyler Ward, Kevin R. B. Butler,
@@ -18,13 +18,13 @@ Vehicles.” In: USENIX Security Symposium. 2021, pp. 285–302.'}
 
 
 index:
-- {name:'Arslan Khan, Dongyan Xu, and Dave Jing Tian. “EC: Embedded Systems
+- {name: 'Arslan Khan, Dongyan Xu, and Dave Jing Tian. “EC: Embedded Systems
 Compartmentalization via Intra-Kernel Isolation”. In: 2023 IEEE Symposium on Security and
 Privacy (S&P). 2023.'}
-- {name:'Arslan Khan, Dongyan Xu, and Dave Jing Tian. “Low-Cost Privilege Separation with Compile
+- {name: 'Arslan Khan, Dongyan Xu, and Dave Jing Tian. “Low-Cost Privilege Separation with Compile
 Time Compartmentalization for Embedded Systems”. In: 2023 IEEE Symposium on Security and
 Privacy (S&P). 2023.'}
-- {name:'Arslan Khan, Muqi Zou, Kyungtae Kim, Dongyan Xu, Antonio Bianchi, and Dave Jing Tian.
+- {name: 'Arslan Khan, Muqi Zou, Kyungtae Kim, Dongyan Xu, Antonio Bianchi, and Dave Jing Tian.
 “Fuzzing SGX Enclaves via Host Program Mutations”. In: 2023 IEEE 8th European Symposium
 on Security and Privacy (EuroS&P). 2023.'}
 - {name: 'Arslan Khan, Joseph I. Choi, Dave Jing Tian, Tyler Ward, Kevin R. B. Butler,

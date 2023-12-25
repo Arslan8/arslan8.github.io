@@ -5,7 +5,7 @@
       {% assign counter = 0 %}
       {% for item in site.data.publications.featured %}
         {% assign counter = counter | plus: 1 %}
-        <p>{{ item.name }}
+        <p>{{ item.name }}<div>
           <script>        
             // Function to create a repository button
             function createRepoButton(repoUrl) {
@@ -42,7 +42,7 @@
                 .then(stargazersData => {
                   // Append stars count
                   const stars = stargazersData.length;
-                  button.innerHTML += ` (${stars} stars)`;
+                  button.innerHTML += ` ${stars}`;
                 })
                 .catch(error => {
                   console.error('Error fetching repository details:', error);
@@ -53,6 +53,7 @@
             }
             createRepoButton("{{ item.code }}");
           </script>
+          </div>
 	 </p>
       {% endfor %}
     {% else %}

@@ -20,17 +20,17 @@ Vehicles.” In: USENIX Security Symposium. 2021, pp. 285–302. <a href="/m2mon
 index:
 - {name: '<b>Arslan Khan</b>, Muqi Zou, Kyungtae Kim, Dongyan Xu, Antonio Bianchi, and Dave Jing Tian.
 “Fuzzing SGX Enclaves via Host Program Mutations”. In: 2023 IEEE 8th European Symposium
-on Security and Privacy (EuroS&P). 2023.', url: '/fuzzsgx.pdf', code: 'https://github.com/purseclab/FuzzSGX'}
+on Security and Privacy (EuroS&P). 2023.', url: '/fuzzsgx.pdf', code: 'purseclab/FuzzSGX'}
 - {name: '<b>Arslan Khan</b>, Dongyan Xu, and Dave Jing Tian. “EC: Embedded Systems
 Compartmentalization via Intra-Kernel Isolation”. In: 2023 IEEE Symposium on Security and
-Privacy (S&P). 2023.', url: '/ec.pdf', code: 'https://github.com/purseclab/Pieces'}
+Privacy (S&P). 2023.', url: '/ec.pdf', code: 'purseclab/Pieces'}
 - {name: '<b>Arslan Khan</b>, Dongyan Xu, and Dave Jing Tian. “Low-Cost Privilege Separation with Compile
 Time Compartmentalization for Embedded Systems”. In: 2023 IEEE Symposium on Security and
-Privacy (S&P). 2023.', url: '/crt.pdf', code: 'https://github.com/purseclab/Pieces'}
+Privacy (S&P). 2023.', url: '/crt.pdf', code: 'purseclab/Pieces'}
 - {name: '<b>Arslan Khan</b>, Joseph I. Choi, Dave Jing Tian, Tyler Ward, Kevin R. B. Butler,
 Patrick Traynor, John M. Shea, and Tan F. Wong. “Privacy-Preserving Localization using
 Enclaves”. In: 2021 IEEE 12th Annual Ubiquitous Computing, Electronics & Mobile
 Communication Conference (UEMCON). <b><font color="#800020">Best Presentation Award</font></b>. 2021, pp. 0269–0278.', url: '/spectrum.pdf', code: ''}
 - {name: '<b>Arslan Khan</b>, Hyungsub Kim, Byoungyoung Lee, Dongyan Xu, Antonio Bianchi, and
 Dave Jing Tian. “M2MON: Building an MMIO-based Security Reference Monitor for Unmanned
-Vehicles.” In: USENIX Security Symposium. 2021, pp. 285–302.', url: '/m2mon.pdf', code: 'https://github.com/purseclab/Pieces'}
+Vehicles.” In: USENIX Security Symposium. 2021, pp. 285–302.', url: '/m2mon.pdf', code: 'purseclab/Pieces'}

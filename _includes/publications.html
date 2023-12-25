@@ -2,13 +2,15 @@
   <div>
     <h3 class="fw-bold border-bottom pb-3 mt-4 mb-1">Publications</h3>
     {% if page.title == "Home" %}
+      {% assign counter = 0 %}
       {% for item in site.data.publications.featured %}
+        {% assign counter = counter | plus: 1 %}
         <p>{{ item.name }}
-          <div id="{{ item.name }}"></div>
           <script>        
             // Function to create a repository button
             function createRepoButton(repoUrl) {
-              const container = document.getElementById("{{ item.name }}");
+              
+              const container = document.currentScript.parentElement;
         
               // Create button element
               const button = document.createElement('a');

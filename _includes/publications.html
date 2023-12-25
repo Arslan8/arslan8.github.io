@@ -41,7 +41,7 @@
                 .then(stargazersData => {
                   // Append stars count
                   const stars = stargazersData.length;
-                  button.innerHTML += `<span class="repoAccessButton"> ${stars}</span>`;
+                  button.innerHTML += `<span class="repoAccessButtonText"> ${stars}</span>`;
                 })
                 .catch(error => {
                   console.error('Error fetching repository details:', error);

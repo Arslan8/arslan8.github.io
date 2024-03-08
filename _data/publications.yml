@@ -1,5 +1,5 @@
 featured:
-- {name: 'Muqi Zou, <b>Arslan Khan</b>, Ruoyu Wu, Han Gao, Antonio Bianchi, and Dave (Jing) Tian. D-Helix: A Generic Decompiler Testing Framework Using Symbolic Differentiation. 33rd USENIX Security Symposium (Security’24), Philadelphia, PA, USA, August 2024.'} 
+- {name: 'Muqi Zou, <b>Arslan Khan</b>, Ruoyu Wu, Han Gao, Antonio Bianchi, and Dave (Jing) Tian. D-Helix: A Generic Decompiler Testing Framework Using Symbolic Differentiation. 33rd USENIX Security Symposium (Security’24), Philadelphia, PA, USA, August 2024.', url: '/dhelix.pdf'} 
 - {name: '<b>Arslan Khan</b>, Muqi Zou, Kyungtae Kim, Dongyan Xu, Antonio Bianchi, and Dave Jing Tian.
 “Fuzzing SGX Enclaves via Host Program Mutations”. In: 2023 IEEE 8th European Symposium
 on Security and Privacy (EuroS&P). 2023. <a href="/fuzzsgx.pdf" target="_blank">Paper</a>', url: '/fuzzsgx.pdf', code: 'purseclab/FuzzSGX'}
@@ -19,7 +19,7 @@ Vehicles.” In: USENIX Security Symposium. 2021, pp. 285–302. <a href="/m2mon
 
 
 index:
-- {name: 'Muqi Zou, <b>Arslan Khan</b>, Ruoyu Wu, Han Gao, Antonio Bianchi, and Dave (Jing) Tian. D-Helix: A Generic Decompiler Testing Framework Using Symbolic Differentiation. 33rd USENIX Security Symposium (Security’24), Philadelphia, PA, USA, August 2024.'}
+- {name: 'Muqi Zou, <b>Arslan Khan</b>, Ruoyu Wu, Han Gao, Antonio Bianchi, and Dave (Jing) Tian. D-Helix: A Generic Decompiler Testing Framework Using Symbolic Differentiation. 33rd USENIX Security Symposium (Security’24), Philadelphia, PA, USA, August 2024.', url: '/dhelix.pdf'}
 - {name: '<b>Arslan Khan</b>, Muqi Zou, Kyungtae Kim, Dongyan Xu, Antonio Bianchi, and Dave Jing Tian.
 “Fuzzing SGX Enclaves via Host Program Mutations”. In: 2023 IEEE 8th European Symposium
 on Security and Privacy (EuroS&P). 2023.', url: '/fuzzsgx.pdf', code: 'purseclab/FuzzSGX'}

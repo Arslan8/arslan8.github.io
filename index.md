@@ -9,7 +9,8 @@ I am a PostDoc Researcher in the <a target="_blank" href="https://www.cs.purdue.
 
 <!-- Announcement bar -->
   <div id="announcementBar" class="announcement">
-    <span>I am on the academic job market in Fall 2023 and Spring 2024. <span class="close-button" onclick="closeAnnouncement()">Close</span></span>
+    <span>I will start an Assistant Professor position in the <a target="_blank" href="https://www.eecs.psu.edu/">CSE Departmant</a> at <a target="_blank" href="https://www.psu.edu/">PennState</a> in Fall 2024!
+I’m looking for highly-motivated students. If you are interested in working with me, drop me an email. <span class="close-button" onclick="closeAnnouncement()">Close</span></span>
   </div>
 
   <!-- Your page content goes here -->

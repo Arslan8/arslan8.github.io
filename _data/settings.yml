@@ -20,4 +20,4 @@ social:
 - {icon: 'linkedin', link: 'https://www.linkedin.com/in/arslankhan52/'}
 
 contacts:
-- {name: 'Arslan Khan', title: 'Graduate Research Assistant', department: 'Computer Science', institution: 'Purdue University', institution_address: '305 N. University Street, West Lafayette, IN 47906', phone: '(765) 775 8891', email: 'khan253@purdue.edu', office: 'HAAS 274', image: 'assets/img/contact.jpg'}
+- {name: 'Arslan Khan', title: 'Assistant Professor', department: 'Computer Science adn Engineering', institution: 'Pennsylvania State University', institution_address: 'W209 Westgate Building, University Park, PA 16802', phone: '+1 (814)-856-1042', email: 'arslankhan@psu.edu', office: 'w359', image: 'assets/img/contact.jpg'}

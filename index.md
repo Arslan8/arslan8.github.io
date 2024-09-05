@@ -13,7 +13,7 @@ My research focuses on advancing the fields of systems and security by exploring
 
 <!-- Announcement bar -->
   <div id="announcementBar" class="announcement">
-I’m looking for highly-motivated students. If you are interested in working with me, drop me an email. <span class="close-button" onclick="closeAnnouncement()">Close</span></span>
+<span>I’m looking for highly-motivated students. If you are interested in working with me, drop me an email. <span class="close-button" onclick="closeAnnouncement()">Close</span></span>
   </div>
 
   <!-- Your page content goes here -->

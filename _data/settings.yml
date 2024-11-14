@@ -1,4 +1,5 @@
 menu:
+- {name: 'teaching', url:'/courses'}
 - {name: 'publications', url: '/publications'}
 - {name: 'cv', url: '/cv.pdf'}
 - {name: 'contact', url: '/contact'}

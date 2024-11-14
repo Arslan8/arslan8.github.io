@@ -1,6 +1,7 @@
 menu:
-- {name: 'teaching', url:'/courses'}
+- {name: 'teaching', url: '/courses'}
 - {name: 'publications', url: '/publications'}
+- {name: 'people', url: '/people'}
 - {name: 'cv', url: '/cv.pdf'}
 - {name: 'contact', url: '/contact'}
 

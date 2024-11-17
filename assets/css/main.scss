@@ -2,3 +2,18 @@
 ---
 
 @import "main";
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures borders between cells are merged */
+  }
+  th, td {
+    border: 1px solid black; /* Adds a black border around each cell */
+    padding: 10px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2; /* Optional: adds a background color to the header */
+  }
+</style>

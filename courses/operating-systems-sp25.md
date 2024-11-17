@@ -25,12 +25,13 @@ ECoRE Bldg 028
 
 #### Schedule
 *This schedule is tentative and may change. Check back later for updates.*
+
 <table border="1">
   <thead>
     <tr>
       <th>Week</th>
       <th>Topic</th>
-      <th>Notes</th>
+      <th>Resources</th>
     </tr>
   </thead>
   <tbody>

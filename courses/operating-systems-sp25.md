@@ -25,25 +25,103 @@ ECoRE Bldg 028
 
 #### Schedule
 *This schedule is tentative and may change. Check back later for updates.*
-| Week       | Topic | Notes |
-|------------|-------------------|-------|
-| Jan 13, 2025 | Introduction & Logistics <br> Deep C dive | Resources |
-| Jan 20, 2025 | Deep C dive <br> ELF, Loaders, LibC & Memory Allocators  | [Details] |
-| Jan 27, 2025 | ELF, Loaders, LibC & Memory Allocators | [Details] |
-| Feb 3, 2025  | Bash & Debugging | [Details] |
-| Feb 10, 2025 | Firmware Interface & Booting | [Details] |
-| Feb 17, 2025 | Init & Userspace  | [Details] |
-| Feb 24, 2025 | Processes & Threads | [Details] |
-| Mar 3, 2025  | IPC & Concurrency | [Details] |
-| Mar 10, 2025 | Review & Midterm | [Details] |
-| Mar 17, 2025 | Userspace-Kernel Interface | [Details] |
-| Mar 24, 2025 | Scheduling | [Details] |
-| Mar 31, 2025 | Virtualization (CPU) | [Details] |
-| Apr 7, 2025  | Virtualization (Memory) | [Details] |
-| Apr 14, 2025 | Device Drivers <br> Kernel-Driver Interface | [Details] |
-| Apr 21, 2025 | Storage & Filesystems | [Details] |
-| Apr 28, 2025 | Security <br> Operating Systems Architectures | [Details] |
-| May 2, 2025  | Review & Finals | [Details] |
+<table border="1">
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Topic</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Jan 13, 2025</td>
+      <td>Introduction & Logistics <br> Deep C dive</td>
+      <td>Resources</td>
+    </tr>
+    <tr>
+      <td>Jan 20, 2025</td>
+      <td>Deep C dive <br> ELF, Loaders, LibC & Memory Allocators</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Jan 27, 2025</td>
+      <td>ELF, Loaders, LibC & Memory Allocators</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Feb 3, 2025</td>
+      <td>Bash & Debugging</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Feb 10, 2025</td>
+      <td>Firmware Interface & Booting</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Feb 17, 2025</td>
+      <td>Init & Userspace</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Feb 24, 2025</td>
+      <td>Processes & Threads</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Mar 3, 2025</td>
+      <td>IPC & Concurrency</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Mar 10, 2025</td>
+      <td>Review & Midterm</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Mar 17, 2025</td>
+      <td>Userspace-Kernel Interface</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Mar 24, 2025</td>
+      <td>Scheduling</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Mar 31, 2025</td>
+      <td>Virtualization (CPU)</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Apr 7, 2025</td>
+      <td>Virtualization (Memory)</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Apr 14, 2025</td>
+      <td>Device Drivers <br> Kernel-Driver Interface</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Apr 21, 2025</td>
+      <td>Storage & Filesystems</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>Apr 28, 2025</td>
+      <td>Security <br> Operating Systems Architectures</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+    <tr>
+      <td>May 2, 2025</td>
+      <td>Review & Finals</td>
+      <td><a href="#">Details</a></td>
+    </tr>
+  </tbody>
+</table>
+
 
 #### Homework
 

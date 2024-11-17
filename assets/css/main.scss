@@ -3,8 +3,7 @@
 
 @import "main";
 
-<style>
-  table {
+table {
     width: 100%;
     border-collapse: collapse; /* Ensures borders between cells are merged */
   }
@@ -16,4 +15,3 @@
   th {
     background-color: #f2f2f2; /* Optional: adds a background color to the header */
   }
-</style>

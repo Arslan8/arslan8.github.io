@@ -57,12 +57,12 @@ ECoRE Bldg 028
     </tr>
     <tr>
       <td>Feb 10, 2025</td>
-      <td>Firmware Interface & Booting</td>
+      <td>Kernel and Userspace</td>
       <td><a href="#">Details</a></td>
     </tr>
     <tr>
       <td>Feb 17, 2025</td>
-      <td>Init & Userspace</td>
+      <td>Userspace-Kernel Interface</td>
       <td><a href="#">Details</a></td>
     </tr>
     <tr>
@@ -82,7 +82,7 @@ ECoRE Bldg 028
     </tr>
     <tr>
       <td>Mar 17, 2025</td>
-      <td>Userspace-Kernel Interface</td>
+      <td>Init</td>
       <td><a href="#">Details</a></td>
     </tr>
     <tr>

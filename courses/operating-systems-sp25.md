@@ -77,42 +77,42 @@ ECoRE Bldg 028
     </tr>
     <tr>
       <td>Mar 10, 2025</td>
-      <td>Review & Midterm</td>
+      <td>Spring Break</td>
       <td><a href="#">Details</a></td>
     </tr>
     <tr>
       <td>Mar 17, 2025</td>
-      <td>Init</td>
+      <td>Review & Midterm</td>
       <td><a href="#">Details</a></td>
     </tr>
     <tr>
       <td>Mar 24, 2025</td>
-      <td>Scheduling</td>
+      <td>Firmware Interface and Init </td>
       <td><a href="#">Details</a></td>
     </tr>
     <tr>
       <td>Mar 31, 2025</td>
-      <td>Virtualization (CPU)</td>
+      <td>Scheduling</td>
       <td><a href="#">Details</a></td>
     </tr>
     <tr>
       <td>Apr 7, 2025</td>
-      <td>Virtualization (Memory)</td>
+      <td>Virtualization (CPU) </td>
       <td><a href="#">Details</a></td>
     </tr>
     <tr>
       <td>Apr 14, 2025</td>
-      <td>Device Drivers <br> Kernel-Driver Interface</td>
+      <td>Virtualization (Memory) </td>
       <td><a href="#">Details</a></td>
     </tr>
     <tr>
       <td>Apr 21, 2025</td>
-      <td>Storage & Filesystems</td>
+      <td>Device Drivers <br> Kernel-Driver Interface</td>
       <td><a href="#">Details</a></td>
     </tr>
     <tr>
       <td>Apr 28, 2025</td>
-      <td>Security <br> Operating Systems Architectures</td>
+      <td>Storage & Filesystems</td>
       <td><a href="#">Details</a></td>
     </tr>
     <tr>

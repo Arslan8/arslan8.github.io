@@ -6,7 +6,7 @@ menu:
 - {name: 'contact', url: '/contact'}
 
 people:
-- {name: 'Reza Shams', title: 'PhD', department: 'Computer Science and Engineering', , url: 'graduate-student'}
+- {name: 'Reza Shams', title: 'PhD', department: 'Computer Science and Engineering', url: 'graduate-student'}
 - {name: 'Hadi Mustafa', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'graduate-student'}
 - {name: 'Muhammad Hammad Bashir', title: 'PhD', department: 'Computer Science and Engineering', url: 'graduate-student'}
 - {name: 'Sagor Sikdar', title: 'PhD', department: 'Computer Science and Engineering', url: 'graduate-student'}

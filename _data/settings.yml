@@ -15,7 +15,9 @@ people:
 
 
 courses:
+- {name: '[CMPSC-597] Embedded Systems Security - Fall 26', url: 'embedded-systems-security-fa26'}
 - {name: '[CMPSC-473] Operating Systems - Spring 25', url: 'operating-systems-sp25'}
+
 
 social:
 - {icon: 'github', link: 'https://github.com/Arslan8'}

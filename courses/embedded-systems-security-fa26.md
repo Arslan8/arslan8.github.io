@@ -2,173 +2,80 @@
 layout: page
 title: "CMPSC 473 - Operating Systems"
 ---
-*This page is under development. Check back later for updates.*
 
-#### Course Information
-We will study design and implement computer operating systems; manage various system resources: processes, memory, processors, files, input/output devices.
+# Embedded Systems Security 
 
-*Timing*: <br>
-Section 1: Tu Th 12:05PM - 1:20PM <br>
-Section 2: Tu Th 1:35PM - 2:50PM <br>
+# Embedded systems are specialized computing systems designed to perform dedicated functions within larger systems and are critical to modern infrastructure, from smart devices to industrial automation. Due to the pervasiveness of these systems, their security is crucial to ensure safety, privacy, and the reliability of critical technologies. In this course, we’ll dive into the latest topics in embedded systems security, with a focus on environments like automotive systems, industrial control, and robotics. You’ll get hands-on experience in developing and securing firmware, rehosting embedded devices, and digging into side-channel attacks. We’ll also cover the basics of software security, fault injection, and defense strategies designed specifically for embedded systems. Along the way, you’ll explore and analyze recent research through paper reviews and discussions, keeping up with the latest trends in the field. The course wraps up with a project where you’ll apply everything you’ve learned to real-world challenges and present your findings in a final showcase.
 
-*Location*: <br>
-ECoRE Bldg 028 
+# Schedule 
 
-#### Prerequisites:
-- CMPSC311
-- CMPEN331
-- C Programming
+The schedule is tentative and may change. All code used in class will be made available on GitHub, if not already open-source. 
 
-*Not required, but highly recommended*:
-- Linux 
-- GDB debugger
+Week 1: Intro to Embedded Systems
 
-#### Course Code Repository
+* Embedded systems and where to find them.
 
-All course materials, including example code, assignments, and supplementary resources, are available in the official course repository:
+Weeks 1–3: Knowing the Hardware (Firmware Development)
 
-[https://github.com/Arslan8/operating-systems-course](https://github.com/Arslan8/operating-systems-course)
+* Knowing the hardware \- Clocks and Reset   
+* ARM Firmware Development \- Going from hardware to a C program  
+* Multithreading firmware \- FreeRTOS  
+* Device Driver Development
 
-Students are encouraged to regularly check the repository for updates, reference materials, and code examples relevant to lectures and assignments.
+Weeks 4–5: Software Security Fundamentals and Challenges in Embedded Systems
 
+* Buffer Overflow and Mitigations  
+* Automatic vulnerability discovery  
+* Software Compartmentalization  
+* Programming Languages and Security
 
-#### Schedule
+Weeks 6–7: Rehosting
 
-<table border="1">
-  <thead>
-    <tr>
-      <th>Week</th>
-      <th>Topic</th>
-      <th>Resources</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Week 1</td>
-      <td>Introduction & Logistics <br> Deep C dive</td>
-      <td>Resources</td>
-    </tr>
-    <tr>
-      <td>Week 2</td>
-      <td> Deep C dive <br> ELF, Loaders, LibC & Memory Allocators  </td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 3</td>
-      <td> ELF, Loaders, LibC & Memory Allocators</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 4</td>
-      <td>Bash & Debugging</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 5</td>
-      <td>Kernel and Userspace</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 6</td>
-      <td>Userspace-Kernel Interface</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 7</td>
-      <td>Processes & Threads</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 8</td>
-      <td>Processes & Threads</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 9</td>
-      <td>Spring Break</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 10</td>
-      <td>Review & Midterm</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 11</td>
-      <td>Concurrency</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 12</td>
-      <td>Concurrency</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 13</td>
-      <td>Virtualization (Memory)</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 14</td>
-      <td>Virtualization (Memory)</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 15</td>
-      <td>Virtualization (CPU)</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 16</td>
-      <td>Kernel Programming - eBPF </td>
-      <td><a href="#">Details</a></td>
-    </tr>
-    <tr>
-      <td>Week 17</td>
-      <td>Review & Finals</td>
-      <td><a href="#">Details</a></td>
-    </tr>
-  </tbody>
-</table>
+* Running firmware without the hardware \- QEMU/Renode  
+* Modeling hardware  
+* HITL 
 
+Week 8: Midterm Presentations  
+Weeks 8-9: Fault Injection \+ Paper Survey
 
+* Clock and Voltage Glitching \- Using Chipwhisperer and Chipshouter
 
-#### Assignments
-- **Assignment 1:** Deep C Dive
-- **Assignment 2:** Malloc
-- **Assignment 3:** Mini Bash
-- **Assignment 4:** Concurrency
-- **Assignment 5 (Bonus):** Scheduling
+Weeks 10–12: Side Channel Analysis \+ Paper Survey
 
-#### Exams
-There will be per-module Canvass quizzes on each section. Besides these, we will have:
-- Midterm
-- Final Exam
+* Logic analysis   
+* Power analysis 
 
+Weeks 13–15: Domain-Specific Defense \+ Paper Survey
 
-#### AI Usage Policy
-Students are permitted to use Generative AI (GenAI) tools as part of their coursework. However, if a student chooses to do so, it is their responsibility to verify the accuracy of any information or claims produced by the AI. Any errors, hallucinations, or misleading outputs from such tools remain the sole responsibility of the student. For homework assignments, students are required to submit relevant chat logs or interactions with the GenAI system along with their work. These logs should clearly show how the tool was used in the completion of the assignment. Students should not rely on GenAI tools as an "answering oracle." Instead, these tools are to be used as helpful assistants to support learning, research, and problem-solving efforts, not as a substitute for the student's own understanding and work.
+* Defenses in Automotive, ICS, Medical Devices, and more..
 
+Week 16: Current Trends in Embedded Systems Security  
+Week 18: Final Presentations
 
-#### Disability Accommodation Statement
+# Grading
+
+There are no exams for this course. Your grade will be decided based on your course project (70%) and paper presentations (30%). The course project will be evaluated based on the novelty of the project, the quality of the artifact, and the project report. Students should ensure the novelty of the project by doing a literature survey. Your grade will be severely impacted if there is existing work on the proposed idea. Moreover, artifact submission is necessary; however, it is fine to submit a Work-In-Progress, given appropriate justification. 
+
+# AI Usage Policy
+
+Students are permitted to use Generative AI (GenAI) tools as part of their coursework. However, if a student chooses to do so, it is their responsibility to verify the accuracy of any information or claims produced by the AI. Any errors, hallucinations, or misleading outputs from such tools remain the sole responsibility of the student. For homework assignments, students are required to submit relevant chat logs or interactions with the GenAI system along with their work. These logs should clearly show how the tool was used in the completion of the assignment. Students should not rely on GenAI tools as an “answering oracle.” Instead, these tools are to be used as helpful assistants to support learning, research, and problem-solving efforts, not as a substitute for the student’s own understanding and work.
+
+# Disability Accommodation Statement
 
 Penn State welcomes students with disabilities into the University’s educational programs. Every Penn State campus has an office for students with disabilities. The [Student Disability Resources website](https://studentaffairs.psu.edu/student-disability-resources) provides contact information for every Penn State campus. For further information, please visit the Student Disability Resources website.
 
 In order to receive consideration for reasonable accommodations, you must contact the appropriate disability services office at the campus where you are officially enrolled, participate in an intake interview, and provide documentation. If the documentation supports your request for reasonable accommodations, your campus’s disability services office will provide you with an accommodation letter. Please share this letter with your instructors and discuss the accommodations with them as early in your courses as possible. You must follow this process for every semester that you request accommodations.
 
-
-
-#### Counseling and Psychological Services (CAPS) Statement
+# Counseling and Psychological Services (CAPS) Statement
 
 Many students at Penn State face personal challenges or have psychological needs that may interfere with their academic progress, social development, or emotional well-being. The university offers a variety of confidential services to help you through difficult times, including individual and group counseling, crisis intervention, consultations, online chats, and mental health screenings. These services are provided by staff who welcome all students and embrace a philosophy respectful of clients’ cultural and religious backgrounds, and sensitive to differences in race, ability, gender identity, and sexual orientation.
 
-- **Counseling and Psychological Services at University Park (CAPS):** [http://studentaffairs.psu.edu/counseling/](http://studentaffairs.psu.edu/counseling/) — 814-863-0395
-- **Counseling and Psychological Services at Commonwealth Campuses:** [https://senate.psu.edu/faculty/counseling-services-at-commonwealth-campuses/](https://senate.psu.edu/faculty/counseling-services-at-commonwealth-campuses/)
-- **Penn State Crisis Line (24 hours/7 days/week):** 877-229-6400
-- **Crisis Text Line (24 hours/7 days/week):** Text `LIONS` to 741741
+* Counseling and Psychological Services at University Park (CAPS): [http://studentaffairs.psu.edu/counseling/](http://studentaffairs.psu.edu/counseling/) — 814-863-0395  
+* Counseling and Psychological Services at Commonwealth Campuses: [https://senate.psu.edu/faculty/counseling-services-at-commonwealth-campuses/](https://senate.psu.edu/faculty/counseling-services-at-commonwealth-campuses/)  
+* Penn State Crisis Line (24 hours/7 days/week): 877-229-6400  
+* Crisis Text Line (24 hours/7 days/week): Text LIONS to 741741
 
-
-
-#### Education Equity and Reporting Bias
+# Education Equity and Reporting Bias
 
 Penn State takes great pride in fostering a diverse and inclusive environment for students, faculty, and staff. Acts of intolerance, discrimination, or harassment due to age, ancestry, color, disability, gender, gender identity, national origin, race, religious belief, sexual orientation, or veteran status are not tolerated and can be reported through Educational Equity via the [Report Bias webpage](http://equity.psu.edu/reportbias/).
+

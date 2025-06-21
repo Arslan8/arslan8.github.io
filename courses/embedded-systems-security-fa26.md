@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "CMPSC 473 - Operating Systems"
+title: "CMPSC 597 - Embedded Systems Security"
 ---
 
 # Embedded Systems Security 

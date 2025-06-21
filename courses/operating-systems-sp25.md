@@ -2,7 +2,6 @@
 layout: page
 title: "CMPSC 473 - Operating Systems"
 ---
-*This page is under development. Check back later for updates.*
 
 #### Course Information
 We will study design and implement computer operating systems; manage various system resources: processes, memory, processors, files, input/output devices.

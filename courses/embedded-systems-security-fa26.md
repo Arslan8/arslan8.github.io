@@ -6,6 +6,14 @@ title: "CMPSC 597 - Embedded Systems Security"
 # Embedded Systems Security 
 Embedded systems are specialized computing systems designed to perform dedicated functions within larger systems and are critical to modern infrastructure, from smart devices to industrial automation. Due to the pervasiveness of these systems, their security is crucial to ensure safety, privacy, and the reliability of critical technologies. In this course, we’ll dive into the latest topics in embedded systems security, with a focus on environments like automotive systems, industrial control, and robotics. You’ll get hands-on experience in developing and securing firmware, rehosting embedded devices, and digging into side-channel attacks. We’ll also cover the basics of software security, fault injection, and defense strategies designed specifically for embedded systems. Along the way, you’ll explore and analyze recent research through paper reviews and discussions, keeping up with the latest trends in the field. The course wraps up with a project where you’ll apply everything you’ve learned to real-world challenges and present your findings in a final showcase.
 
+# Course Materials
+* Github: [https://github.com/Arslan8/EmbeddedSecCourse](https://github.com/Arslan8/EmbeddedSecCourse)
+* Discord: [https://discord.com/invite/BPG2skZh](https://discord.com/invite/BPG2skZh)
+
+# Location (Fall 25)
+* Eng Desi & Innovation Bldg 016
+* MoWeFr 11:15AM - 12:05PM
+
 # Schedule 
 
 The schedule is tentative and may change. All code used in class will be made available on GitHub, if not already open-source. 

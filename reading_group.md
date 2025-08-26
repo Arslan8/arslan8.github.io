@@ -36,15 +36,16 @@ permalink: /reading_group/
 </section>
 
 <section class="max-w-6xl mx-auto px-6 pb-14">
-  <h2 class="text-2xl font-semibold mb-4">Schedule &amp; Sign-ups</h2>
+  <h2 class="text-2xl font-semibold mb-4">Schedule</h2>
   <p class="text-gray-700 mb-4">The live schedule is embedded below. Use the contact button above to coordinate a date.</p>
-  <div class="iframe-wrap rounded-2xl overflow-hidden shadow-sm ring-1 ring-gray-200 bg-white">
-    <iframe 
+
+  <div style="position:relative;width:100%;padding-bottom:70vh;">
+    <iframe
       title="Reading Group Schedule"
       src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTSxGVlNasl0fRk6qfPnJ1g5jZnLhvLsCwVELXTP9EU_wuQoyBV-vpwpq5BQfoTFZc3XjOAWaFbiDjW/pubhtml?widget=true&amp;headers=false"
+      style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
       allowfullscreen
-      loading="lazy"
-    ></iframe>
+      loading="lazy">
+    </iframe>
   </div>
 </section>
-

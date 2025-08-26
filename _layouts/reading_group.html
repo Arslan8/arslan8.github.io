@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Penn State Security Reading Group</title>
+  <meta name="description" content="Open reading group on systems & security at Penn State, affiliated with INSR. Visitors are welcome—reach out to arrange a talk." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Simple responsive iframe wrapper */
+    .iframe-wrap { position: relative; width: 100%; padding-bottom: 65vh; }
+    .iframe-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    @media (min-width: 1024px) { .iframe-wrap { padding-bottom: 70vh; } }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased">
+  <!-- Header -->
+  <header class="bg-white/90 backdrop-blur border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <h1 class="text-2xl font-semibold tracking-tight">
+        <span class="text-blue-700">Penn State</span> Security Reading Group
+      </h1>
+      <a href="mailto:arslankhan@psu.edu?subject=Reading%20Group%20Talk%20Proposal" class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-medium bg-blue-700 text-white hover:bg-blue-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600" aria-label="Propose a talk via email">
+        Propose a Talk
+      </a>
+    </div>
+  </header>
+
+  <!-- Intro -->
+  <section class="max-w-6xl mx-auto px-6 py-10">
+    <div class="grid gap-6 lg:grid-cols-5">
+      <div class="lg:col-span-3">
+        <h2 class="text-3xl font-bold leading-tight mb-3">Open, systems & security focused</h2>
+        <p class="text-lg text-gray-700 mb-4">We are a reading group at Penn State, affiliated with the <a href="https://insr.psu.edu/welcome/" target="_blank" class="text-blue-700 underline hover:no-underline">Institute for Networking and Security Research (INSR)</a>, covering topics across systems and security. We welcome attendees from outside Penn State—if you’d like to visit or give a talk, please reach out.</p>
+        <p class="text-gray-700">Contact: <a class="text-blue-700 underline hover:no-underline" href="mailto:arslankhan@psu.edu">arslankhan@psu.edu</a></p>
+      </div>
+      <div class="lg:col-span-2">
+        <div class="p-4 rounded-2xl border border-blue-100 bg-blue-50">
+          <h3 class="font-semibold mb-2">Speak at the Reading Group</h3>
+          <ul class="list-disc list-inside text-sm text-gray-800 space-y-1">
+            <li>30–45 min talk + Q&A</li>
+            <li>Systems, security, and adjacent areas</li>
+            <li>All levels welcome: research-in-progress or published work</li>
+          </ul>
+          <a href="mailto:arslankhan@psu.edu?subject=Reading%20Group%20Talk%20Proposal" class="mt-3 inline-block rounded-xl px-3 py-2 bg-blue-700 text-white text-sm hover:bg-blue-800">Email to arrange your talk</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule (Google Sheet) -->
+  <section class="max-w-6xl mx-auto px-6 pb-14">
+    <h2 class="text-2xl font-semibold mb-4">Schedule & Sign-ups</h2>
+    <p class="text-gray-700 mb-4">The live schedule is embedded below. Use the contact button above to coordinate a date.</p>
+    <div class="iframe-wrap rounded-2xl overflow-hidden shadow-sm ring-1 ring-gray-200 bg-white">
+      <iframe 
+        title="Reading Group Schedule"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTSxGVlNasl0fRk6qfPnJ1g5jZnLhvLsCwVELXTP9EU_wuQoyBV-vpwpq5BQfoTFZc3XjOAWaFbiDjW/pubhtml?widget=true&amp;headers=false"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-white">
+    <div class="max-w-6xl mx-auto px-6 py-8 text-sm text-gray-600 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+      <p>© <span id="year"></span> Penn State Security Reading Group</p>
+      <p class="text-gray-500">Affiliated with <a href="https://insr.psu.edu/welcome/" target="_blank" class="text-blue-700 underline hover:no-underline">INSR</a>. This page welcomes outside participants.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

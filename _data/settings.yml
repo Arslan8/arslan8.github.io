@@ -2,6 +2,7 @@ menu:
 - {name: 'teaching', url: '/courses'}
 - {name: 'publications', url: '/publications'}
 - {name: 'people', url: '/people'}
+- {name: 'reading group', url: '/reading_group'}
 - {name: 'cv', url: '/cv.pdf'}
 - {name: 'contact', url: '/contact'}
 

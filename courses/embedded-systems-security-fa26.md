@@ -8,7 +8,8 @@ Embedded systems are specialized computing systems designed to perform dedicated
 
 # Course Materials
 * Github: [https://github.com/Arslan8/EmbeddedSecCourse](https://github.com/Arslan8/EmbeddedSecCourse)
-* Discord: [https://discord.com/invite/BPG2skZh](https://discord.com/invite/BPG2skZh)
+* Discord: [https://discord.com/invite/BPG2skZh](Server)
+* Paper List: [https://docs.google.com/spreadsheets/d/e/2PACX-1vSvd02Ef1plJQm_z7ybkX5De-gnI-A6RundirIFQ5eZB2XlNcGTuPGodCgsql7WMPxSVY3b-8dbNBD4/pubhtml](Papers)
 
 # Location (Fall 25)
 * Eng Desi & Innovation Bldg 016

@@ -18,14 +18,15 @@ Embedded systems are specialized computing systems designed to perform dedicated
 
 The schedule is tentative and may change. All code used in class will be made available on GitHub, if not already open-source. 
 
-[Week 1: Intro to Embedded Systems](https://docs.google.com/presentation/d/e/2PACX-1vTY1lFl3_zkcf464JBB_UzOMMJY6ZBt79hwbh1my6ITc0MiEoFuZ01OHiNVHkcdJerQV_PLk0mnEV6c/pub?start=false&loop=false&delayms=3000)
+Week 1: Intro to Embedded Systems
 
-* Embedded systems and where to find them.
+* [Embedded systems and where to find them.
+](https://docs.google.com/presentation/d/e/2PACX-1vTY1lFl3_zkcf464JBB_UzOMMJY6ZBt79hwbh1my6ITc0MiEoFuZ01OHiNVHkcdJerQV_PLk0mnEV6c/pub?start=false&loop=false&delayms=3000)
 
 Weeks 1–3: Knowing the Hardware (Firmware Development)
 
+* [Firmware Development \- Going from hardware to a C program](https://docs.google.com/presentation/d/e/2PACX-1vSN0Kl9TCf9mnx6ckMBZEmC41Q1EkcY-_1aZCIWCZW0VIHXzq_EaJc7Da7VVQYOVGTFfX5SD1EBmGji/pub?start=false&loop=false&delayms=3000)
 * Knowing the hardware \- Clocks and Reset   
-* ARM Firmware Development \- Going from hardware to a C program  
 * Multithreading firmware \- FreeRTOS  
 * Device Driver Development
 

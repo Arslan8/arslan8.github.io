@@ -26,7 +26,7 @@ Week 1: Intro to Embedded Systems
 Weeks 1–3: Knowing the Hardware (Firmware Development)
 
 * [Firmware Development \- Going from hardware to a C program](https://docs.google.com/presentation/d/e/2PACX-1vSN0Kl9TCf9mnx6ckMBZEmC41Q1EkcY-_1aZCIWCZW0VIHXzq_EaJc7Da7VVQYOVGTFfX5SD1EBmGji/pub?start=false&loop=false&delayms=3000)
-* Knowing the hardware \- Clocks and Reset   
+* [Knowing the hardware \- Clocks and Reset](https://docs.google.com/presentation/d/e/2PACX-1vTYmdrRfBRH6B45R9rVvqUFg_3uQZyQxJanP1Hoaq9XTBo0KUOTPs6yJreSm6TR6ENlmIz4yTt5kEY8/pub?start=false&loop=false&delayms=3000)   
 * Multithreading firmware \- FreeRTOS  
 * Device Driver Development
 

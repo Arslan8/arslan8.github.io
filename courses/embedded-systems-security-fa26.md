@@ -31,10 +31,10 @@ Weeks 1–3: Knowing the Hardware (Firmware Development)
 
 Weeks 4–5: Software Security Fundamentals and Challenges in Embedded Systems
 
-* Buffer Overflow and Mitigations  
-* Automatic vulnerability discovery  
-* Software Compartmentalization  
-* Programming Languages and Security
+* Buffer Overflow and Mitigations
+* [Software Compartmentalization, Programming Languages, and Security](https://docs.google.com/presentation/d/e/2PACX-1vS4AEt0PL2ObATi0NXaAUKeNjtoIE-sKqgahk2rRf45E3ZafsqMIcVjuiA_mVBhA2NyUkJDLl1bm63M/pub?start=false&loop=false&delayms=3000)
+* [Automatic vulnerability discovery](https://docs.google.com/presentation/d/e/2PACX-1vQ7WcXyebGAwvV4Uu4zh6TckMIxD_dIUD5Z2Df-zKppRTs1oCc-kqwwDVcGUMsEZ82bShSzj9xywfRe/pub?start=false&loop=false&delayms=3000)  
+
 
 Weeks 6–7: Rehosting
 

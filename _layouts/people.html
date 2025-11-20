@@ -10,7 +10,7 @@ layout: default
   <div class="col-md-6">
     <h5>{{ person.name }}</h5>
     <p> {{ person.title }} </p>
-    <p><a href="{{ site.github.url }}/people/{{ person.url }}">Homepage</a></p>
+    <p><a href="{{ person.url }}">Homepage</a></p>
   </div>
 </div>
 {% endfor %}
@@ -22,7 +22,7 @@ layout: default
   <div class="col-md-6">
     <h5>{{ person.name }}</h5>
     <p>{{ person.title }}</p>
-    <p><a href="{{ site.github.url }}/people/{{ person.url }}">Homepage</a></p>
+    <p><a href="{{ person.url }}">Homepage</a></p>
   </div>
 </div>
 {% endfor %}

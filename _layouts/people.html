@@ -10,19 +10,19 @@ layout: default
   <div class="col-md-6">
     <h5>{{ person.name }}</h5>
     <p> {{ person.title }} </p>
-    <p><a href="{{ site.github.url }}/people/{{ person.url }}">More info</a></p>
+    <p><a href="{{ site.github.url }}/people/{{ person.url }}">Homepage</a></p>
   </div>
 </div>
 {% endfor %}
 
 
 <h3 class="fw-bold border-bottom pb-3 mb-5">Alumni</h3>
-{% for person in site.data.settings.alumni %}
+{% for person in site.data.settings.alum %}
 <div class="row g-5 mb-5">
   <div class="col-md-6">
     <h5>{{ person.name }}</h5>
     <p>{{ person.title }}</p>
-    <p><a href="{{ site.github.url }}/people/{{ person.url }}">More info</a></p>
+    <p><a href="{{ site.github.url }}/people/{{ person.url }}">Homepage</a></p>
   </div>
 </div>
 {% endfor %}

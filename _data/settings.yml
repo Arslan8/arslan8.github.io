@@ -7,12 +7,19 @@ menu:
 - {name: 'contact', url: '/contact'}
 
 people:
-- {name: 'Reza Shams', title: 'PhD', department: 'Computer Science and Engineering', url: 'graduate-student'}
 - {name: 'Hadi Mustafa', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'graduate-student'}
+- {name: 'Michael P. Rooney', title: 'MS (Co-Advised with Dr. Dongyan Xu)', department: 'Computer Science at Purdue', url: 'graduate-student'}
+- {name: 'Danielle L. Daniel', title: 'PhD (D.Eng, Currently at UNITED STATES AIR FORCE)', department: 'Computer Science and Engineering', url: 'graduate-student'}
+- {name: 'Sagor Sikdar', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'Computer Science and Engineering', url: 'graduate-student'}
 - {name: 'Muhammad Hammad Bashir', title: 'PhD', department: 'Computer Science and Engineering', url: 'graduate-student'}
-- {name: 'Sagor Sikdar', title: 'PhD', department: 'Computer Science and Engineering', url: 'graduate-student'}
-- {name: 'Nimai Patel', title: 'MS', department: 'Computer Science and Engineering', url: 'graduate-student'}
-- {name: 'Colin Smith', title: 'BS', department: 'Computer Science and Engineering', url: 'graduate-student'}
+- {name: 'Chungyl Lee', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'graduate-student'}
+- {name: 'Colin Smith', title: 'PhD', department: 'Computer Science and Engineering', url: 'graduate-student'}
+- {name: 'Evan English', title: 'BS (Co-Advised with Dr. Dongyan Xu)', department: 'Computer Science at Purdue', url: 'graduate-student'}
+
+alums:
+- {name: 'Seongjin Kim - Now at Theori', title: 'BS (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'graduate-student'}
+- {name: 'Nimai Patel - Now at Lucid Motors', title: 'MS', department: 'Computer Science and Engineering', url: 'graduate-student'}
+
 
 
 courses:

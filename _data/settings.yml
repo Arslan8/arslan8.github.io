@@ -7,18 +7,18 @@ menu:
 - {name: 'contact', url: '/contact'}
 
 people:
-- {name: 'Hadi Mustafa', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'graduate-student'}
-- {name: 'Michael P. Rooney', title: 'MS (Co-Advised with Dr. Dongyan Xu)', department: 'Computer Science at Purdue', url: 'graduate-student'}
-- {name: 'Danielle L. Daniel', title: 'PhD (D.Eng, Currently at UNITED STATES AIR FORCE)', department: 'Computer Science and Engineering', url: 'graduate-student'}
-- {name: 'Sagor Sikdar', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'Computer Science and Engineering', url: 'graduate-student'}
+- {name: 'Hadi Mustafa', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'https://arslan8.github.io/nowebsite.html'}
+- {name: 'Michael P. Rooney', title: 'MS (Co-Advised with Dr. Dongyan Xu)', department: 'Computer Science at Purdue', url: 'https://arslan8.github.io/nowebsite.html'}
+- {name: 'Danielle L. Daniel', title: 'PhD (D.Eng, Currently at UNITED STATES AIR FORCE)', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
+- {name: 'Sagor Sikdar', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
 - {name: 'Muhammad Hammad Bashir', title: 'PhD', department: 'Computer Science and Engineering', url: 'https://muhammadhammad001.github.io/'}
-- {name: 'Chungyl Lee', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'graduate-student'}
-- {name: 'Colin Smith', title: 'PhD', department: 'Computer Science and Engineering', url: 'graduate-student'}
-- {name: 'Evan English', title: 'BS (Co-Advised with Dr. Dongyan Xu)', department: 'Computer Science at Purdue', url: 'graduate-student'}
+- {name: 'Chungyl Lee', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'https://arslan8.github.io/nowebsite.html'}
+- {name: 'Colin Smith', title: 'PhD', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
+- {name: 'Evan English', title: 'BS (Co-Advised with Dr. Dongyan Xu)', department: 'Computer Science at Purdue', url: 'https://arslan8.github.io/nowebsite.html'}
 
 alums:
-- {name: 'Seongjin Kim - Now at Theori', title: 'BS (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'graduate-student'}
-- {name: 'Nimai Patel - Now at Lucid Motors', title: 'MS', department: 'Computer Science and Engineering', url: 'graduate-student'}
+- {name: 'Seongjin Kim - Now at Theori', title: 'BS (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'https://arslan8.github.io/nowebsite.html'}
+- {name: 'Nimai Patel - Now at Lucid Motors', title: 'MS', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
 
 
 

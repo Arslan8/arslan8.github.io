@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Penn State Security Reading Group"
+title: "Penn State INSR Reading Group and Seminar Series"
 permalink: /reading_group/
 ---
 
@@ -12,7 +12,7 @@ permalink: /reading_group/
         We are a reading group at Penn State, affiliated with the
         <a href="https://insr.psu.edu/welcome/" target="_blank" class="text-blue-700 underline hover:no-underline">
           Institute for Networking and Security Research (INSR)
-        </a>, covering topics across systems and security. We welcome attendees from outside Penn State—if you’d like to visit or give a talk, please reach out.
+        </a>, covering topics across systems, networking, and security. We welcome attendees from outside Penn State—if you’d like to visit or give a talk, please reach out.
       </p>
       <p class="text-gray-700">
         Contact: <a class="text-blue-700 underline hover:no-underline" href="mailto:arslankhan@psu.edu">arslankhan@psu.edu</a>

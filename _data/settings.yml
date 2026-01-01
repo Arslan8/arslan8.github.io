@@ -23,6 +23,7 @@ alums:
 
 
 courses:
+- {name: '[CMPSC-597] Advanced Software Security - Spring 26', url: 'Advanced_Software_Security_spring26'}
 - {name: '[CMPSC-597] Embedded Systems Security - Fall 25', url: 'embedded-systems-security-fa26'}
 - {name: '[CMPSC-473] Operating Systems - Spring 25', url: 'operating-systems-sp25'}
 

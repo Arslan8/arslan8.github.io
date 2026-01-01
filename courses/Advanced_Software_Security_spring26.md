@@ -3,8 +3,9 @@ layout: page
 title: "CMPSC 597 - Advanced Software Security"
 ---
 
-# Embedded Systems Security 
-Embedded systems are specialized computing systems designed to perform dedicated functions within larger systems and are critical to modern infrastructure, from smart devices to industrial automation. Due to the pervasiveness of these systems, their security is crucial to ensure safety, privacy, and the reliability of critical technologies. In this course, we’ll dive into the latest topics in embedded systems security, with a focus on environments like automotive systems, industrial control, and robotics. You’ll get hands-on experience in developing and securing firmware, rehosting embedded devices, and digging into side-channel attacks. We’ll also cover the basics of software security, fault injection, and defense strategies designed specifically for embedded systems. Along the way, you’ll explore and analyze recent research through paper reviews and discussions, keeping up with the latest trends in the field. The course wraps up with a project where you’ll apply everything you’ve learned to real-world challenges and present your findings in a final showcase.
+# Advanced Software Security
+This course focuses on software security fundamentals, secure coding guidelines and principles, and advanced security concepts spanning software, hardware, and embedded systems. Students will learn to assess and understand threats, design and implement secure systems, and gain hands-on experience with common security pitfalls. The course additionally covers hardware and embedded-systems security, including firmware security, trusted execution environments, memory-mapped I/O, peripheral attacks, and security challenges in resource-constrained systems. Finally, the course introduces agentic AI–assisted security, where autonomous and semi-autonomous agents are used for vulnerability discovery, automated program and firmware analysis, intelligent fuzzing, policy reasoning, and adaptive defense—highlighting both the capabilities and risks of agent-driven security systems.
+
 
 # Course Materials
 * Github: [https://github.com/Arslan8/EmbeddedSecCourse](https://github.com/Arslan8/EmbeddedSecCourse)

@@ -8,38 +8,28 @@ This course focuses on software security fundamentals, secure coding guidelines 
 
 
 # Course Materials
-* Github: [https://github.com/Arslan8/EmbeddedSecCourse](https://github.com/Arslan8/EmbeddedSecCourse)
+* Github: [https://github.com/Arslan8/EmbeddedSecCourse](https://github.com/Arslan8/EmbeddedSecCourse) (Yes, we will use the same repo as the previous iteration of the course)
 * Discord: [Invitation Link](https://discord.com/invite/BPG2skZh)
 * Paper List: [Papers](https://docs.google.com/spreadsheets/d/e/2PACX-1vSvd02Ef1plJQm_z7ybkX5De-gnI-A6RundirIFQ5eZB2XlNcGTuPGodCgsql7WMPxSVY3b-8dbNBD4/pubhtml)
 # Location (Fall 25)
-* Eng Desi & Innovation Bldg 016
-* MoWeFr 11:15AM - 12:05PM
+* Borland Bldg 116
+* MoWeFr 10:10AM - 11:00AM
 
 # Schedule 
 
 The schedule is tentative and may change. All code used in class will be made available on GitHub, if not already open-source. 
 
-Week 1: Welcome.
+Week 1: Welcome and Gentle Introduction to CTFs.
 
-* [Embedded systems and where to find them.
-](https://docs.google.com/presentation/d/e/2PACX-1vTY1lFl3_zkcf464JBB_UzOMMJY6ZBt79hwbh1my6ITc0MiEoFuZ01OHiNVHkcdJerQV_PLk0mnEV6c/pub?start=false&loop=false&delayms=3000)
 
 Weeks 1–3: Attack Modeling
+ 
 
-* [Firmware Development \- Going from hardware to a C program](https://docs.google.com/presentation/d/e/2PACX-1vSN0Kl9TCf9mnx6ckMBZEmC41Q1EkcY-_1aZCIWCZW0VIHXzq_EaJc7Da7VVQYOVGTFfX5SD1EBmGji/pub?start=false&loop=false&delayms=3000)
-* [Knowing the hardware \- Clocks and Reset (Little bit of Device Driver Development)](https://docs.google.com/presentation/d/e/2PACX-1vTYmdrRfBRH6B45R9rVvqUFg_3uQZyQxJanP1Hoaq9XTBo0KUOTPs6yJreSm6TR6ENlmIz4yTt5kEY8/pub?start=false&loop=false&delayms=3000)   
-* [Multithreading firmware \- FreeRTOS](https://docs.google.com/presentation/d/e/2PACX-1vRoae2maDiPR8AMtq5g5GJQZhTcJkbh4DDVF5tXiFsUnUvdLz_xO1HA9_iakpgK2iRQNOvtIHAS34ik/pub?start=false&loop=false&delayms=3000)  
-
-Weeks 4–5: Access Control, Privilege Escalation, and Linux Security Modules.
-
-* [Automatic vulnerability discovery](https://docs.google.com/presentation/d/e/2PACX-1vQ7WcXyebGAwvV4Uu4zh6TckMIxD_dIUD5Z2Df-zKppRTs1oCc-kqwwDVcGUMsEZ82bShSzj9xywfRe/pub?start=false&loop=false&delayms=3000)  
+Weeks 4–5: Access Control, Privilege Escalation, and Linux Security Modules. 
 
 
 Weeks 6–7:  Automatic Vulnerability Discovery using Reasoning (Continuation from Embedded Systems Fall 25 Course)
 
-* Running firmware without the hardware \- QEMU/Renode  
-* Modeling hardware  
-* HITL 
 
 Week 8: Midterm Presentations  
 

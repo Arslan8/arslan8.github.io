@@ -22,9 +22,10 @@ The schedule is tentative and may change. All code used in class will be made av
 [Week 1-2: Welcome and Gentle Introduction to CTFs + Attack Modeling](https://docs.google.com/presentation/d/e/2PACX-1vRRJjYhPohJU1XKYhjPBIf99HF4W9xvz0slX3RZClM9xkjNZp1XAQyUQ7aJov1-rSzQsc6LciT4oDkT/pub?start=false&loop=false&delayms=3000) 
 
 [Week 3-4: Trusted, Confidential, and Secure Computing](https://docs.google.com/presentation/d/e/2PACX-1vRDCENxM-aaLBtNJkCYraLq2RDrYEQCNyAE43BIy1DNfehQMS2jCQlYQzR4krfOM7kk0bbBWY0Ps6rG/pub?start=false&loop=false&delayms=3000)  
+
 [Week 4-5: Firmware Security and Secure Booting](https://docs.google.com/presentation/d/e/2PACX-1vSkrHC_6kn2ilxUw8w_doYJw0JrshfResGK7fUJubeL0mmVbei0vRsPiuvSHsdpPW_ofhscK8Wb1QJl/pub?start=false&loop=false&delayms=3000)
 
-Weeks 6–7: Access Control, Privilege Escalation, and Linux Security Modules. 
+[Weeks 6–7: Access Control, Privilege Escalation, and Linux Security Modules.](https://docs.google.com/presentation/d/e/2PACX-1vT82agjCRYHyG2KfsQL4rRxzD97fP8SbHIBuLHKXK1YMQrMCBbt6c7R3XTeiYGiuzi4DgwX9-y5N93o/pub?start=false&loop=false&delayms=3000) 
 
 
 Week 8: Midterm Presentations  

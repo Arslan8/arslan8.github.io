@@ -31,9 +31,9 @@ The schedule is tentative and may change. All code used in class will be made av
 
 
 Week 8: Midterm Presentations  
-Weeks 6–7:  Automatic Vulnerability Discovery using Reasoning (Continuation from Embedded Systems Fall 25 Course)
 
-Weeks 8–12: Automatic Vulnerability Discovery using Agentic AI
+
+[Weeks 6–12: Automatic Vulnerability Discovery using Agentic AI](https://docs.google.com/presentation/d/e/2PACX-1vT34bVcHmHwYc6CW2B5uVBb-lB5T8AMGAaaOO-IvGRlT9EGKYAAWXJ1qKOHFB8kcehRAnz6K-85gmIO/pub?start=false&loop=false&delayms=3000)
 
 Weeks 13-15: Fault Injection \+ Paper Survey
 

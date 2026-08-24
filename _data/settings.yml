@@ -7,16 +7,27 @@ menu:
 - {name: 'contact', url: '/contact'}
 
 people:
-- {name: 'Reza Shams', title: 'PhD', department: 'Computer Science and Engineering', url: 'graduate-student'}
-- {name: 'Hadi Mustafa', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'graduate-student'}
-- {name: 'Muhammad Hammad Bashir', title: 'PhD', department: 'Computer Science and Engineering', url: 'graduate-student'}
-- {name: 'Sagor Sikdar', title: 'PhD', department: 'Computer Science and Engineering', url: 'graduate-student'}
-- {name: 'Nimai Patel', title: 'MS', department: 'Computer Science and Engineering', url: 'graduate-student'}
-- {name: 'Colin Smith', title: 'BS', department: 'Computer Science and Engineering', url: 'graduate-student'}
+- {name: 'Hadi Mustafa', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'https://arslan8.github.io/nowebsite.html'}
+- {name: 'Michael P. Rooney', title: 'MS (Co-Advised with Dr. Dongyan Xu)', department: 'Computer Science at Purdue', url: 'https://michaelprooney.github.io/'}
+- {name: 'Danielle L. Daniel', title: 'PhD (D.Eng, Currently at UNITED STATES AIR FORCE)', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
+- {name: 'Sagor Sikdar', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
+- {name: 'Muhammad Hammad Bashir', title: 'PhD', department: 'Computer Science and Engineering', url: 'https://muhammadhammad001.github.io/'}
+- {name: 'Changyul Lee', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'https://blog.serendipia.pe.kr/'}
+- {name: 'Colin Smith', title: 'PhD', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
+- {name: 'Evan English', title: 'BS (Co-Advised with Dr. Dongyan Xu)', department: 'Computer Science at Purdue', url: 'https://arslan8.github.io/nowebsite.html'}
+
+alums:
+- {name: 'Seongjin Kim - Now at Theori', title: 'BS (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'https://arslan8.github.io/nowebsite.html'}
+- {name: 'Nimai Patel - Now at Lucid Motors', title: 'MS', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
+
 
 
 courses:
+<<<<<<< HEAD
 - {name: '[CSE-544] Systems Security - Fall 26', url: 'systems-security-fa26'}
+=======
+- {name: '[CMPSC-597] Advanced Software Security - Spring 26', url: 'Advanced_Software_Security_spring26'}
+>>>>>>> ef40785d0fea879eb87427edacbe6e96d21a9150
 - {name: '[CMPSC-597] Embedded Systems Security - Fall 25', url: 'embedded-systems-security-fa26'}
 - {name: '[CMPSC-473] Operating Systems - Spring 25', url: 'operating-systems-sp25'}
 

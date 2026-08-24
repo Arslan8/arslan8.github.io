@@ -1,67 +1,56 @@
 ---
 layout: page
-title: "CMPSC 597 - Embedded Systems Security"
+title: "CMPSC 597 - Advanced Software Security"
 ---
 
-# Embedded Systems Security 
-Embedded systems are specialized computing systems designed to perform dedicated functions within larger systems and are critical to modern infrastructure, from smart devices to industrial automation. Due to the pervasiveness of these systems, their security is crucial to ensure safety, privacy, and the reliability of critical technologies. In this course, we’ll dive into the latest topics in embedded systems security, with a focus on environments like automotive systems, industrial control, and robotics. You’ll get hands-on experience in developing and securing firmware, rehosting embedded devices, and digging into side-channel attacks. We’ll also cover the basics of software security, fault injection, and defense strategies designed specifically for embedded systems. Along the way, you’ll explore and analyze recent research through paper reviews and discussions, keeping up with the latest trends in the field. The course wraps up with a project where you’ll apply everything you’ve learned to real-world challenges and present your findings in a final showcase.
+# Advanced Software Security
+This course focuses on software security fundamentals, secure coding guidelines and principles, and advanced security concepts spanning software, hardware, and embedded systems. Students will learn to assess and understand threats, design and implement secure systems, and gain hands-on experience with common security pitfalls. The course additionally covers hardware and embedded-systems security, including firmware security, trusted execution environments, memory-mapped I/O, peripheral attacks, and security challenges in resource-constrained systems. Finally, the course introduces agentic AI–assisted security, where autonomous and semi-autonomous agents are used for vulnerability discovery, automated program and firmware analysis, intelligent fuzzing, policy reasoning, and adaptive defense—highlighting both the capabilities and risks of agent-driven security systems.
+
 
 # Course Materials
-* Github: [https://github.com/Arslan8/EmbeddedSecCourse](https://github.com/Arslan8/EmbeddedSecCourse)
+* Github: [https://github.com/Arslan8/EmbeddedSecCourse](https://github.com/Arslan8/EmbeddedSecCourse) (Yes, we will use the same repo as the previous iteration of the course)
 * Discord: [Invitation Link](https://discord.com/invite/BPG2skZh)
 * Paper List: [Papers](https://docs.google.com/spreadsheets/d/e/2PACX-1vSvd02Ef1plJQm_z7ybkX5De-gnI-A6RundirIFQ5eZB2XlNcGTuPGodCgsql7WMPxSVY3b-8dbNBD4/pubhtml)
 # Location (Fall 25)
-* Eng Desi & Innovation Bldg 016
-* MoWeFr 11:15AM - 12:05PM
+* Borland Bldg 116
+* MoWeFr 10:10AM - 11:00AM
 
 # Schedule 
 
 The schedule is tentative and may change. All code used in class will be made available on GitHub, if not already open-source. 
 
-Week 1: Intro to Embedded Systems
+[Week 1-2: Welcome and Gentle Introduction to CTFs + Attack Modeling](https://docs.google.com/presentation/d/e/2PACX-1vRRJjYhPohJU1XKYhjPBIf99HF4W9xvz0slX3RZClM9xkjNZp1XAQyUQ7aJov1-rSzQsc6LciT4oDkT/pub?start=false&loop=false&delayms=3000) 
 
-* [Embedded systems and where to find them.
-](https://docs.google.com/presentation/d/e/2PACX-1vTY1lFl3_zkcf464JBB_UzOMMJY6ZBt79hwbh1my6ITc0MiEoFuZ01OHiNVHkcdJerQV_PLk0mnEV6c/pub?start=false&loop=false&delayms=3000)
+[Week 3: Architecture Review](https://docs.google.com/presentation/d/e/2PACX-1vSijKd47kMq7iVkYFa8J9wYqmjRI7aSbsLZ1kkUJ4WjTFL473iZddwSUugMx13eEYCOpcpoNhFymE6R/pub?start=false&loop=false&delayms=3000)
 
-Weeks 1–3: Knowing the Hardware (Firmware Development)
+[Week 3-4: Trusted, Confidential, and Secure Computing](https://docs.google.com/presentation/d/e/2PACX-1vRDCENxM-aaLBtNJkCYraLq2RDrYEQCNyAE43BIy1DNfehQMS2jCQlYQzR4krfOM7kk0bbBWY0Ps6rG/pub?start=false&loop=false&delayms=3000)  
 
-* [Firmware Development \- Going from hardware to a C program](https://docs.google.com/presentation/d/e/2PACX-1vSN0Kl9TCf9mnx6ckMBZEmC41Q1EkcY-_1aZCIWCZW0VIHXzq_EaJc7Da7VVQYOVGTFfX5SD1EBmGji/pub?start=false&loop=false&delayms=3000)
-* [Knowing the hardware \- Clocks and Reset (Little bit of Device Driver Development)](https://docs.google.com/presentation/d/e/2PACX-1vTYmdrRfBRH6B45R9rVvqUFg_3uQZyQxJanP1Hoaq9XTBo0KUOTPs6yJreSm6TR6ENlmIz4yTt5kEY8/pub?start=false&loop=false&delayms=3000)   
-* [Multithreading firmware \- FreeRTOS](https://docs.google.com/presentation/d/e/2PACX-1vRoae2maDiPR8AMtq5g5GJQZhTcJkbh4DDVF5tXiFsUnUvdLz_xO1HA9_iakpgK2iRQNOvtIHAS34ik/pub?start=false&loop=false&delayms=3000)  
+[Week 4-5: Firmware Security and Secure Booting](https://docs.google.com/presentation/d/e/2PACX-1vSkrHC_6kn2ilxUw8w_doYJw0JrshfResGK7fUJubeL0mmVbei0vRsPiuvSHsdpPW_ofhscK8Wb1QJl/pub?start=false&loop=false&delayms=3000)
 
-Weeks 4–5: Software Security Fundamentals and Challenges in Embedded Systems
+[Weeks 6–7: Access Control, Privilege Escalation, and Linux Security Modules.](https://docs.google.com/presentation/d/e/2PACX-1vT82agjCRYHyG2KfsQL4rRxzD97fP8SbHIBuLHKXK1YMQrMCBbt6c7R3XTeiYGiuzi4DgwX9-y5N93o/pub?start=false&loop=false&delayms=3000) 
 
-* Buffer Overflow and Mitigations
-* [Software Compartmentalization, Programming Languages, and Security](https://docs.google.com/presentation/d/e/2PACX-1vS4AEt0PL2ObATi0NXaAUKeNjtoIE-sKqgahk2rRf45E3ZafsqMIcVjuiA_mVBhA2NyUkJDLl1bm63M/pub?start=false&loop=false&delayms=3000)
-* [Automatic vulnerability discovery](https://docs.google.com/presentation/d/e/2PACX-1vQ7WcXyebGAwvV4Uu4zh6TckMIxD_dIUD5Z2Df-zKppRTs1oCc-kqwwDVcGUMsEZ82bShSzj9xywfRe/pub?start=false&loop=false&delayms=3000)  
-
-
-Weeks 6–7: Rehosting
-
-* Running firmware without the hardware \- QEMU/Renode  
-* Modeling hardware  
-* HITL 
 
 Week 8: Midterm Presentations  
-Weeks 8-9: Fault Injection \+ Paper Survey
+
+
+[Weeks 6–12: Automatic Vulnerability Discovery using Agentic AI](https://docs.google.com/presentation/d/e/2PACX-1vT34bVcHmHwYc6CW2B5uVBb-lB5T8AMGAaaOO-IvGRlT9EGKYAAWXJ1qKOHFB8kcehRAnz6K-85gmIO/pub?start=false&loop=false&delayms=3000)
+
+Weeks 13-15: Fault Injection \+ Paper Survey
 
 * Clock and Voltage Glitching \- Using Chipwhisperer and Chipshouter
 
-Weeks 10–12: Side Channel Analysis \+ Paper Survey
+Weeks 16–17: Side Channel Analysis \+ Paper Survey
 
 * Logic analysis   
 * Power analysis 
 
-Weeks 13–15: Domain-Specific Defense \+ Paper Survey
-
-* Defenses in Automotive, ICS, Medical Devices, and more..
-
-Week 16: Current Trends in Embedded Systems Security  
 Week 18: Final Presentations
 
 # Grading
 
 There are no exams for this course. Your grade will be decided based on your course project (70%) and paper presentations (30%). The course project will be evaluated based on the novelty of the project, the quality of the artifact, and the project report. Students should ensure the novelty of the project by doing a literature survey. Your grade will be severely impacted if there is existing work on the proposed idea. Moreover, artifact submission is necessary; however, it is fine to submit a Work-In-Progress, given appropriate justification. 
+
+Alternatively, students may participate in the real MITRE eCTF; in this case, grades will be determined using a hybrid team- and individual-based evaluation to ensure fairness. Specifically, 40% of the grade will be based on the team’s final official eCTF rank, 40% on documented individual technical contributions, and 20% on an individual reflection report. Individual contributions must be explicitly acknowledged by the team captain through a signed contribution statement and corroborated with concrete artifacts such as Git commits, design documents, exploit or defense implementations, testing or fuzzing infrastructure, and related technical evidence; captain acknowledgment alone is necessary but not sufficient for full credit. Each student must also submit a short technical reflection describing their specific contributions, design decisions, security insights, and lessons learned. In cases of unclear or minimal contribution, the instructor reserves the right to adjust individual grades independently of team rank, including reviewing repositories, logs, peer feedback, or conducting interviews if needed. Students cannot receive full credit without verifiable technical contributions.
 
 # AI Usage Policy
 

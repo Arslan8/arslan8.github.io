@@ -29,8 +29,9 @@
 
   <!-- Publications List -->
   <div id="publications-container">
-    {% assign grouped_by_year = site.data.publications | group_by: "year" %}
-    {% for year_group in grouped_by_year reversed %}
+    {% assign sorted_pubs = site.data.publications | sort: "year" | reverse %}
+    {% assign grouped_by_year = sorted_pubs | group_by: "year" %}
+    {% for year_group in grouped_by_year %}
       <div class="year-section mb-4" data-year="{{ year_group.name }}">
         <h4 class="fw-bold text-secondary border-bottom pb-1 mb-3 font-monospace">{{ year_group.name }}</h4>
 

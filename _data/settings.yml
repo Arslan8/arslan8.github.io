@@ -16,6 +16,7 @@ people:
 
 
 courses:
+- {name: '[CSE-544] Systems Security - Fall 26', url: 'systems-security-fa26'}
 - {name: '[CMPSC-597] Embedded Systems Security - Fall 25', url: 'embedded-systems-security-fa26'}
 - {name: '[CMPSC-473] Operating Systems - Spring 25', url: 'operating-systems-sp25'}
 

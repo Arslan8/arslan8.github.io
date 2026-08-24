@@ -14,7 +14,7 @@ My research focuses on advancing the fields of systems and security by exploring
 
 <!-- Announcement bar -->
   <div id="announcementBar" class="announcement">
-<span>I’m looking for highly-motivated students. If you are interested in working with me, drop me an email. <span class="close-button" onclick="closeAnnouncement()">Close</span></span>
+<span>I currently have no open PhD positions. However, if you are at PSU, please feel free to reach out for graduate and undergraduate research opportunities. <span class="close-button" onclick="closeAnnouncement()">Close</span></span>
   </div>
 
   <!-- Your page content goes here -->

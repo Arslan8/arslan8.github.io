@@ -4,45 +4,31 @@
     <span class="text-muted small" id="pub-count">{{ site.data.publications | size }} papers</span>
   </div>
 
-  <!-- Search & Autocomplete / Filter Controls -->
+  <!-- Search & Filter Controls -->
   <div class="bg-light p-3 rounded-3 mb-4 border">
     <div class="row g-3 align-items-center">
       <div class="col-md-7">
-        <div class="input-group">
-          <span class="input-group-text bg-white border-end-0 text-muted">
-            <i class="fas fa-search"></i>
-          </span>
-          <input type="search" 
-                 id="pub-search" 
-                 class="form-control border-start-0 border-end-0" 
-                 list="pub-suggestions" 
-                 placeholder="Search by title, keyword, author, or venue..." 
-                 autocomplete="off"
-                 oninput="filterPubs()" 
-                 onchange="filterPubs()">
-          <button class="btn btn-white border border-start-0 text-muted" type="button" onclick="clearSearch()" title="Clear search">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
+        <div class="position-relative">
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0 text-muted">
+              <i class="fas fa-search"></i>
+            </span>
+            <input type="text" 
+                   id="pub-search" 
+                   class="form-control border-start-0 border-end-0 bg-white" 
+                   placeholder="Search by title, keyword, author, or venue..." 
+                   autocomplete="off"
+                   oninput="handleSearchInput()" 
+                   onfocus="handleSearchInput()">
+            <button class="btn btn-white bg-white border border-start-0 text-muted" type="button" onclick="clearSearch()" title="Clear search">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
 
-        <!-- Autocomplete Suggestions Datalist -->
-        <datalist id="pub-suggestions">
-          {% for paper in site.data.publications %}
-            <option value="{{ paper.title }}"></option>
-          {% endfor %}
-          <option value="NeuroScope"></option>
-          <option value="D-Helix"></option>
-          <option value="SAIN"></option>
-          <option value="FuzzSGX"></option>
-          <option value="EC: Intra-Kernel Isolation"></option>
-          <option value="CRT: Compile Time Compartmentalization"></option>
-          <option value="M2MON"></option>
-          <option value="SGX Enclaves"></option>
-          <option value="USENIX Security"></option>
-          <option value="IEEE S&P"></option>
-          <option value="Embedded Systems"></option>
-          <option value="Confidential Computing"></option>
-        </datalist>
+          <!-- Live Autocomplete Suggestions Dropdown -->
+          <ul id="autocomplete-dropdown" class="dropdown-menu shadow w-100 p-1 mt-1 d-none" style="position: absolute; top: 100%; left: 0; z-index: 1050; max-height: 280px; overflow-y: auto;">
+          </ul>
+        </div>
       </div>
 
       <!-- Year Filter Buttons -->
@@ -59,12 +45,13 @@
 
     <!-- Suggested Quick Search Chips -->
     <div class="d-flex align-items-center gap-1 flex-wrap mt-3 pt-2 border-top">
-      <span class="text-muted small me-1"><i class="fas fa-lightbulb me-1"></i>Suggestions:</span>
+      <span class="text-muted small me-1"><i class="fas fa-lightbulb me-1"></i>Quick filters:</span>
       <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('NeuroScope')" style="cursor: pointer;">NeuroScope</span>
       <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('D-Helix')" style="cursor: pointer;">D-Helix</span>
       <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('SAIN')" style="cursor: pointer;">SAIN</span>
       <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('FuzzSGX')" style="cursor: pointer;">FuzzSGX</span>
-      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('Compartmentalization')" style="cursor: pointer;">Compartmentalization</span>
+      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('EC')" style="cursor: pointer;">EC</span>
+      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('CRT')" style="cursor: pointer;">CRT</span>
       <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('M2MON')" style="cursor: pointer;">M2MON</span>
       <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('Enclaves')" style="cursor: pointer;">Enclaves</span>
       <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('USENIX Security')" style="cursor: pointer;">USENIX Security</span>
@@ -82,9 +69,11 @@
         <div class="d-flex flex-column gap-3">
           {% for paper in year_group.items %}
             <div class="card border-0 shadow-sm rounded-3 p-3 publication-card" 
+                 id="pub-card-{{ paper.id }}"
                  data-year="{{ paper.year }}" 
+                 data-title="{{ paper.title | escape }}"
                  data-category="{{ paper.category }}" 
-                 data-search="{{ paper.title | downcase }} {{ paper.authors | downcase }} {{ paper.venue | downcase }} {{ paper.category | downcase }} {{ paper.year }} {{ paper.code | downcase }}">
+                 data-text="{{ paper.title }} {{ paper.authors | strip_html }} {{ paper.venue }} {{ paper.category }} {{ paper.year }}">
               
               <div class="d-flex justify-content-between align-items-start gap-2">
                 <h5 class="fw-bold mb-1 text-dark">
@@ -153,7 +142,92 @@
 </div>
 
 <script>
+  // Available publication metadata for suggestions
+  const pubSuggestions = [
+    {% for paper in site.data.publications %}
+      { title: "{{ paper.title | escape }}", id: "pub-card-{{ paper.id }}", year: "{{ paper.year }}" },
+    {% endfor %}
+    { title: "NeuroScope", keyword: "NeuroScope" },
+    { title: "D-Helix", keyword: "D-Helix" },
+    { title: "SAIN", keyword: "SAIN" },
+    { title: "FuzzSGX", keyword: "FuzzSGX" },
+    { title: "EC (Intra-Kernel Isolation)", keyword: "EC" },
+    { title: "CRT (Privilege Separation)", keyword: "CRT" },
+    { title: "M2MON", keyword: "M2MON" },
+    { title: "SGX Enclaves", keyword: "SGX" },
+    { title: "USENIX Security", keyword: "USENIX Security" },
+    { title: "IEEE S&P", keyword: "IEEE S&P" },
+    { title: "EuroS&P", keyword: "EuroS&P" }
+  ];
+
   let activeYear = 'all';
+
+  function escapeRegExp(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  // Word-boundary aware matching so "EC" doesn't falsely match "sECurity"
+  function testMatch(text, query) {
+    if (!query) return true;
+    const cleanQuery = query.trim().toLowerCase();
+    if (!cleanQuery) return true;
+
+    const terms = cleanQuery.split(/\s+/).filter(Boolean);
+    const cleanText = text.toLowerCase();
+
+    return terms.every(term => {
+      // For short acronyms / terms (<= 3 chars like EC, CRT, SGX, ICS, ML), require word boundary
+      if (term.length <= 3) {
+        const regex = new RegExp('(^|[^a-z0-9])' + escapeRegExp(term) + '([^a-z0-9]|$)', 'i');
+        return regex.test(cleanText);
+      }
+      // For words starting with query or containing full term
+      const prefixRegex = new RegExp('(^|[^a-z0-9])' + escapeRegExp(term), 'i');
+      return prefixRegex.test(cleanText) || cleanText.includes(term);
+    });
+  }
+
+  function handleSearchInput() {
+    const input = document.getElementById('pub-search');
+    const query = input ? input.value.trim() : '';
+    const dropdown = document.getElementById('autocomplete-dropdown');
+
+    // 1. Filter publications on page immediately
+    filterPubs();
+
+    // 2. Populate and show autocomplete dropdown
+    if (!query || !dropdown) {
+      if (dropdown) dropdown.classList.add('d-none');
+      return;
+    }
+
+    const matches = pubSuggestions.filter(item => {
+      return testMatch(item.title, query) || (item.keyword && testMatch(item.keyword, query));
+    });
+
+    if (matches.length === 0) {
+      dropdown.classList.add('d-none');
+      return;
+    }
+
+    dropdown.innerHTML = '';
+    matches.slice(0, 6).forEach(item => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.className = 'dropdown-item small py-2 text-truncate';
+      a.href = 'javascript:void(0)';
+      a.innerHTML = `<i class="fas fa-file-alt text-secondary me-2"></i>${item.title}`;
+      a.onclick = function(e) {
+        e.preventDefault();
+        applySuggestion(item.keyword || item.title);
+        dropdown.classList.add('d-none');
+      };
+      li.appendChild(a);
+      dropdown.appendChild(li);
+    });
+
+    dropdown.classList.remove('d-none');
+  }
 
   function filterYear(year, btn) {
     activeYear = year;
@@ -168,27 +242,34 @@
 
   function applySuggestion(term) {
     const input = document.getElementById('pub-search');
-    input.value = term;
+    if (input) {
+      input.value = term;
+    }
+    const dropdown = document.getElementById('autocomplete-dropdown');
+    if (dropdown) dropdown.classList.add('d-none');
     filterPubs();
   }
 
   function clearSearch() {
     const input = document.getElementById('pub-search');
-    input.value = '';
+    if (input) input.value = '';
+    const dropdown = document.getElementById('autocomplete-dropdown');
+    if (dropdown) dropdown.classList.add('d-none');
     filterPubs();
   }
 
   function filterPubs() {
     const searchInput = document.getElementById('pub-search');
-    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    const query = searchInput ? searchInput.value.trim() : '';
     const cards = document.querySelectorAll('.publication-card');
     let visibleCount = 0;
 
     cards.forEach(card => {
-      const searchData = (card.getAttribute('data-search') || '').toLowerCase();
+      const cardText = card.getAttribute('data-text') || '';
       const cardYear = card.getAttribute('data-year');
-      const matchesSearch = query === '' || searchData.includes(query);
-      const matchesYear = activeYear === 'all' || cardYear === activeYear;
+      
+      const matchesSearch = testMatch(cardText, query);
+      const matchesYear = (activeYear === 'all' || cardYear === activeYear);
 
       if (matchesSearch && matchesYear) {
         card.classList.remove('d-none');
@@ -222,6 +303,15 @@
     }
   }
 
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    const searchBox = document.getElementById('pub-search');
+    const dropdown = document.getElementById('autocomplete-dropdown');
+    if (dropdown && searchBox && !searchBox.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.add('d-none');
+    }
+  });
+
   function toggleBibtex(id) {
     const el = document.getElementById('bib-' + id);
     if (el) {
@@ -237,6 +327,5 @@
     });
   }
 
-  // Run filter on initial page load in case input was prefilled
   document.addEventListener('DOMContentLoaded', filterPubs);
 </script>

@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<h3 class="fw-bold border-bottom pb-3 mb-5">Projects</h3>
+
+{% for project in site.data.projects %}
+<div class="row align-items-center mb-5 pb-4 border-bottom">
+  <div class="col-md-9">
+    <h4 class="fw-bold"><a href="{{ project.github }}" target="_blank" class="text-decoration-none">{{ project.name }}</a></h4>
+    <p class="text-secondary mb-3">{{ project.description }}</p>
+    <a href="{{ project.github }}" target="_blank" class="btn btn-sm btn-outline-dark">
+      <i class="fab fa-github me-1"></i> GitHub Repository
+    </a>
+  </div>
+  <div class="col-md-3 text-center text-md-end mt-3 mt-md-0">
+    <a href="{{ project.github }}" target="_blank">
+      <img src="{{ site.github.url }}/{{ project.image }}" alt="{{ project.name }} Logo" class="img-fluid rounded" style="max-height: 95px;">
+    </a>
+  </div>
+</div>
+{% endfor %}

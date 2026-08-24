@@ -4,26 +4,70 @@
     <span class="text-muted small" id="pub-count">{{ site.data.publications | size }} papers</span>
   </div>
 
-  <!-- Search & Filter Controls -->
+  <!-- Search & Autocomplete / Filter Controls -->
   <div class="bg-light p-3 rounded-3 mb-4 border">
-    <div class="row g-2 align-items-center">
-      <div class="col-md-6">
+    <div class="row g-3 align-items-center">
+      <div class="col-md-7">
         <div class="input-group">
           <span class="input-group-text bg-white border-end-0 text-muted">
             <i class="fas fa-search"></i>
           </span>
-          <input type="text" id="pub-search" class="form-control border-start-0" placeholder="Search by title, author, venue, keyword..." onkeyup="filterPubs()">
+          <input type="search" 
+                 id="pub-search" 
+                 class="form-control border-start-0 border-end-0" 
+                 list="pub-suggestions" 
+                 placeholder="Search by title, keyword, author, or venue..." 
+                 autocomplete="off"
+                 oninput="filterPubs()" 
+                 onchange="filterPubs()">
+          <button class="btn btn-white border border-start-0 text-muted" type="button" onclick="clearSearch()" title="Clear search">
+            <i class="fas fa-times"></i>
+          </button>
         </div>
+
+        <!-- Autocomplete Suggestions Datalist -->
+        <datalist id="pub-suggestions">
+          {% for paper in site.data.publications %}
+            <option value="{{ paper.title }}"></option>
+          {% endfor %}
+          <option value="NeuroScope"></option>
+          <option value="D-Helix"></option>
+          <option value="SAIN"></option>
+          <option value="FuzzSGX"></option>
+          <option value="EC: Intra-Kernel Isolation"></option>
+          <option value="CRT: Compile Time Compartmentalization"></option>
+          <option value="M2MON"></option>
+          <option value="SGX Enclaves"></option>
+          <option value="USENIX Security"></option>
+          <option value="IEEE S&P"></option>
+          <option value="Embedded Systems"></option>
+          <option value="Confidential Computing"></option>
+        </datalist>
       </div>
-      <div class="col-md-6">
+
+      <!-- Year Filter Buttons -->
+      <div class="col-md-5">
         <div class="d-flex gap-1 flex-wrap justify-content-md-end" id="year-filters">
-          <button class="btn btn-sm btn-dark filter-btn active" onclick="filterCategory('all', this)">All</button>
-          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterCategory('2025', this)">2025</button>
-          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterCategory('2024', this)">2024</button>
-          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterCategory('2023', this)">2023</button>
-          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterCategory('2021', this)">2021</button>
+          <button class="btn btn-sm btn-dark filter-btn active" onclick="filterYear('all', this)">All</button>
+          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterYear('2025', this)">2025</button>
+          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterYear('2024', this)">2024</button>
+          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterYear('2023', this)">2023</button>
+          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterYear('2021', this)">2021</button>
         </div>
       </div>
+    </div>
+
+    <!-- Suggested Quick Search Chips -->
+    <div class="d-flex align-items-center gap-1 flex-wrap mt-3 pt-2 border-top">
+      <span class="text-muted small me-1"><i class="fas fa-lightbulb me-1"></i>Suggestions:</span>
+      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('NeuroScope')" style="cursor: pointer;">NeuroScope</span>
+      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('D-Helix')" style="cursor: pointer;">D-Helix</span>
+      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('SAIN')" style="cursor: pointer;">SAIN</span>
+      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('FuzzSGX')" style="cursor: pointer;">FuzzSGX</span>
+      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('Compartmentalization')" style="cursor: pointer;">Compartmentalization</span>
+      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('M2MON')" style="cursor: pointer;">M2MON</span>
+      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('Enclaves')" style="cursor: pointer;">Enclaves</span>
+      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('USENIX Security')" style="cursor: pointer;">USENIX Security</span>
     </div>
   </div>
 
@@ -40,7 +84,7 @@
             <div class="card border-0 shadow-sm rounded-3 p-3 publication-card" 
                  data-year="{{ paper.year }}" 
                  data-category="{{ paper.category }}" 
-                 data-search="{{ paper.title | downcase }} {{ paper.authors | downcase }} {{ paper.venue | downcase }} {{ paper.category | downcase }} {{ paper.year }}">
+                 data-search="{{ paper.title | downcase }} {{ paper.authors | downcase }} {{ paper.venue | downcase }} {{ paper.category | downcase }} {{ paper.year }} {{ paper.code | downcase }}">
               
               <div class="d-flex justify-content-between align-items-start gap-2">
                 <h5 class="fw-bold mb-1 text-dark">
@@ -111,7 +155,7 @@
 <script>
   let activeYear = 'all';
 
-  function filterCategory(year, btn) {
+  function filterYear(year, btn) {
     activeYear = year;
     document.querySelectorAll('.filter-btn').forEach(b => {
       b.classList.remove('btn-dark', 'active');
@@ -122,13 +166,26 @@
     filterPubs();
   }
 
+  function applySuggestion(term) {
+    const input = document.getElementById('pub-search');
+    input.value = term;
+    filterPubs();
+  }
+
+  function clearSearch() {
+    const input = document.getElementById('pub-search');
+    input.value = '';
+    filterPubs();
+  }
+
   function filterPubs() {
-    const query = document.getElementById('pub-search').value.toLowerCase().trim();
+    const searchInput = document.getElementById('pub-search');
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
     const cards = document.querySelectorAll('.publication-card');
     let visibleCount = 0;
 
     cards.forEach(card => {
-      const searchData = card.getAttribute('data-search');
+      const searchData = (card.getAttribute('data-search') || '').toLowerCase();
       const cardYear = card.getAttribute('data-year');
       const matchesSearch = query === '' || searchData.includes(query);
       const matchesYear = activeYear === 'all' || cardYear === activeYear;
@@ -153,11 +210,14 @@
 
     const noResults = document.getElementById('no-results');
     const pubCount = document.getElementById('pub-count');
-    if (visibleCount === 0) {
-      noResults.classList.remove('d-none');
-      pubCount.textContent = '0 papers found';
-    } else {
-      noResults.classList.add('d-none');
+    if (noResults) {
+      if (visibleCount === 0) {
+        noResults.classList.remove('d-none');
+      } else {
+        noResults.classList.add('d-none');
+      }
+    }
+    if (pubCount) {
       pubCount.textContent = `${visibleCount} paper${visibleCount === 1 ? '' : 's'}`;
     }
   }
@@ -170,9 +230,13 @@
   }
 
   function copyBibtex(id) {
-    const code = document.getElementById('code-' + id).innerText;
-    navigator.clipboard.writeText(code).then(() => {
+    const codeEl = document.getElementById('code-' + id);
+    if (!codeEl) return;
+    navigator.clipboard.writeText(codeEl.innerText).then(() => {
       alert('BibTeX copied to clipboard!');
     });
   }
+
+  // Run filter on initial page load in case input was prefilled
+  document.addEventListener('DOMContentLoaded', filterPubs);
 </script>

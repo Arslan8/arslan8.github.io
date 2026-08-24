@@ -16,7 +16,7 @@
             <input type="text" 
                    id="pub-search" 
                    class="form-control border-start-0 border-end-0 bg-white" 
-                   placeholder="Search by title, keyword, author, or venue..." 
+                   placeholder="Search by case-sensitive keyword (e.g., EC, CRT, SGX, USENIX)..." 
                    autocomplete="off"
                    oninput="handleSearchInput()" 
                    onfocus="handleSearchInput()">
@@ -25,7 +25,7 @@
             </button>
           </div>
 
-          <!-- Live Autocomplete Suggestions Dropdown -->
+          <!-- Live Autocomplete Suggestions Dropdown (Only appears when typing) -->
           <ul id="autocomplete-dropdown" class="dropdown-menu shadow w-100 p-1 mt-1 d-none" style="position: absolute; top: 100%; left: 0; z-index: 1050; max-height: 280px; overflow-y: auto;">
           </ul>
         </div>
@@ -41,20 +41,6 @@
           <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterYear('2021', this)">2021</button>
         </div>
       </div>
-    </div>
-
-    <!-- Suggested Quick Search Chips -->
-    <div class="d-flex align-items-center gap-1 flex-wrap mt-3 pt-2 border-top">
-      <span class="text-muted small me-1"><i class="fas fa-lightbulb me-1"></i>Quick filters:</span>
-      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('NeuroScope')" style="cursor: pointer;">NeuroScope</span>
-      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('D-Helix')" style="cursor: pointer;">D-Helix</span>
-      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('SAIN')" style="cursor: pointer;">SAIN</span>
-      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('FuzzSGX')" style="cursor: pointer;">FuzzSGX</span>
-      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('EC')" style="cursor: pointer;">EC</span>
-      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('CRT')" style="cursor: pointer;">CRT</span>
-      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('M2MON')" style="cursor: pointer;">M2MON</span>
-      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('Enclaves')" style="cursor: pointer;">Enclaves</span>
-      <span class="badge bg-white text-dark border suggestion-chip" onclick="applySuggestion('USENIX Security')" style="cursor: pointer;">USENIX Security</span>
     </div>
   </div>
 
@@ -166,24 +152,23 @@
     return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
-  // Word-boundary aware matching so "EC" doesn't falsely match "sECurity"
+  // Case-sensitive word-boundary aware search
   function testMatch(text, query) {
     if (!query) return true;
-    const cleanQuery = query.trim().toLowerCase();
+    const cleanQuery = query.trim();
     if (!cleanQuery) return true;
 
     const terms = cleanQuery.split(/\s+/).filter(Boolean);
-    const cleanText = text.toLowerCase();
 
     return terms.every(term => {
-      // For short acronyms / terms (<= 3 chars like EC, CRT, SGX, ICS, ML), require word boundary
+      // For short acronyms / terms (<= 3 chars like EC, CRT, SGX, ICS, ML), require exact word boundary
       if (term.length <= 3) {
-        const regex = new RegExp('(^|[^a-z0-9])' + escapeRegExp(term) + '([^a-z0-9]|$)', 'i');
-        return regex.test(cleanText);
+        const regex = new RegExp('(^|[^a-zA-Z0-9])' + escapeRegExp(term) + '([^a-zA-Z0-9]|$)');
+        return regex.test(text);
       }
-      // For words starting with query or containing full term
-      const prefixRegex = new RegExp('(^|[^a-z0-9])' + escapeRegExp(term), 'i');
-      return prefixRegex.test(cleanText) || cleanText.includes(term);
+      // For longer terms, check word prefix or exact substring (case-sensitive)
+      const prefixRegex = new RegExp('(^|[^a-zA-Z0-9])' + escapeRegExp(term));
+      return prefixRegex.test(text) || text.includes(term);
     });
   }
 
@@ -195,9 +180,12 @@
     // 1. Filter publications on page immediately
     filterPubs();
 
-    // 2. Populate and show autocomplete dropdown
+    // 2. Hide dropdown if query is empty
     if (!query || !dropdown) {
-      if (dropdown) dropdown.classList.add('d-none');
+      if (dropdown) {
+        dropdown.classList.add('d-none');
+        dropdown.innerHTML = '';
+      }
       return;
     }
 
@@ -207,6 +195,7 @@
 
     if (matches.length === 0) {
       dropdown.classList.add('d-none');
+      dropdown.innerHTML = '';
       return;
     }
 
@@ -246,7 +235,10 @@
       input.value = term;
     }
     const dropdown = document.getElementById('autocomplete-dropdown');
-    if (dropdown) dropdown.classList.add('d-none');
+    if (dropdown) {
+      dropdown.classList.add('d-none');
+      dropdown.innerHTML = '';
+    }
     filterPubs();
   }
 
@@ -254,7 +246,10 @@
     const input = document.getElementById('pub-search');
     if (input) input.value = '';
     const dropdown = document.getElementById('autocomplete-dropdown');
-    if (dropdown) dropdown.classList.add('d-none');
+    if (dropdown) {
+      dropdown.classList.add('d-none');
+      dropdown.innerHTML = '';
+    }
     filterPubs();
   }
 

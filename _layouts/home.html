@@ -2,74 +2,49 @@
 layout: default
 ---
 
-
-
-
-<div class="row g-5 mb-1">
-  <div class="col-md-6">
-    <h3 class="fw-bold border-bottom pb-3 mb-1">About</h3>
+<div class="row align-items-center mb-5">
+  <div class="col-md-8">
+    <h2 class="fw-bold mb-3">About</h2>
     {{ content }}
   </div>
-  <div class="col-md-6">
-    <img align="right" src="{{ site.github.url }}/assets/img/cover.jpeg" alt="Home" class="rounded float-right" width="40%">
+  <div class="col-md-4 text-center">
+    <img src="{{ site.github.url }}/assets/img/cover.jpeg" alt="Arslan Khan" class="img-fluid rounded-3 shadow-sm" style="max-width: 220px; width: 100%;">
   </div>
 </div>
-
-
-     
 
 {% include publications.html %}
-<!--
-<div class="row g-5 mb-5">
-  <div class="col-md-12">
-    <h2 class="fw-bold border-bottom pb-3 mb-5">Updates</h2>
-    {% for post in site.posts %}
-      <p><a href="{{ site.github.url }}/{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
-    {% endfor %}
-  </div>
-</div>
--->
-<hr class="m-0" />
-<div class="row g-5 mb-1">
-  <div class="col-md-12">
-    <h3 class="fw-bold border-bottom mt-4 pb-3 mb-4">Projects</h3>
 
-    <div class="row align-items-center mb-4">
-      <div class="col-md-9">
-        <h4><a href="https://github.com/purseclab/Pieces" target="_blank">Pieces</a></h4>
-        <p class="mb-0">Pieces is a highly programmable language-agnostic automatic program compartmentalization framework. Pieces can be programmed to partition programs based on various criteria, including methods of isolation between compartments.</p>
-      </div>
-      <div class="col-md-3 text-center">
-        <a href="https://github.com/purseclab/Pieces" target="_blank">
-          <img src="{{ site.github.url }}/assets/img/pieces.png" alt="Pieces Logo" class="img-fluid rounded" style="max-height: 110px;">
-        </a>
-      </div>
+<div class="my-5">
+  <h3 class="fw-bold border-bottom pb-3 mb-4">Projects</h3>
+
+  <div class="row align-items-center mb-4">
+    <div class="col-md-9">
+      <h5><a href="https://github.com/purseclab/Pieces" target="_blank" class="text-decoration-none">Pieces</a></h5>
+      <p class="text-muted mb-0">A programmable, language-agnostic automatic program compartmentalization framework to partition applications across customized isolation boundaries.</p>
     </div>
-
-    <hr class="my-4" />
-
-    <div class="row align-items-center mb-4">
-      <div class="col-md-9">
-        <h4><a href="https://github.com/Arslan8/FreeRTOS" target="_blank">SeRTOS</a></h4>
-        <p class="mb-0">Security Enhanced FreeRTOS (SeRTOS) is a security-enhanced version of the famous RTOS, FreeRTOS. It has compile-time privilege separation and other cool security features.</p>
-      </div>
-      <div class="col-md-3 text-center">
-        <a href="https://github.com/Arslan8/FreeRTOS" target="_blank">
-          <img src="{{ site.github.url }}/assets/img/sertos.png" alt="SeRTOS Logo" class="img-fluid rounded" style="max-height: 110px;">
-        </a>
-      </div>
+    <div class="col-md-3 text-center">
+      <a href="https://github.com/purseclab/Pieces" target="_blank">
+        <img src="{{ site.github.url }}/assets/img/pieces.png" alt="Pieces Logo" class="img-fluid rounded" style="max-height: 70px;">
+      </a>
     </div>
+  </div>
 
+  <div class="row align-items-center mb-4">
+    <div class="col-md-9">
+      <h5><a href="https://github.com/Arslan8/FreeRTOS" target="_blank" class="text-decoration-none">SeRTOS</a></h5>
+      <p class="text-muted mb-0">Security Enhanced FreeRTOS with compile-time privilege separation and intra-kernel isolation for resource-constrained systems.</p>
+    </div>
+    <div class="col-md-3 text-center">
+      <a href="https://github.com/Arslan8/FreeRTOS" target="_blank">
+        <img src="{{ site.github.url }}/assets/img/sertos.png" alt="SeRTOS Logo" class="img-fluid rounded" style="max-height: 70px;">
+      </a>
+    </div>
   </div>
 </div>
 
-<hr class="m-0" />
-<div class="row g-5 mb-1">
-  <div class="col-md-12">
-    <h2 class="fw-bold border-bottom pb-3 mt-4 mb-1">Interests</h2>
-                    <p>Apart from being a security researcher, i like to travel and hike. I've visited most of Northeren Pakistan and various places around the US. When forced indoors, I like to play games (I have achieved ELO of 1700+ on Age Of Empires using unconventional methods), learn new instruments and play with synthesizers. Here's some music i've written over the years. </p>
-                    <p align="center"> <iframe width="50%" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/837738305&color=%23ab5a10&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/arslan_khan_8" title="arslan_khan_8" target="_blank" style="color: #cccccc; text-decoration: none;">arslan_khan_8</a> · <a href="https://soundcloud.com/arslan_khan_8/sets/arslan" title="Arslan" target="_blank" style="color: #cccccc; text-decoration: none;">Arslan</a></div> </p>
-                    
-  </div>
+<div class="my-5">
+  <h3 class="fw-bold border-bottom pb-3 mb-3">Interests</h3>
+  <p class="text-muted">
+    Outside of research, I enjoy hiking, traveling across northern Pakistan and the US, synthesizer sound design, and making <a href="https://soundcloud.com/arslan_khan_8" target="_blank">music</a>.
+  </p>
 </div>
-

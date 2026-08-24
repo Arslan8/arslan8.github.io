@@ -1,6 +1,11 @@
-<div class="row g-5 mb-1">
+<div class="my-5">
+  <div class="d-flex justify-content-between align-items-baseline border-bottom pb-3 mb-4">
+    <h3 class="fw-bold mb-0">Publications</h3>
+    {% if page.title == "Home" %}
+      <a href="{{ site.github.url }}/publications" class="text-decoration-none small">View all &rarr;</a>
+    {% endif %}
+  </div>
   <div>
-    <h3 class="fw-bold border-bottom pb-3 mt-4 mb-1">Publications</h3>
     {% if page.title == "Home" %}
       {% assign counter = 0 %}
       {% for item in site.data.publications.featured %}

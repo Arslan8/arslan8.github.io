@@ -3,26 +3,276 @@ layout: default
 ---
 
 {{ content }}
-<style>
-  table {
-    width: 100%;
-    border-collapse: collapse; /* Ensures borders between cells are merged */
-  }
-  th, td {
-    border: 1px solid black; /* Adds a black border around each cell */
-    padding: 10px;
-    text-align: left;
-  }
-  th {
-    background-color: #f2f2f2; /* Optional: adds a background color to the header */
-  }
-</style>
 
-<div class="row g-5 mb-5">
-  <div>
-    <h3 class="fw-bold border-bottom pb-3 mb-5">Courses</h3>
-    {% for course in site.data.settings.courses %}
-      <p><a href="{{ site.github.url }}/courses/{{ course.url}}">{{ course.name }}</a></p>
-    {% endfor %}
+<div class="mb-5">
+  <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+    <h3 class="fw-bold mb-0">Teaching & Courses</h3>
+    <span class="text-muted small" id="course-count">{{ site.data.courses | size }} courses</span>
+  </div>
+
+  <!-- Search & Filter Controls -->
+  <div class="bg-light p-3 rounded-3 mb-4 border">
+    <div class="row g-3 align-items-center">
+      <div class="col-md-7">
+        <div class="position-relative">
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0 text-muted">
+              <i class="fas fa-search"></i>
+            </span>
+            <input type="text" 
+                   id="course-search" 
+                   class="form-control border-start-0 border-end-0 bg-white" 
+                   placeholder="Search by course code, title, topic, or semester..." 
+                   autocomplete="off"
+                   oninput="handleCourseSearch()" 
+                   onfocus="handleCourseSearch()">
+            <button class="btn btn-white bg-white border border-start-0 text-muted" type="button" onclick="clearCourseSearch()" title="Clear search">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+
+          <!-- Live Autocomplete Suggestions Dropdown -->
+          <ul id="course-autocomplete" class="dropdown-menu shadow w-100 p-1 mt-1 d-none" style="position: absolute; top: 100%; left: 0; z-index: 1050; max-height: 280px; overflow-y: auto;">
+          </ul>
+        </div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="col-md-5">
+        <div class="d-flex gap-1 flex-wrap justify-content-md-end" id="term-filters">
+          <button class="btn btn-sm btn-dark filter-btn active" onclick="filterTerm('all', this)">All</button>
+          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterTerm('Graduate', this)">Graduate</button>
+          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterTerm('Undergraduate', this)">Undergraduate</button>
+          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterTerm('Fall 2026', this)">Fall 2026</button>
+          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterTerm('Spring 2026', this)">Spring 2026</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Courses List -->
+  <div id="courses-container">
+    <div class="d-flex flex-column gap-4">
+      {% for course in site.data.courses %}
+        <div class="card border-0 shadow-sm rounded-3 p-4 course-card" 
+             id="course-card-{{ course.id }}"
+             data-term="{{ course.term }}" 
+             data-level="{{ course.level }}"
+             data-title="{{ course.code }} {{ course.name }}"
+             data-text="{{ course.code }} {{ course.name }} {{ course.term }} {{ course.level }} {{ course.location }} {{ course.description }}">
+          
+          <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-2">
+            <div>
+              <span class="badge bg-dark me-2">{{ course.code }}</span>
+              <span class="badge bg-secondary me-2">{{ course.level }}</span>
+              <span class="badge bg-light text-dark border">{{ course.term }}</span>
+            </div>
+          </div>
+
+          <h4 class="fw-bold mb-2">
+            <a href="{{ site.github.url }}{{ course.url }}" class="text-decoration-none text-dark hover-primary">
+              {{ course.name }}
+            </a>
+          </h4>
+
+          <div class="text-muted small mb-3 d-flex align-items-center flex-wrap gap-3">
+            {% if course.location %}
+              <span><i class="fas fa-map-marker-alt me-1 text-danger"></i> {{ course.location }}</span>
+            {% endif %}
+            {% if course.time %}
+              <span><i class="far fa-clock me-1 text-primary"></i> {{ course.time }}</span>
+            {% endif %}
+          </div>
+
+          <p class="text-secondary small mb-3">
+            {{ course.description }}
+          </p>
+
+          <div class="d-flex gap-2 align-items-center flex-wrap">
+            <a href="{{ site.github.url }}{{ course.url }}" class="btn btn-sm btn-outline-primary">
+              <i class="fas fa-book-open me-1"></i> Syllabus & Schedule
+            </a>
+
+            {% if course.github and course.github != "" %}
+              <a href="{{ course.github }}" target="_blank" class="btn btn-sm btn-outline-dark">
+                <i class="fab fa-github me-1"></i> GitHub Repo
+              </a>
+            {% endif %}
+
+            {% if course.discord and course.discord != "" %}
+              <a href="{{ course.discord }}" target="_blank" class="btn btn-sm btn-outline-secondary">
+                <i class="fab fa-discord me-1"></i> Discord
+              </a>
+            {% endif %}
+          </div>
+
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div id="no-course-results" class="text-center text-muted my-5 d-none">
+    <i class="fas fa-search fa-2x mb-3 text-secondary"></i>
+    <p>No matching courses found.</p>
   </div>
 </div>
+
+<script>
+  const courseSuggestions = [
+    {% for course in site.data.courses %}
+      { title: "{{ course.code }}: {{ course.name }}", term: "{{ course.term }}", keyword: "{{ course.code }}" },
+    {% endfor %}
+    { title: "Systems Security", keyword: "Systems Security" },
+    { title: "Software Security", keyword: "Software Security" },
+    { title: "Embedded Security", keyword: "Embedded Systems" },
+    { title: "Operating Systems", keyword: "Operating Systems" },
+    { title: "Graduate Courses", keyword: "Graduate" },
+    { title: "Undergraduate Courses", keyword: "Undergraduate" }
+  ];
+
+  let activeTermFilter = 'all';
+
+  function escapeRegExp(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
+  function testCourseMatch(text, query) {
+    if (!query) return true;
+    const cleanQuery = query.trim();
+    if (!cleanQuery) return true;
+
+    const terms = cleanQuery.split(/\s+/).filter(Boolean);
+
+    return terms.every(term => {
+      // Case-sensitive or word boundary for acronyms (e.g. CSE, CMPSC, OS)
+      if (term.length <= 4) {
+        const regex = new RegExp('(^|[^a-zA-Z0-9])' + escapeRegExp(term) + '([^a-zA-Z0-9]|$)', 'i');
+        return regex.test(text);
+      }
+      const prefixRegex = new RegExp('(^|[^a-zA-Z0-9])' + escapeRegExp(term), 'i');
+      return prefixRegex.test(text) || text.toLowerCase().includes(term.toLowerCase());
+    });
+  }
+
+  function handleCourseSearch() {
+    const input = document.getElementById('course-search');
+    const query = input ? input.value.trim() : '';
+    const dropdown = document.getElementById('course-autocomplete');
+
+    filterCourses();
+
+    if (!query || !dropdown) {
+      if (dropdown) {
+        dropdown.classList.add('d-none');
+        dropdown.innerHTML = '';
+      }
+      return;
+    }
+
+    const matches = courseSuggestions.filter(item => {
+      return testCourseMatch(item.title, query) || (item.keyword && testCourseMatch(item.keyword, query));
+    });
+
+    if (matches.length === 0) {
+      dropdown.classList.add('d-none');
+      dropdown.innerHTML = '';
+      return;
+    }
+
+    dropdown.innerHTML = '';
+    matches.slice(0, 6).forEach(item => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.className = 'dropdown-item small py-2 text-truncate';
+      a.href = 'javascript:void(0)';
+      a.innerHTML = `<i class="fas fa-graduation-cap text-secondary me-2"></i>${item.title}`;
+      a.onclick = function(e) {
+        e.preventDefault();
+        applyCourseSuggestion(item.keyword || item.title);
+      };
+      li.appendChild(a);
+      dropdown.appendChild(li);
+    });
+
+    dropdown.classList.remove('d-none');
+  }
+
+  function filterTerm(filterVal, btn) {
+    activeTermFilter = filterVal;
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.remove('btn-dark', 'active');
+      b.classList.add('btn-outline-secondary');
+    });
+    btn.classList.remove('btn-outline-secondary');
+    btn.classList.add('btn-dark', 'active');
+    filterCourses();
+  }
+
+  function applyCourseSuggestion(term) {
+    const input = document.getElementById('course-search');
+    if (input) input.value = term;
+    const dropdown = document.getElementById('course-autocomplete');
+    if (dropdown) {
+      dropdown.classList.add('d-none');
+      dropdown.innerHTML = '';
+    }
+    filterCourses();
+  }
+
+  function clearCourseSearch() {
+    const input = document.getElementById('course-search');
+    if (input) input.value = '';
+    const dropdown = document.getElementById('course-autocomplete');
+    if (dropdown) {
+      dropdown.classList.add('d-none');
+      dropdown.innerHTML = '';
+    }
+    filterCourses();
+  }
+
+  function filterCourses() {
+    const searchInput = document.getElementById('course-search');
+    const query = searchInput ? searchInput.value.trim() : '';
+    const cards = document.querySelectorAll('.course-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const cardText = card.getAttribute('data-text') || '';
+      const cardTerm = card.getAttribute('data-term') || '';
+      const cardLevel = card.getAttribute('data-level') || '';
+      
+      const matchesSearch = testCourseMatch(cardText, query);
+      const matchesFilter = (activeTermFilter === 'all' || cardTerm === activeTermFilter || cardLevel === activeTermFilter);
+
+      if (matchesSearch && matchesFilter) {
+        card.classList.remove('d-none');
+        visibleCount++;
+      } else {
+        card.classList.add('d-none');
+      }
+    });
+
+    const noResults = document.getElementById('no-course-results');
+    const countBadge = document.getElementById('course-count');
+    if (noResults) {
+      if (visibleCount === 0) {
+        noResults.classList.remove('d-none');
+      } else {
+        noResults.classList.add('d-none');
+      }
+    }
+    if (countBadge) {
+      countBadge.textContent = `${visibleCount} course${visibleCount === 1 ? '' : 's'}`;
+    }
+  }
+
+  document.addEventListener('click', function(e) {
+    const searchBox = document.getElementById('course-search');
+    const dropdown = document.getElementById('course-autocomplete');
+    if (dropdown && searchBox && !searchBox.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.add('d-none');
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', filterCourses);
+</script>

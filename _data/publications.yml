@@ -1,42 +1,139 @@
-featured:
-- {name: 'Ruoyu Wu, Muqi Zou, <b>Arslan Khan</b>, Taegyu Kim, Dongyan Xu, Dave (Jing) Tian, Antonio Bianchi, NeuroScope: Reverse Engineering Deep Neural Network on Edge Devices using Dynamic Analysis. 34th USENIX Security Symposium (Security’25), Seattle, WA, August 2025. <a href="/publications/neuro.pdf" target="_blank">Paper</a>', url: '/publications/neuro.pdf', code: 'purseclab/NeuroScope'}
-- {name: 'Muqi Zou, <b>Arslan Khan</b>, Ruoyu Wu, Han Gao, Antonio Bianchi, and Dave (Jing) Tian. D-Helix: A Generic Decompiler Testing Framework Using Symbolic Differentiation. 33rd USENIX Security Symposium (Security’24), Philadelphia, PA, USA, August 2024. <a href="/publications/dhelix.pdf" target="_blank">Paper</a>', url: '/publications/dhelix.pdf', code: 'purseclab/D-helix'}
-- {name: 'Syed Ghazanfar Abbas, Muslum Ozgur Ozmen, Abdulellah Alsaheel, <b>Arslan Khan</b>, Z. Berkay Celik, and Dongyan Xu. SAIN: Improving ICS Attack Detection Sensitivity via State-Aware Invariants. 33rd USENIX Security Symposium (Security’24), Philadelphia, PA, USA, August 2024. <a href="/publications/sain.pdf" target="_blank">Paper</a>', url: '/publications/sain.pdf', code: 'purseclab/SAIN'} 
-- {name: '<b>Arslan Khan</b>, Muqi Zou, Kyungtae Kim, Dongyan Xu, Antonio Bianchi, and Dave Jing Tian.
-“Fuzzing SGX Enclaves via Host Program Mutations”. In: 2023 IEEE 8th European Symposium
-on Security and Privacy (EuroS&P). 2023. <a href="/publications/fuzzsgx.pdf" target="_blank">Paper</a>', url: '/publications/fuzzsgx.pdf', code: 'purseclab/FuzzSGX'}
-- {name: '<b>Arslan Khan</b>, Dongyan Xu, and Dave Jing Tian. “EC: Embedded Systems
-Compartmentalization via Intra-Kernel Isolation”. In: 2023 IEEE Symposium on Security and
-Privacy (S&P). 2023. <a href="/publications/ec.pdf" target="_blank">Paper</a>', url: '/publications/ec.pdf', code: 'purseclab/Pieces'}
-- {name: '<b>Arslan Khan</b>, Dongyan Xu, and Dave Jing Tian. “Low-Cost Privilege Separation with Compile
-Time Compartmentalization for Embedded Systems”. In: 2023 IEEE Symposium on Security and
-Privacy (S&P). 2023. <a href="/publications/crt.pdf" target="_blank">Paper</a>', url: '/publications/crt.pdf', code: 'purseclab/Pieces'}
-- {name: '<b>Arslan Khan</b>, Joseph I. Choi, Dave Jing Tian, Tyler Ward, Kevin R. B. Butler,
-Patrick Traynor, John M. Shea, and Tan F. Wong. “Privacy-Preserving Localization using
-Enclaves”. In: 2021 IEEE 12th Annual Ubiquitous Computing, Electronics & Mobile
-Communication Conference (UEMCON). <b><font color="#800020">Best Presentation Award</font></b>. 2021, pp. 0269–0278. <a href="/publications/spectrum.pdf" target="_blank">Paper</a>', url: '/publications/spectrum.pdf', code: ''}
-- {name: '<b>Arslan Khan</b>, Hyungsub Kim, Byoungyoung Lee, Dongyan Xu, Antonio Bianchi, and
-Dave Jing Tian. “M2MON: Building an MMIO-based Security Reference Monitor for Unmanned
-Vehicles.” In: USENIX Security Symposium. 2021, pp. 285–302. <a href="/publications/m2mon.pdf" target="_blank">Paper</a>', url: '/publications/m2mon.pdf', code: 'purseclab/Pieces'}
+- id: "neuroscope25"
+  title: "NeuroScope: Reverse Engineering Deep Neural Network on Edge Devices using Dynamic Analysis"
+  authors: "Ruoyu Wu, Muqi Zou, <b>Arslan Khan</b>, Taegyu Kim, Dongyan Xu, Dave (Jing) Tian, and Antonio Bianchi"
+  venue: "34th USENIX Security Symposium (USENIX Security '25)"
+  location: "Seattle, WA"
+  year: 2025
+  category: "ML & AI Security"
+  pdf: "/publications/neuro.pdf"
+  code: "https://github.com/purseclab/NeuroScope"
+  bibtex: |
+    @inproceedings{wu2025neuroscope,
+      title={NeuroScope: Reverse Engineering Deep Neural Network on Edge Devices using Dynamic Analysis},
+      author={Wu, Ruoyu and Zou, Muqi and Khan, Arslan and Kim, Taegyu and Xu, Dongyan and Tian, Dave Jing and Bianchi, Antonio},
+      booktitle={34th USENIX Security Symposium (USENIX Security 25)},
+      year={2025}
+    }
 
+- id: "dhelix24"
+  title: "D-Helix: A Generic Decompiler Testing Framework Using Symbolic Differentiation"
+  authors: "Muqi Zou, <b>Arslan Khan</b>, Ruoyu Wu, Han Gao, Antonio Bianchi, and Dave (Jing) Tian"
+  venue: "33rd USENIX Security Symposium (USENIX Security '24)"
+  location: "Philadelphia, PA"
+  year: 2024
+  category: "Program Analysis & Decompilation"
+  pdf: "/publications/dhelix.pdf"
+  code: "https://github.com/purseclab/D-helix"
+  bibtex: |
+    @inproceedings{zou2024dhelix,
+      title={D-Helix: A Generic Decompiler Testing Framework Using Symbolic Differentiation},
+      author={Zou, Muqi and Khan, Arslan and Wu, Ruoyu and Gao, Han and Bianchi, Antonio and Tian, Dave Jing},
+      booktitle={33rd USENIX Security Symposium (USENIX Security 24)},
+      year={2024}
+    }
 
-index:
-- {name: 'Ruoyu Wu, Muqi Zou, <b>Arslan Khan</b>, Taegyu Kim, Dongyan Xu, Dave (Jing) Tian, Antonio Bianchi, NeuroScope: Reverse Engineering Deep Neural Network on Edge Devices using Dynamic Analysis. 34th USENIX Security Symposium (Security’25), Seattle, WA, August 2025.', url: '/publications/neuro.pdf', code: 'purseclab/NeuroScope'}
-- {name: 'Muqi Zou, <b>Arslan Khan</b>, Ruoyu Wu, Han Gao, Antonio Bianchi, and Dave (Jing) Tian. D-Helix: A Generic Decompiler Testing Framework Using Symbolic Differentiation. 33rd USENIX Security Symposium (Security’24), Philadelphia, PA, USA, August 2024.', url: '/publications/dhelix.pdf', code: 'purseclab/D-helix'}
-- {name: 'Syed Ghazanfar Abbas, Muslum Ozgur Ozmen, Abdulellah Alsaheel, <b>Arslan Khan</b>, Z. Berkay Celik, and Dongyan Xu. SAIN: Improving ICS Attack Detection Sensitivity via State-Aware Invariants. 33rd USENIX Security Symposium (Security’24), Philadelphia, PA, USA, August 2024.', url: '/publications/sain.pdf', code: 'purseclab/SAIN'}
-- {name: '<b>Arslan Khan</b>, Muqi Zou, Kyungtae Kim, Dongyan Xu, Antonio Bianchi, and Dave Jing Tian.
-“Fuzzing SGX Enclaves via Host Program Mutations”. In: 2023 IEEE 8th European Symposium
-on Security and Privacy (EuroS&P). 2023.', url: '/publications/fuzzsgx.pdf', code: 'purseclab/FuzzSGX'}
-- {name: '<b>Arslan Khan</b>, Dongyan Xu, and Dave Jing Tian. “EC: Embedded Systems
-Compartmentalization via Intra-Kernel Isolation”. In: 2023 IEEE Symposium on Security and
-Privacy (S&P). 2023.', url: '/publications/ec.pdf', code: 'purseclab/Pieces'}
-- {name: '<b>Arslan Khan</b>, Dongyan Xu, and Dave Jing Tian. “Low-Cost Privilege Separation with Compile
-Time Compartmentalization for Embedded Systems”. In: 2023 IEEE Symposium on Security and
-Privacy (S&P). 2023.', url: '/publications/crt.pdf', code: 'purseclab/Pieces'}
-- {name: '<b>Arslan Khan</b>, Joseph I. Choi, Dave Jing Tian, Tyler Ward, Kevin R. B. Butler,
-Patrick Traynor, John M. Shea, and Tan F. Wong. “Privacy-Preserving Localization using
-Enclaves”. In: 2021 IEEE 12th Annual Ubiquitous Computing, Electronics & Mobile
-Communication Conference (UEMCON). <b><font color="#800020">Best Presentation Award</font></b>. 2021, pp. 0269–0278.', url: '/publications/spectrum.pdf', code: ''}
-- {name: '<b>Arslan Khan</b>, Hyungsub Kim, Byoungyoung Lee, Dongyan Xu, Antonio Bianchi, and
-Dave Jing Tian. “M2MON: Building an MMIO-based Security Reference Monitor for Unmanned
-Vehicles.” In: USENIX Security Symposium. 2021, pp. 285–302.', url: '/publications/m2mon.pdf', code: 'purseclab/Pieces'}
+- id: "sain24"
+  title: "SAIN: Improving ICS Attack Detection Sensitivity via State-Aware Invariants"
+  authors: "Syed Ghazanfar Abbas, Muslum Ozgur Ozmen, Abdulellah Alsaheel, <b>Arslan Khan</b>, Z. Berkay Celik, and Dongyan Xu"
+  venue: "33rd USENIX Security Symposium (USENIX Security '24)"
+  location: "Philadelphia, PA"
+  year: 2024
+  category: "Embedded & ICS Security"
+  pdf: "/publications/sain.pdf"
+  code: "https://github.com/purseclab/SAIN"
+  bibtex: |
+    @inproceedings{abbas2024sain,
+      title={SAIN: Improving ICS Attack Detection Sensitivity via State-Aware Invariants},
+      author={Abbas, Syed Ghazanfar and Ozmen, Muslum Ozgur and Alsaheel, Abdulellah and Khan, Arslan and Celik, Z Berkay and Xu, Dongyan},
+      booktitle={33rd USENIX Security Symposium (USENIX Security 24)},
+      year={2024}
+    }
+
+- id: "fuzzsgx23"
+  title: "Fuzzing SGX Enclaves via Host Program Mutations"
+  authors: "<b>Arslan Khan</b>, Muqi Zou, Kyungtae Kim, Dongyan Xu, Antonio Bianchi, and Dave Jing Tian"
+  venue: "IEEE 8th European Symposium on Security and Privacy (EuroS&P '23)"
+  year: 2023
+  category: "Confidential Computing"
+  pdf: "/publications/fuzzsgx.pdf"
+  code: "https://github.com/purseclab/FuzzSGX"
+  bibtex: |
+    @inproceedings{khan2023fuzzing,
+      title={Fuzzing SGX Enclaves via Host Program Mutations},
+      author={Khan, Arslan and Zou, Muqi and Kim, Kyungtae and Xu, Dongyan and Bianchi, Antonio and Tian, Dave Jing},
+      booktitle={2023 IEEE 8th European Symposium on Security and Privacy (EuroS\&P)},
+      pages={694--710},
+      year={2023},
+      organization={IEEE}
+    }
+
+- id: "ec23"
+  title: "EC: Embedded Systems Compartmentalization via Intra-Kernel Isolation"
+  authors: "<b>Arslan Khan</b>, Dongyan Xu, and Dave Jing Tian"
+  venue: "44th IEEE Symposium on Security and Privacy (IEEE S&P '23)"
+  year: 2023
+  category: "Operating Systems & Isolation"
+  pdf: "/publications/ec.pdf"
+  code: "https://github.com/purseclab/Pieces"
+  bibtex: |
+    @inproceedings{khan2023ec,
+      title={EC: Embedded Systems Compartmentalization via Intra-Kernel Isolation},
+      author={Khan, Arslan and Xu, Dongyan and Tian, Dave Jing},
+      booktitle={2023 IEEE Symposium on Security and Privacy (SP)},
+      pages={2170--2187},
+      year={2023},
+      organization={IEEE}
+    }
+
+- id: "crt23"
+  title: "Low-Cost Privilege Separation with Compile Time Compartmentalization for Embedded Systems"
+  authors: "<b>Arslan Khan</b>, Dongyan Xu, and Dave Jing Tian"
+  venue: "44th IEEE Symposium on Security and Privacy (IEEE S&P '23)"
+  year: 2023
+  category: "Operating Systems & Isolation"
+  pdf: "/publications/crt.pdf"
+  code: "https://github.com/purseclab/Pieces"
+  bibtex: |
+    @inproceedings{khan2023lowcost,
+      title={Low-Cost Privilege Separation with Compile Time Compartmentalization for Embedded Systems},
+      author={Khan, Arslan and Xu, Dongyan and Tian, Dave Jing},
+      booktitle={2023 IEEE Symposium on Security and Privacy (SP)},
+      pages={2152--2169},
+      year={2023},
+      organization={IEEE}
+    }
+
+- id: "spectrum21"
+  title: "Privacy-Preserving Localization using Enclaves"
+  authors: "<b>Arslan Khan</b>, Joseph I. Choi, Dave Jing Tian, Tyler Ward, Kevin R. B. Butler, Patrick Traynor, John M. Shea, and Tan F. Wong"
+  venue: "IEEE 12th Annual Ubiquitous Computing, Electronics & Mobile Communication Conference (UEMCON '21)"
+  award: "🏆 Best Presentation Award"
+  year: 2021
+  category: "Confidential Computing"
+  pdf: "/publications/spectrum.pdf"
+  bibtex: |
+    @inproceedings{khan2021privacy,
+      title={Privacy-Preserving Localization using Enclaves},
+      author={Khan, Arslan and Choi, Joseph I and Tian, Dave Jing and Ward, Tyler and Butler, Kevin RB and Traynor, Patrick and Shea, John M and Wong, Tan F},
+      booktitle={2021 IEEE 12th Annual Ubiquitous Computing, Electronics \& Mobile Communication Conference (UEMCON)},
+      pages={0269--0278},
+      year={2021},
+      organization={IEEE}
+    }
+
+- id: "m2mon21"
+  title: "M2MON: Building an MMIO-based Security Reference Monitor for Unmanned Vehicles"
+  authors: "<b>Arslan Khan</b>, Hyungsub Kim, Byoungyoung Lee, Dongyan Xu, Antonio Bianchi, and Dave Jing Tian"
+  venue: "30th USENIX Security Symposium (USENIX Security '21)"
+  year: 2021
+  category: "Embedded & ICS Security"
+  pdf: "/publications/m2mon.pdf"
+  code: "https://github.com/purseclab/Pieces"
+  bibtex: |
+    @inproceedings{khan2021m2mon,
+      title={M2MON: Building an MMIO-based Security Reference Monitor for Unmanned Vehicles},
+      author={Khan, Arslan and Kim, Hyungsub and Lee, Byoungyoung and Xu, Dongyan and Bianchi, Antonio and Tian, Dave Jing},
+      booktitle={30th USENIX Security Symposium (USENIX Security 21)},
+      pages={285--302},
+      year={2021}
+    }

@@ -1,115 +1,177 @@
-<div class="my-5">
-  <div class="d-flex justify-content-between align-items-baseline border-bottom pb-3 mb-4">
+<div class="mb-5">
+  <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
     <h3 class="fw-bold mb-0">Publications</h3>
-    {% if page.title == "Home" %}
-      <a href="{{ site.github.url }}/publications" class="text-decoration-none small">View all &rarr;</a>
-    {% endif %}
+    <span class="text-muted small" id="pub-count">{{ site.data.publications | size }} papers</span>
   </div>
-  <div>
-    {% if page.title == "Home" %}
-      {% assign counter = 0 %}
-      {% for item in site.data.publications.featured %}
-        <p>{{ item.name }}
-          <script>        
-            // Function to create a repository button
-            function createRepoButton(repoUrl) {
+
+  <!-- Search & Filter Controls -->
+  <div class="bg-light p-3 rounded-3 mb-4 border">
+    <div class="row g-2 align-items-center">
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-text bg-white border-end-0 text-muted">
+            <i class="fas fa-search"></i>
+          </span>
+          <input type="text" id="pub-search" class="form-control border-start-0" placeholder="Search by title, author, venue, keyword..." onkeyup="filterPubs()">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex gap-1 flex-wrap justify-content-md-end" id="year-filters">
+          <button class="btn btn-sm btn-dark filter-btn active" onclick="filterCategory('all', this)">All</button>
+          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterCategory('2025', this)">2025</button>
+          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterCategory('2024', this)">2024</button>
+          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterCategory('2023', this)">2023</button>
+          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterCategory('2021', this)">2021</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Publications List -->
+  <div id="publications-container">
+    {% assign grouped_by_year = site.data.publications | group_by: "year" %}
+    {% for year_group in grouped_by_year reversed %}
+      <div class="year-section mb-4" data-year="{{ year_group.name }}">
+        <h4 class="fw-bold text-secondary border-bottom pb-1 mb-3 font-monospace">{{ year_group.name }}</h4>
+
+        <div class="d-flex flex-column gap-3">
+          {% for paper in year_group.items %}
+            <div class="card border-0 shadow-sm rounded-3 p-3 publication-card" 
+                 data-year="{{ paper.year }}" 
+                 data-category="{{ paper.category }}" 
+                 data-search="{{ paper.title | downcase }} {{ paper.authors | downcase }} {{ paper.venue | downcase }} {{ paper.category | downcase }} {{ paper.year }}">
               
-              const container = document.currentScript.parentElement;
-        
-              // Create button element
-              const button = document.createElement('a');
-              button.href = 'https://github.com/' + repoUrl;
-              button.className = 'repoAccessButton';
-              button.target = '_blank';
-        
-              // Append GitHub icon
-              const githubIcon = document.createElement('span');
-              githubIcon.className = 'icon';
-              githubIcon.innerHTML = '<svg class="octicon octicon-mark-github" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="#ecf0f1"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.20-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.20-.36-1.02.08-2.12 0 0 .67-.21 2.20.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.20-.82 2.20-.82.44 1.10.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.20 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>';
-              button.appendChild(githubIcon);
-        
-              // Append separator
-              const separator = document.createElement('span');
-              separator.className = 'separator';
-              separator.innerHTML = '<svg class="octicon octicon-star" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="#ecf0f1"><path fill-rule="evenodd" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25zm-.553 9.256a.75.75 0 0 1 .553-.969L8 8.551l2.553-2.315a.75.75 0 0 1 1.104 0 .75.75 0 0 1 0 1.154L9.104 8.551l2.553 2.315a.75.75 0 0 1-1.104 0 .75.75 0 0 1-1.104-1.154L8 9.449l-2.553 2.315a.75.75 0 0 1-1.104-1.154l2.553-2.315-2.553-2.316a.75.75 0 0 1 .551-1.217z"></path></svg>';
-              button.appendChild(separator);
-        
-              // // Append star icon
-              // const starIcon = document.createElement('span');
-              // starIcon.className = 'icon';
-              // starIcon.innerHTML = '<svg class="octicon octicon-star" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="#ecf0f1"><path fill-rule="evenodd" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25zm-.553 9.256a.75.75 0 0 1 .553-.969L8 8.551l2.553-2.315a.75.75 0 0 1 1.104 0 .75.75 0 0 1 0 1.154L9.104 8.551l2.553 2.315a.75.75 0 0 1-1.104 0 .75.75 0 0 1-1.104-1.154L8 9.449l-2.553 2.315a.75.75 0 0 1-1.104-1.154l2.553-2.315-2.553-2.316a.75.75 0 0 1 .551-1.217z"></path></svg>';
-              // button.appendChild(starIcon);
-        
-              // Fetch repository details from GitHub API
-              fetch('https://api.github.com/repos/' + repoUrl + '/stargazers')
-                .then(response => response.json())
-                .then(stargazersData => {
-                  // Append stars count
-                  const stars = stargazersData.length;
-                  button.innerHTML += `<span class="repoAccessButtonText"> ${stars}</span>`;
-                })
-                .catch(error => {
-                  console.error('Error fetching repository details:', error);
-                });
-        
-              // Append the button to the container
-              container.appendChild(button);
-            }
-            createRepoButton("{{ item.code }}");
-          </script>
-	 </p>
-      {% endfor %}
-    {% else %}
-      {% for item in site.data.publications.index %}
-        <p><a href="{{ item.url }}">{{ item.name }}</a> 
-          <script>        
-            // Function to create a repository button
-            function createRepoButton(repoUrl) {
-              
-              const container = document.currentScript.parentElement;
-        
-              // Create button element
-              const button = document.createElement('a');
-              button.href = 'https://github.com/' + repoUrl;
-              button.className = 'repoAccessButton';
-              button.target = '_blank';
-        
-              // Append GitHub icon
-              const githubIcon = document.createElement('span');
-              githubIcon.className = 'icon';
-              githubIcon.innerHTML = '<svg class="octicon octicon-mark-github" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="#ecf0f1"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.20-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.20-.36-1.02.08-2.12 0 0 .67-.21 2.20.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.20-.82 2.20-.82.44 1.10.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.20 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>';
-              button.appendChild(githubIcon);
-        
-              // Append separator
-              const separator = document.createElement('span');
-              separator.className = 'separator';
-              separator.innerHTML = '<svg class="octicon octicon-star" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="#ecf0f1"><path fill-rule="evenodd" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25zm-.553 9.256a.75.75 0 0 1 .553-.969L8 8.551l2.553-2.315a.75.75 0 0 1 1.104 0 .75.75 0 0 1 0 1.154L9.104 8.551l2.553 2.315a.75.75 0 0 1-1.104 0 .75.75 0 0 1-1.104-1.154L8 9.449l-2.553 2.315a.75.75 0 0 1-1.104-1.154l2.553-2.315-2.553-2.316a.75.75 0 0 1 .551-1.217z"></path></svg>';
-              button.appendChild(separator);
-        
-              // // Append star icon
-              // const starIcon = document.createElement('span');
-              // starIcon.className = 'icon';
-              // starIcon.innerHTML = '<svg class="octicon octicon-star" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" fill="#ecf0f1"><path fill-rule="evenodd" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25zm-.553 9.256a.75.75 0 0 1 .553-.969L8 8.551l2.553-2.315a.75.75 0 0 1 1.104 0 .75.75 0 0 1 0 1.154L9.104 8.551l2.553 2.315a.75.75 0 0 1-1.104 0 .75.75 0 0 1-1.104-1.154L8 9.449l-2.553 2.315a.75.75 0 0 1-1.104-1.154l2.553-2.315-2.553-2.316a.75.75 0 0 1 .551-1.217z"></path></svg>';
-              // button.appendChild(starIcon);
-        
-              // Fetch repository details from GitHub API
-              fetch('https://api.github.com/repos/' + repoUrl + '/stargazers')
-                .then(response => response.json())
-                .then(stargazersData => {
-                  // Append stars count
-                  const stars = stargazersData.length;
-                  button.innerHTML += `<span class="repoAccessButtonText"> ${stars}</span>`;
-                })
-                .catch(error => {
-                  console.error('Error fetching repository details:', error);
-                });
-        
-              // Append the button to the container
-              container.appendChild(button);
-            }
-            createRepoButton("{{ item.code }}");
-          </script></p>
-      {% endfor %}
-    {% endif %}
+              <div class="d-flex justify-content-between align-items-start gap-2">
+                <h5 class="fw-bold mb-1 text-dark">
+                  {% if paper.pdf %}
+                    <a href="{{ site.github.url }}{{ paper.pdf }}" target="_blank" class="text-decoration-none text-dark hover-primary">
+                      {{ paper.title }}
+                    </a>
+                  {% else %}
+                    {{ paper.title }}
+                  {% endif %}
+                </h5>
+              </div>
+
+              <div class="text-secondary small mb-1">
+                {{ paper.authors }}
+              </div>
+
+              <div class="text-muted small mb-2 d-flex align-items-center flex-wrap gap-2">
+                <span class="fst-italic">{{ paper.venue }}</span>
+                {% if paper.award %}
+                  <span class="badge bg-warning text-dark border"><i class="fas fa-trophy me-1"></i>{{ paper.award }}</span>
+                {% endif %}
+                {% if paper.category %}
+                  <span class="badge bg-light text-secondary border">{{ paper.category }}</span>
+                {% endif %}
+              </div>
+
+              <div class="d-flex gap-2 align-items-center flex-wrap mt-1">
+                {% if paper.pdf %}
+                  <a href="{{ site.github.url }}{{ paper.pdf }}" target="_blank" class="btn btn-sm btn-outline-primary py-0 px-2" style="font-size: 0.82rem;">
+                    <i class="far fa-file-pdf me-1"></i> Paper
+                  </a>
+                {% endif %}
+
+                {% if paper.code %}
+                  <a href="{{ paper.code }}" target="_blank" class="btn btn-sm btn-outline-dark py-0 px-2" style="font-size: 0.82rem;">
+                    <i class="fab fa-github me-1"></i> Code
+                  </a>
+                {% endif %}
+
+                {% if paper.bibtex %}
+                  <button class="btn btn-sm btn-outline-secondary py-0 px-2" style="font-size: 0.82rem;" onclick="toggleBibtex('{{ paper.id }}')">
+                    <i class="fas fa-quote-right me-1"></i> BibTeX
+                  </button>
+                {% endif %}
+              </div>
+
+              {% if paper.bibtex %}
+                <div id="bib-{{ paper.id }}" class="mt-3 p-2 bg-light rounded border bibtex-block d-none" style="position: relative;">
+                  <button class="btn btn-sm btn-light border position-absolute top-0 end-0 m-2 py-0 px-2" onclick="copyBibtex('{{ paper.id }}')" style="font-size: 0.75rem;">Copy</button>
+                  <pre class="mb-0 small text-dark font-monospace" style="font-size: 0.75rem; white-space: pre-wrap;" id="code-{{ paper.id }}">{{ paper.bibtex }}</pre>
+                </div>
+              {% endif %}
+
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div id="no-results" class="text-center text-muted my-5 d-none">
+    <i class="fas fa-search fa-2x mb-3 text-secondary"></i>
+    <p>No matching publications found.</p>
   </div>
 </div>
+
+<script>
+  let activeYear = 'all';
+
+  function filterCategory(year, btn) {
+    activeYear = year;
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.remove('btn-dark', 'active');
+      b.classList.add('btn-outline-secondary');
+    });
+    btn.classList.remove('btn-outline-secondary');
+    btn.classList.add('btn-dark', 'active');
+    filterPubs();
+  }
+
+  function filterPubs() {
+    const query = document.getElementById('pub-search').value.toLowerCase().trim();
+    const cards = document.querySelectorAll('.publication-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const searchData = card.getAttribute('data-search');
+      const cardYear = card.getAttribute('data-year');
+      const matchesSearch = query === '' || searchData.includes(query);
+      const matchesYear = activeYear === 'all' || cardYear === activeYear;
+
+      if (matchesSearch && matchesYear) {
+        card.classList.remove('d-none');
+        visibleCount++;
+      } else {
+        card.classList.add('d-none');
+      }
+    });
+
+    // Hide/show year headers if empty
+    document.querySelectorAll('.year-section').forEach(section => {
+      const hasVisible = section.querySelectorAll('.publication-card:not(.d-none)').length > 0;
+      if (hasVisible) {
+        section.classList.remove('d-none');
+      } else {
+        section.classList.add('d-none');
+      }
+    });
+
+    const noResults = document.getElementById('no-results');
+    const pubCount = document.getElementById('pub-count');
+    if (visibleCount === 0) {
+      noResults.classList.remove('d-none');
+      pubCount.textContent = '0 papers found';
+    } else {
+      noResults.classList.add('d-none');
+      pubCount.textContent = `${visibleCount} paper${visibleCount === 1 ? '' : 's'}`;
+    }
+  }
+
+  function toggleBibtex(id) {
+    const el = document.getElementById('bib-' + id);
+    if (el) {
+      el.classList.toggle('d-none');
+    }
+  }
+
+  function copyBibtex(id) {
+    const code = document.getElementById('code-' + id).innerText;
+    navigator.clipboard.writeText(code).then(() => {
+      alert('BibTeX copied to clipboard!');
+    });
+  }
+</script>

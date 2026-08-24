@@ -1,0 +1,14 @@
+- date: "Aug 2026"
+  content: "Teaching <a href='/courses/systems-security-fa26'>CSE 544: Systems Security</a> in Fall 2026."
+
+- date: "Aug 2025"
+  content: "Paper on reverse engineering DNNs on edge devices (<em>NeuroScope</em>) accepted to <strong>USENIX Security '25</strong>!"
+
+- date: "Aug 2024"
+  content: "Two papers accepted to <strong>USENIX Security '24</strong>: <em>D-Helix</em> and <em>SAIN</em>."
+
+- date: "Aug 2024"
+  content: "Joined the School of EECS at <strong>Penn State University</strong> as an Assistant Professor."
+
+- date: "May 2023"
+  content: "Two papers on embedded systems compartmentalization (<em>EC</em> and <em>CRT</em>) presented at <strong>IEEE S&P '23</strong>."

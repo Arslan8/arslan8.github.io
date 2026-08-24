@@ -2,49 +2,30 @@
 layout: default
 ---
 
-<div class="row align-items-center mb-5">
+<div class="row align-items-center g-4 mb-5">
   <div class="col-md-8">
-    <h2 class="fw-bold mb-3">About</h2>
+    <h2 class="fw-bold mb-1">Arslan Khan</h2>
+    <p class="text-muted mb-3">
+      Assistant Professor of Computer Science and Engineering<br>
+      Pennsylvania State University &bull; INSR
+    </p>
     {{ content }}
   </div>
-  <div class="col-md-4 text-center">
-    <img src="{{ site.github.url }}/assets/img/cover.jpeg" alt="Arslan Khan" class="img-fluid rounded-3 shadow-sm" style="max-width: 220px; width: 100%;">
+  <div class="col-md-4 text-center text-md-end">
+    <img src="{{ site.github.url }}/assets/img/cover.jpeg" alt="Arslan Khan" class="img-fluid rounded-circle shadow-sm" style="width: 175px; height: 175px; object-fit: cover;">
   </div>
 </div>
 
-{% include publications.html %}
-
+{% if site.data.news %}
 <div class="my-5">
-  <h3 class="fw-bold border-bottom pb-3 mb-4">Projects</h3>
-
-  <div class="row align-items-center mb-4">
-    <div class="col-md-9">
-      <h5><a href="https://github.com/purseclab/Pieces" target="_blank" class="text-decoration-none">Pieces</a></h5>
-      <p class="text-muted mb-0">A programmable, language-agnostic automatic program compartmentalization framework to partition applications across customized isolation boundaries.</p>
-    </div>
-    <div class="col-md-3 text-center">
-      <a href="https://github.com/purseclab/Pieces" target="_blank">
-        <img src="{{ site.github.url }}/assets/img/pieces.png" alt="Pieces Logo" class="img-fluid rounded" style="max-height: 70px;">
-      </a>
-    </div>
-  </div>
-
-  <div class="row align-items-center mb-4">
-    <div class="col-md-9">
-      <h5><a href="https://github.com/Arslan8/FreeRTOS" target="_blank" class="text-decoration-none">SeRTOS</a></h5>
-      <p class="text-muted mb-0">Security Enhanced FreeRTOS with compile-time privilege separation and intra-kernel isolation for resource-constrained systems.</p>
-    </div>
-    <div class="col-md-3 text-center">
-      <a href="https://github.com/Arslan8/FreeRTOS" target="_blank">
-        <img src="{{ site.github.url }}/assets/img/sertos.png" alt="SeRTOS Logo" class="img-fluid rounded" style="max-height: 70px;">
-      </a>
-    </div>
-  </div>
+  <h4 class="fw-bold border-bottom pb-2 mb-3">Recent News</h4>
+  <ul class="list-unstyled">
+    {% for item in site.data.news %}
+      <li class="mb-2 d-flex align-items-baseline">
+        <span class="badge bg-light text-secondary border me-3 font-monospace" style="min-width: 85px; font-weight: 500;">{{ item.date }}</span>
+        <span>{{ item.content }}</span>
+      </li>
+    {% endfor %}
+  </ul>
 </div>
-
-<div class="my-5">
-  <h3 class="fw-bold border-bottom pb-3 mb-3">Interests</h3>
-  <p class="text-muted">
-    Outside of research, I enjoy hiking, traveling across northern Pakistan and the US, synthesizer sound design, and making <a href="https://soundcloud.com/arslan_khan_8" target="_blank">music</a>.
-  </p>
-</div>
+{% endif %}

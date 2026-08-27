@@ -28,313 +28,380 @@ The course also covers compartmentalization, accelerator and heterogeneous-syste
 
 All code used in class will be made available on GitHub when possible.
 
-Short quizzes will be given after major course modules. These quizzes are intended to assess understanding of systems-security concepts, mechanisms, attacks, and design tradeoffs.
+Short quizzes will be given after major course modules to assess understanding of systems-security concepts, mechanisms, attacks, and design tradeoffs.
 
-### Week 1 — August 25 & 27: Systems Security Foundations
+<div class="d-flex justify-content-between align-items-center mb-3 mt-4">
+  <span class="text-muted small"><i class="fas fa-info-circle me-1"></i> Click on any week to expand or collapse topics and readings.</span>
+  <div>
+    <button class="btn btn-sm btn-outline-dark py-0 px-2" onclick="toggleSchedule(true)">Expand All</button>
+    <button class="btn btn-sm btn-outline-secondary py-0 px-2" onclick="toggleSchedule(false)">Collapse All</button>
+  </div>
+</div>
 
-* Threat models and security goals
-* Security policies versus mechanisms
-* Trusted Computing Base
-* Reference monitors
-* Protection domains
-* Least privilege
-* User/kernel boundary
-* Attack surfaces
-* Fundamental principles of secure-system design
+<details class="card border mb-3 shadow-sm week-dropdown" open>
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 1 — August 25 & 27: Systems Security Foundations
+  </summary>
+  <div class="card-body">
+    <ul>
+      <li>Threat models and security goals</li>
+      <li>Security policies versus mechanisms</li>
+      <li>Trusted Computing Base</li>
+      <li>Reference monitors</li>
+      <li>Protection domains</li>
+      <li>Least privilege</li>
+      <li>User/kernel boundary</li>
+      <li>Attack surfaces</li>
+      <li>Fundamental principles of secure-system design</li>
+    </ul>
+  </div>
+</details>
 
-### Week 2 — September 1 & 3: Memory Safety and Exploitation
+<details class="card border mb-3 shadow-sm week-dropdown">
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 2 — September 1 & 3: Memory Safety and Exploitation
+  </summary>
+  <div class="card-body">
+    <ul>
+      <li>Process memory layout</li>
+      <li>Stack and heap memory</li>
+      <li>Buffer overflows</li>
+      <li>Stack corruption</li>
+      <li>Heap corruption</li>
+      <li>Use-after-free vulnerabilities</li>
+      <li>Double-free vulnerabilities</li>
+      <li>Integer vulnerabilities</li>
+      <li>Spatial and temporal memory safety</li>
+      <li>Control-flow hijacking</li>
+      <li>Return-Oriented Programming</li>
+    </ul>
+  </div>
+</details>
 
-* Process memory layout
-* Stack and heap memory
-* Buffer overflows
-* Stack corruption
-* Heap corruption
-* Use-after-free vulnerabilities
-* Double-free vulnerabilities
-* Integer vulnerabilities
-* Spatial and temporal memory safety
-* Control-flow hijacking
-* Return-Oriented Programming
+<details class="card border mb-3 shadow-sm week-dropdown" open>
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 3 — September 8 & 10: Memory-Safety Defenses & Readings
+  </summary>
+  <div class="card-body">
+    <ul>
+      <li>Stack canaries</li>
+      <li>NX / DEP</li>
+      <li>Address Space Layout Randomization</li>
+      <li>RELRO</li>
+      <li>Control-Flow Integrity</li>
+      <li>Shadow stacks</li>
+      <li>Pointer Authentication</li>
+      <li>Memory tagging</li>
+      <li>Hardware-assisted memory safety</li>
+      <li>Memory-safe programming languages</li>
+      <li>Limitations and bypasses of modern mitigations</li>
+    </ul>
 
-### Week 3 — September 8 & 10: Memory-Safety Defenses
+    <h6 class="fw-bold mt-4 border-bottom pb-1">Readings for Memory Safety</h6>
+    <p class="fw-bold mb-1 text-primary">Required Reading</p>
+    <ul>
+      <li>
+        <strong>László Szekeres, Mathias Payer, Tao Wei, and Dawn Song.</strong> "SoK: Eternal War in Memory." <em>IEEE Symposium on Security and Privacy (S&P)</em>, 2013. A broad overview of memory corruption, spatial and temporal memory safety, exploitation techniques, and major classes of defenses. [<a href="https://www.ieee-security.org/TC/SP2013/papers/4977a048.pdf" target="_blank">Paper</a>]
+      </li>
+    </ul>
 
-* Stack canaries
-* NX / DEP
-* Address Space Layout Randomization
-* RELRO
-* Control-Flow Integrity
-* Shadow stacks
-* Pointer Authentication
-* Memory tagging
-* Hardware-assisted memory safety
-* Memory-safe programming languages
-* Limitations and bypasses of modern mitigations
+    <p class="fw-bold mb-1 text-secondary">Optional Readings</p>
+    <ul>
+      <li>
+        <strong>Crispin Cowan et al.</strong> "StackGuard: Automatic Adaptive Detection and Prevention of Buffer-Overflow Attacks." <em>USENIX Security</em>, 1998. Classic stack-canary work. Useful for distinguishing exploit mitigation from complete memory safety. [<a href="https://www.usenix.org/conference/7th-usenix-security-symposium/stackguard-automatic-adaptive-detection-and-prevention" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Santosh Nagarakatte, Jianzhou Zhao, Milo M. K. Martin, and Steve Zdancewic.</strong> "SoftBound: Highly Compatible and Complete Spatial Memory Safety for C." <em>PLDI</em>, 2009. A canonical metadata-based approach for enforcing spatial memory safety. [<a href="https://llvm.org/pubs/2009-06-PLDI-SoftBound.html" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Santosh Nagarakatte, Jianzhou Zhao, Milo M. K. Martin, and Steve Zdancewic.</strong> "CETS: Compiler Enforced Temporal Safety for C." <em>ISMM</em>, 2010. A companion to SoftBound focused on temporal memory safety, including dangling pointers and use-after-free. [<a href="https://llvm.org/pubs/2010-06-ISMM-CETS.html" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Konstantin Serebryany, Derek Bruening, Alexander Potapenko, and Dmitry Vyukov.</strong> "AddressSanitizer: A Fast Address Sanity Checker." <em>USENIX ATC</em>, 2012. The foundational paper behind AddressSanitizer, covering shadow memory and practical detection of memory errors. [<a href="https://www.usenix.org/conference/atc12/technical-sessions/presentation/serebryany" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Jonathan Woodruff et al.</strong> "The CHERI Capability Model: Revisiting RISC in an Age of Risk." <em>ISCA</em>, 2014. Introduces the CHERI capability architecture and hardware-supported pointer bounds and authority. [<a href="https://www.cl.cam.ac.uk/research/security/ctsrd/pdfs/201406-isca2014-cheri.pdf" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Ralf Jung et al.</strong> "RustBelt: Securing the Foundations of the Rust Programming Language." <em>POPL</em>, 2018. Provides a formal foundation for Rust's ownership-based memory-safety guarantees, including interaction with <code>unsafe</code> code. [<a href="https://plv.mpi-sws.org/rustbelt/popl18/" target="_blank">Paper</a>]
+      </li>
+    </ul>
 
-#### Readings for Memory Safety
+    <div class="alert alert-secondary py-1 px-3 mt-3 mb-0 small">
+      <strong>Module Quiz</strong> follows this topic.
+    </div>
+  </div>
+</details>
 
-##### Required Reading
+<details class="card border mb-3 shadow-sm week-dropdown">
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 4 — September 15 & 17: Kernel Security
+  </summary>
+  <div class="card-body">
+    <ul>
+      <li>Kernel attack surface</li>
+      <li>System calls and the user/kernel boundary</li>
+      <li>Kernel memory corruption</li>
+      <li>Kernel privilege escalation</li>
+      <li>Kernel drivers</li>
+      <li>Driver security</li>
+      <li>Kernel exploitation</li>
+      <li>Kernel hardening</li>
+      <li>Kernel attack-surface reduction</li>
+      <li>Modern kernel defense mechanisms</li>
+    </ul>
+    <div class="alert alert-secondary py-1 px-3 mt-3 mb-0 small">
+      <strong>Module Quiz</strong> follows this topic.
+    </div>
+  </div>
+</details>
 
-* **László Szekeres, Mathias Payer, Tao Wei, and Dawn Song.  
-  "SoK: Eternal War in Memory." IEEE Symposium on Security and Privacy (S&P), 2013.**  
-  A broad overview of memory corruption, spatial and temporal memory safety, exploitation techniques, and major classes of defenses.  
-  [[Paper](https://www.ieee-security.org/TC/SP2013/papers/4977a048.pdf)]
+<details class="card border mb-3 shadow-sm week-dropdown">
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 5 — September 22 & 24: Access Control
+  </summary>
+  <div class="card-body">
+    <ul>
+      <li>Access-control matrix</li>
+      <li>Access Control Lists</li>
+      <li>Unix file permissions</li>
+      <li>Users and groups</li>
+      <li>UID, EUID, and SUID</li>
+      <li><code>setuid</code> and <code>setgid</code></li>
+      <li>Linux capabilities</li>
+      <li>Discretionary Access Control</li>
+      <li>Confused deputy attacks</li>
+      <li>Capability-based security</li>
+      <li>Privilege transitions</li>
+    </ul>
+    <div class="alert alert-warning py-2 px-3 mt-3 mb-0 small">
+      <strong>Important Milestone:</strong> Research-based semester project proposals are due <strong>Thursday, September 24</strong>. Students without an approved research proposal will complete the instructor-defined project.
+    </div>
+  </div>
+</details>
 
-##### Optional Readings
+<details class="card border mb-3 shadow-sm week-dropdown">
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 6 — September 29 & October 1: Mandatory Access Control and SELinux
+  </summary>
+  <div class="card-body">
+    <ul>
+      <li>Discretionary versus Mandatory Access Control</li>
+      <li>Bell-LaPadula</li>
+      <li>Biba</li>
+      <li>Multi-Level Security</li>
+      <li>Linux Security Modules</li>
+      <li>SELinux</li>
+      <li>AppArmor</li>
+      <li>Labels and security domains</li>
+      <li>Type Enforcement</li>
+      <li>Policy transitions</li>
+      <li>Landlock</li>
+      <li>Reference-monitor implementation</li>
+    </ul>
+    <div class="alert alert-secondary py-1 px-3 mt-3 mb-0 small">
+      <strong>Module Quiz</strong> follows this topic.
+    </div>
+  </div>
+</details>
 
-* **Crispin Cowan et al.  
-  "StackGuard: Automatic Adaptive Detection and Prevention of Buffer-Overflow Attacks." USENIX Security, 1998.**  
-  Classic stack-canary work. Useful for distinguishing exploit mitigation from complete memory safety.  
-  [[Paper](https://www.usenix.org/conference/7th-usenix-security-symposium/stackguard-automatic-adaptive-detection-and-prevention)]
+<details class="card border mb-3 shadow-sm week-dropdown">
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 7 — October 6 & 8: Virtualization
+  </summary>
+  <div class="card-body">
+    <ul>
+      <li>Virtual machines and hypervisors</li>
+      <li>Type-1 and Type-2 hypervisors</li>
+      <li>Privileged and unprivileged execution</li>
+      <li>Hardware-assisted virtualization</li>
+      <li>VM exits</li>
+      <li>CPU virtualization</li>
+      <li>Memory virtualization</li>
+      <li>Extended/Nested Page Tables</li>
+      <li>Device virtualization</li>
+      <li>Emulated and paravirtualized devices</li>
+      <li>KVM and QEMU</li>
+      <li>VirtIO</li>
+      <li>VM isolation</li>
+      <li>VM escape attacks</li>
+      <li>Virtual machines as security boundaries</li>
+    </ul>
+  </div>
+</details>
 
-* **Santosh Nagarakatte, Jianzhou Zhao, Milo M. K. Martin, and Steve Zdancewic.  
-  "SoftBound: Highly Compatible and Complete Spatial Memory Safety for C." PLDI, 2009.**  
-  A canonical metadata-based approach for enforcing spatial memory safety.  
-  [[Paper](https://llvm.org/pubs/2009-06-PLDI-SoftBound.html)]
+<details class="card border mb-3 shadow-sm week-dropdown">
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 8 — October 13 & 15: Confidential Computing
+  </summary>
+  <div class="card-body">
+    <ul>
+      <li>Threat models in cloud computing</li>
+      <li>Trusted Execution Environments</li>
+      <li>Intel SGX</li>
+      <li>Intel TDX</li>
+      <li>AMD SEV</li>
+      <li>AMD SEV-SNP</li>
+      <li>Memory encryption</li>
+      <li>Confidential virtual machines</li>
+      <li>Protecting workloads from the hypervisor</li>
+      <li>Remote attestation</li>
+      <li>Measurement and trust establishment</li>
+      <li>I/O challenges in confidential systems</li>
+      <li>Limitations of confidential computing</li>
+    </ul>
+    <div class="alert alert-secondary py-1 px-3 mt-3 mb-0 small">
+      <strong>Module Quiz</strong> follows this topic.
+    </div>
+  </div>
+</details>
 
-* **Santosh Nagarakatte, Jianzhou Zhao, Milo M. K. Martin, and Steve Zdancewic.  
-  "CETS: Compiler Enforced Temporal Safety for C." ISMM, 2010.**  
-  A companion to SoftBound focused on temporal memory safety, including dangling pointers and use-after-free.  
-  [[Paper](https://llvm.org/pubs/2010-06-ISMM-CETS.html)]
+<details class="card border mb-3 shadow-sm week-dropdown">
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 9 — October 20 & 22: Linux Isolation Primitives
+  </summary>
+  <div class="card-body">
+    <p class="text-muted small">This module examines the mechanisms from which modern Linux containers and application sandboxes are constructed.</p>
+    <ul>
+      <li><code>chroot</code></li>
+      <li>Filesystem isolation</li>
+      <li>Mounts and bind mounts</li>
+      <li><code>pivot_root</code></li>
+      <li>Linux namespaces (User, PID, Mount, Network, IPC, UTS)</li>
+      <li>cgroups</li>
+      <li>Linux capabilities</li>
+      <li><code>seccomp</code> and seccomp-BPF</li>
+      <li><code>no_new_privs</code></li>
+      <li><code>unshare</code> and <code>nsenter</code></li>
+      <li>Rootless isolation</li>
+    </ul>
+    <p class="small text-muted mb-0">Students leave this module understanding the individual mechanisms behind a container rather than viewing containers as a single monolithic primitive.</p>
+  </div>
+</details>
 
-* **Konstantin Serebryany, Derek Bruening, Alexander Potapenko, and Dmitry Vyukov.  
-  "AddressSanitizer: A Fast Address Sanity Checker." USENIX ATC, 2012.**  
-  The foundational paper behind AddressSanitizer, covering shadow memory and practical detection of memory errors.  
-  [[Paper](https://www.usenix.org/conference/atc12/technical-sessions/presentation/serebryany)]
+<details class="card border mb-3 shadow-sm week-dropdown">
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 10 — October 27 & 29: Containers and Sandboxing
+  </summary>
+  <div class="card-body">
+    <ul>
+      <li>What a container actually is</li>
+      <li>Constructing containers from Linux isolation primitives</li>
+      <li>OCI container model</li>
+      <li><code>runc</code> and containerd</li>
+      <li>Docker architecture</li>
+      <li>Container root filesystems and OverlayFS</li>
+      <li>Rootless vs. Privileged containers</li>
+      <li>Container capabilities & escape vulnerabilities</li>
+      <li>Dangerous mounts and Docker socket exposure</li>
+      <li>Bubblewrap (<code>bwrap</code>), Firejail, <code>systemd-nspawn</code></li>
+      <li>Building application sandboxes from first principles</li>
+      <li>Containers versus virtual machines</li>
+    </ul>
+    <div class="alert alert-secondary py-1 px-3 mt-3 mb-0 small">
+      <strong>Module Quiz</strong> follows this topic.
+    </div>
+  </div>
+</details>
 
-* **Jonathan Woodruff et al.  
-  "The CHERI Capability Model: Revisiting RISC in an Age of Risk." ISCA, 2014.**  
-  Introduces the CHERI capability architecture and hardware-supported pointer bounds and authority.  
-  [[Paper](https://www.cl.cam.ac.uk/research/security/ctsrd/pdfs/201406-isca2014-cheri.pdf)]
+<details class="card border mb-3 shadow-sm week-dropdown">
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 11 — November 3 & 5: Compartmentalization
+  </summary>
+  <div class="card-body">
+    <ul>
+      <li>Privilege separation and least-privilege decomposition</li>
+      <li>Process-based compartmentalization</li>
+      <li>Capability-oriented systems (Capsicum, <code>pledge</code>, <code>unveil</code>)</li>
+      <li>Intel Memory Protection Keys (MPK) & ERIM</li>
+      <li>RLBox and WebAssembly sandboxing</li>
+      <li>Automatic compartmentalization</li>
+      <li>Compartment interfaces and cross-compartment communication</li>
+      <li>Attack-surface reduction and performance tradeoffs</li>
+    </ul>
+    <div class="alert alert-secondary py-1 px-3 mt-3 mb-0 small">
+      <strong>Module Quiz</strong> follows this topic.
+    </div>
+  </div>
+</details>
 
-* **Ralf Jung et al.  
-  "RustBelt: Securing the Foundations of the Rust Programming Language." POPL, 2018.**  
-  Provides a formal foundation for Rust's ownership-based memory-safety guarantees, including interaction with `unsafe` code.  
-  [[Paper](https://plv.mpi-sws.org/rustbelt/popl18/)]
+<details class="card border mb-3 shadow-sm week-dropdown">
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 12 — November 10 & 12: Accelerators and Heterogeneous-System Security
+  </summary>
+  <div class="card-body">
+    <p class="text-muted small">Modern applications, particularly machine-learning systems, increasingly depend on GPUs and other accelerators.</p>
+    <ul>
+      <li>CPU-accelerator architecture & GPU execution model</li>
+      <li>Host and device memory & GPU virtual memory</li>
+      <li>GPU runtimes, drivers, and PCIe communication</li>
+      <li>Direct Memory Access (DMA) & IOMMUs</li>
+      <li>Device assignment and passthrough</li>
+      <li>Accelerator multi-tenancy & GPU process isolation</li>
+      <li>SR-IOV, MIG, and hardware partitioning</li>
+      <li>Accelerator drivers as part of the Trusted Computing Base</li>
+      <li>CPU-GPU trust boundaries & isolation failures</li>
+    </ul>
+  </div>
+</details>
 
-**Module Quiz**
+<details class="card border mb-3 shadow-sm week-dropdown">
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 13 — November 17 & 19: Confidential Accelerators and Agentic Systems
+  </summary>
+  <div class="card-body">
+    <h6 class="fw-bold border-bottom pb-1">Confidential Accelerators & ML Systems</h6>
+    <ul>
+      <li>Confidential GPU computing & accelerator attestation</li>
+      <li>Confidential VMs with accelerators (Intel TDX, AMD SEV-SNP)</li>
+      <li>Protected CPU-GPU communication & Trusted I/O</li>
+      <li>Model confidentiality, training-data confidentiality</li>
+      <li>Confidential inference and training</li>
+    </ul>
 
-### Week 4 — September 15 & 17: Kernel Security
+    <h6 class="fw-bold border-bottom pb-1 mt-3">Agentic Systems Security</h6>
+    <ul>
+      <li>Agent architectures & LLM-to-tool trust boundaries</li>
+      <li>Tool permissions, capabilities, and agent sandboxing</li>
+      <li>Untrusted tool outputs & prompt injections into agent loop</li>
+      <li>Persistent agent state and memory security</li>
+      <li>Multi-agent trust boundaries & autonomous action risks</li>
+    </ul>
+    <div class="alert alert-secondary py-1 px-3 mt-3 mb-0 small">
+      <strong>Module Quiz</strong> follows this topic.
+    </div>
+  </div>
+</details>
 
-* Kernel attack surface
-* System calls and the user/kernel boundary
-* Kernel memory corruption
-* Kernel privilege escalation
-* Kernel drivers
-* Driver security
-* Kernel exploitation
-* Kernel hardening
-* Kernel attack-surface reduction
-* Modern kernel defense mechanisms
+<div class="card border-0 bg-light p-3 mb-3 text-center text-muted rounded">
+  <strong>November 22–28: Thanksgiving Holiday — No Classes</strong>
+</div>
 
-**Module Quiz**
+<details class="card border mb-3 shadow-sm week-dropdown">
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 14 — December 1 & 3: Semester Project Presentations & Demonstrations
+  </summary>
+  <div class="card-body">
+    <p class="mb-0">The final two instructional weeks are reserved entirely for semester projects. Students will present their systems, demonstrate technical artifacts, explain their design decisions, discuss security models and evaluation, and answer technical questions.</p>
+  </div>
+</details>
 
-### Week 5 — September 22 & 24: Access Control
+<details class="card border mb-3 shadow-sm week-dropdown">
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 15 — December 8 & 10: Semester Project Presentations & Demonstrations
+  </summary>
+  <div class="card-body">
+    <p class="mb-0">Semester project presentations and demonstrations continue.</p>
+  </div>
+</details>
 
-* Access-control matrix
-* Access Control Lists
-* Unix file permissions
-* Users and groups
-* UID, EUID, and SUID
-* `setuid` and `setgid`
-* Linux capabilities
-* Discretionary Access Control
-* Confused deputy attacks
-* Capability-based security
-* Privilege transitions
-
-**Research-based semester project proposals are due Thursday, September 24.**
-
-Students who wish to pursue their own research project must submit a proposal by this date. Students without an approved research proposal will complete the instructor-defined semester project.
-
-### Week 6 — September 29 & October 1: Mandatory Access Control and SELinux
-
-* Discretionary versus Mandatory Access Control
-* Bell-LaPadula
-* Biba
-* Multi-Level Security
-* Linux Security Modules
-* SELinux
-* AppArmor
-* Labels and security domains
-* Type Enforcement
-* Policy transitions
-* Landlock
-* Reference-monitor implementation
-
-**Module Quiz**
-
-### Week 7 — October 6 & 8: Virtualization
-
-* Virtual machines and hypervisors
-* Type-1 and Type-2 hypervisors
-* Privileged and unprivileged execution
-* Hardware-assisted virtualization
-* VM exits
-* CPU virtualization
-* Memory virtualization
-* Extended/Nested Page Tables
-* Device virtualization
-* Emulated and paravirtualized devices
-* KVM and QEMU
-* VirtIO
-* VM isolation
-* VM escape attacks
-* Virtual machines as security boundaries
-
-### Week 8 — October 13 & 15: Confidential Computing
-
-* Threat models in cloud computing
-* Trusted Execution Environments
-* Intel SGX
-* Intel TDX
-* AMD SEV
-* AMD SEV-SNP
-* Memory encryption
-* Confidential virtual machines
-* Protecting workloads from the hypervisor
-* Remote attestation
-* Measurement and trust establishment
-* I/O challenges in confidential systems
-* Limitations of confidential computing
-
-**Module Quiz**
-
-### Week 9 — October 20 & 22: Linux Isolation Primitives
-
-This module examines the mechanisms from which modern Linux containers and application sandboxes are constructed.
-
-* `chroot`
-* Filesystem isolation
-* Mounts and bind mounts
-* `pivot_root`
-* Linux namespaces
-* User namespaces
-* PID namespaces
-* Mount namespaces
-* Network namespaces
-* IPC namespaces
-* UTS namespaces
-* cgroups
-* Linux capabilities
-* `seccomp`
-* seccomp-BPF
-* `no_new_privs`
-* `unshare`
-* `nsenter`
-* Rootless isolation
-
-Students should leave this module understanding the individual mechanisms behind a container rather than viewing containers as a primitive provided by the operating system.
-
-### Week 10 — October 27 & 29: Containers and Sandboxing
-
-* What a container actually is
-* Constructing containers from Linux isolation primitives
-* OCI container model
-* `runc`
-* containerd
-* Docker architecture
-* Container root filesystems
-* OverlayFS
-* Rootless containers
-* Privileged containers
-* Container capabilities
-* Container escape vulnerabilities
-* Dangerous mounts and configurations
-* Docker socket exposure
-* Bubblewrap (`bwrap`)
-* Firejail
-* `systemd-nspawn`
-* Building application sandboxes from first principles
-* Containers versus virtual machines
-
-**Module Quiz**
-
-### Week 11 — November 3 & 5: Compartmentalization
-
-* Privilege separation
-* Least-privilege decomposition
-* Process-based compartmentalization
-* Capability-oriented systems
-* Capsicum
-* `pledge` and `unveil`
-* Intel Memory Protection Keys
-* ERIM
-* RLBox
-* Automatic compartmentalization
-* Compartment interfaces
-* Cross-compartment communication
-* Attack-surface reduction
-* Security and performance tradeoffs
-
-**Module Quiz**
-
-### Week 12 — November 10 & 12: Accelerators and Heterogeneous-System Security
-
-Modern applications, particularly machine-learning systems, increasingly depend on GPUs and other accelerators. This module examines how these devices interact with operating-system security mechanisms.
-
-* CPU-accelerator architecture
-* GPU execution model
-* Host and device memory
-* GPU virtual memory
-* GPU runtimes and drivers
-* PCIe
-* Direct Memory Access
-* IOMMUs
-* Device assignment and passthrough
-* Accelerator multi-tenancy
-* GPU process isolation
-* SR-IOV
-* MIG and hardware partitioning
-* Accelerator drivers as part of the Trusted Computing Base
-* CPU-GPU trust boundaries
-* Isolation failures in heterogeneous systems
-* Security implications for machine-learning workloads
-
-### Week 13 — November 17 & 19: Confidential Accelerators and Agentic Systems
-
-#### Confidential Accelerators and ML Systems
-
-* Confidential GPU computing
-* GPU and accelerator attestation
-* Confidential VMs with accelerators
-* Intel TDX and accelerator workloads
-* AMD SEV-SNP and accelerator workloads
-* Protected CPU-GPU communication
-* Trusted I/O
-* Device identity and attestation chains
-* Model confidentiality
-* Training-data confidentiality
-* Confidential inference
-* Confidential training
-* Security boundaries in modern ML infrastructure
-
-#### Agentic Systems Security
-
-* Agent architectures
-* LLM-to-tool trust boundaries
-* Tool permissions and capabilities
-* Agent sandboxing
-* Untrusted tool outputs
-* Persistent agent state and memory
-* Security of autonomous actions
-* Multi-agent trust boundaries
-* Risks introduced by increasingly autonomous systems
-
-**Module Quiz**
-
-### November 22-28: Thanksgiving Holiday — No Classes
-
-There are no classes during Penn State's Thanksgiving holiday.
-
-### Week 14 — December 1 & 3: Semester Project Presentations and Demonstrations
-
-The final two instructional weeks are reserved entirely for semester projects.
-
-Students will present their systems, demonstrate their technical artifacts, explain their design decisions, discuss their security model and evaluation, and answer technical questions about their work.
-
-### Week 15 — December 8 & 10: Semester Project Presentations and Demonstrations
-
-Semester project presentations and demonstrations continue.
+<script>
+  function toggleSchedule(openState) {
+    document.querySelectorAll('.week-dropdown').forEach(d => {
+      d.open = openState;
+    });
+  }
+</script>
 
 # Semester Project
 

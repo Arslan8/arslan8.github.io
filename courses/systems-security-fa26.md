@@ -70,6 +70,47 @@ Short quizzes will be given after major course modules. These quizzes are intend
 * Memory-safe programming languages
 * Limitations and bypasses of modern mitigations
 
+#### Readings for Memory Safety
+
+##### Required Reading
+
+* **László Szekeres, Mathias Payer, Tao Wei, and Dawn Song.  
+  "SoK: Eternal War in Memory." IEEE Symposium on Security and Privacy (S&P), 2013.**  
+  A broad overview of memory corruption, spatial and temporal memory safety, exploitation techniques, and major classes of defenses.  
+  [[Paper](https://www.ieee-security.org/TC/SP2013/papers/4977a048.pdf)]
+
+##### Optional Readings
+
+* **Crispin Cowan et al.  
+  "StackGuard: Automatic Adaptive Detection and Prevention of Buffer-Overflow Attacks." USENIX Security, 1998.**  
+  Classic stack-canary work. Useful for distinguishing exploit mitigation from complete memory safety.  
+  [[Paper](https://www.usenix.org/conference/7th-usenix-security-symposium/stackguard-automatic-adaptive-detection-and-prevention)]
+
+* **Santosh Nagarakatte, Jianzhou Zhao, Milo M. K. Martin, and Steve Zdancewic.  
+  "SoftBound: Highly Compatible and Complete Spatial Memory Safety for C." PLDI, 2009.**  
+  A canonical metadata-based approach for enforcing spatial memory safety.  
+  [[Paper](https://llvm.org/pubs/2009-06-PLDI-SoftBound.html)]
+
+* **Santosh Nagarakatte, Jianzhou Zhao, Milo M. K. Martin, and Steve Zdancewic.  
+  "CETS: Compiler Enforced Temporal Safety for C." ISMM, 2010.**  
+  A companion to SoftBound focused on temporal memory safety, including dangling pointers and use-after-free.  
+  [[Paper](https://llvm.org/pubs/2010-06-ISMM-CETS.html)]
+
+* **Konstantin Serebryany, Derek Bruening, Alexander Potapenko, and Dmitry Vyukov.  
+  "AddressSanitizer: A Fast Address Sanity Checker." USENIX ATC, 2012.**  
+  The foundational paper behind AddressSanitizer, covering shadow memory and practical detection of memory errors.  
+  [[Paper](https://www.usenix.org/conference/atc12/technical-sessions/presentation/serebryany)]
+
+* **Jonathan Woodruff et al.  
+  "The CHERI Capability Model: Revisiting RISC in an Age of Risk." ISCA, 2014.**  
+  Introduces the CHERI capability architecture and hardware-supported pointer bounds and authority.  
+  [[Paper](https://www.cl.cam.ac.uk/research/security/ctsrd/pdfs/201406-isca2014-cheri.pdf)]
+
+* **Ralf Jung et al.  
+  "RustBelt: Securing the Foundations of the Rust Programming Language." POPL, 2018.**  
+  Provides a formal foundation for Rust's ownership-based memory-safety guarantees, including interaction with `unsafe` code.  
+  [[Paper](https://plv.mpi-sws.org/rustbelt/popl18/)]
+
 **Module Quiz**
 
 ### Week 4 — September 15 & 17: Kernel Security

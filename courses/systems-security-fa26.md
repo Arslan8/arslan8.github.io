@@ -40,7 +40,7 @@ Short quizzes will be given after major course modules to assess understanding o
 
 <details class="card border mb-3 shadow-sm week-dropdown" open>
   <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
-    Week 1 — August 25 & 27: Systems Security Foundations
+    Week 1 — August 25 & 27: Systems Security Foundations & Readings
   </summary>
   <div class="card-body">
     <ul>
@@ -53,6 +53,28 @@ Short quizzes will be given after major course modules to assess understanding o
       <li>User/kernel boundary</li>
       <li>Attack surfaces</li>
       <li>Fundamental principles of secure-system design</li>
+    </ul>
+
+    <h6 class="fw-bold mt-4 border-bottom pb-1">Readings: Foundations of Systems Security: Least Privilege and Protection</h6>
+
+    <p class="fw-bold mb-1 text-primary">Required Reading</p>
+    <ul>
+      <li>
+        <strong>Nick Roessler et al.</strong> "μSCOPE: A Methodology for Analyzing Least-Privilege Compartmentalization in Large Software Artifacts." <em>RAID</em>, 2021. Presents a methodology for reasoning about and quantifying least privilege in complex software systems. Using the Linux kernel as a case study, the paper examines overprivilege, protection domains, compartmentalization, and the tradeoff between stronger privilege separation and enforcement overhead. [<a href="https://cs.brown.edu/~vpk/papers/uscope.raid21.pdf" target="_blank">Paper</a>]
+      </li>
+    </ul>
+
+    <p class="fw-bold mb-1 text-secondary">Optional Readings</p>
+    <ul>
+      <li>
+        <strong>Adam Barth, Collin Jackson, Charles Reis, and the Google Chrome Team.</strong> "The Security Architecture of the Chromium Browser." 2008. Demonstrates how a real-world system applies protection domains, privilege separation, sandboxing, and attack-surface reduction. It also provides a concrete example of reasoning from an explicit threat model to a security architecture. [<a href="https://seclab.stanford.edu/websec/chromium/chromium-security-architecture.pdf" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Tianneng Shi, Jingxuan He, Zhun Wang, Linyu Wu, Hongwei Li, Wenbo Guo, and Dawn Song.</strong> "Progent: Programmable Privilege Control for LLM Agents." 2025. Applies the principle of least privilege to agentic systems by enforcing fine-grained policies over tool calls and their arguments. It explores how an agent's privileges can be dynamically restricted according to the task being performed. [<a href="https://arxiv.org/abs/2504.11703" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Jinhao Zhu, Kevin Tseng, Gil Vernik, Xiao Huang, Shishir G. Patil, Vivian Fang, and Raluca Ada Popa.</strong> "MiniScope: A Least Privilege Framework for Authorizing Tool Calling Agents." 2025. Develops a least-privilege authorization model for tool-calling agents by reconstructing permission hierarchies and granting agents only the permissions necessary to perform a task. [<a href="https://arxiv.org/abs/2512.11147" target="_blank">Paper</a>]
+      </li>
     </ul>
   </div>
 </details>

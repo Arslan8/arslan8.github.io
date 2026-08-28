@@ -43,6 +43,13 @@ Short quizzes will be given after major course modules to assess understanding o
     Week 1 — August 25 & 27: Systems Security Foundations & Readings
   </summary>
   <div class="card-body">
+    <div class="mb-3">
+      <a href="https://docs.google.com/presentation/d/e/2PACX-1vTV0TNwT-lx08PQ_JpDApmHh0QGAV_Cj_sAXEZaflJshKiRSplE3_0D6wbC1uyTbTkstHR2beqT4lD3/pub?start=false&loop=false&delayms=3000" target="_blank" class="btn btn-sm btn-outline-primary">
+        <i class="fas fa-file-powerpoint me-1"></i> Lecture Slides: Systems Security Foundations
+      </a>
+    </div>
+
+    <h6 class="fw-bold border-bottom pb-1">Topics</h6>
     <ul>
       <li>Threat models and security goals</li>
       <li>Security policies versus mechanisms</li>

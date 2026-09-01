@@ -86,9 +86,9 @@ Short quizzes will be given after major course modules to assess understanding o
   </div>
 </details>
 
-<details class="card border mb-3 shadow-sm week-dropdown">
+<details class="card border mb-3 shadow-sm week-dropdown" open>
   <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
-    Week 2 — September 1 & 3: Memory Safety and Exploitation
+    Week 2 — September 1 & 3: Memory Safety and Exploitation & Readings
   </summary>
   <div class="card-body">
     <div class="mb-3">
@@ -110,6 +110,52 @@ Short quizzes will be given after major course modules to assess understanding o
       <li>Spatial and temporal memory safety</li>
       <li>Control-flow hijacking</li>
       <li>Return-Oriented Programming</li>
+    </ul>
+
+    <h6 class="fw-bold mt-4 border-bottom pb-1">Readings: Memory Safety and Exploitation</h6>
+
+    <p class="fw-bold mb-1 text-primary">Required Reading</p>
+    <ul>
+      <li>
+        <strong>Adriaan Jacobs, Mahmoud Ammar, and Stijn Volckaert.</strong> "SoK: On the Fragility of Memory Error Exploit Mitigations." <em>35th USENIX Security Symposium (USENIX Security '26)</em>, 2026. [<a href="https://www.usenix.org/conference/usenixsecurity26/presentation/jacobs" target="_blank">Paper</a>]
+      </li>
+    </ul>
+
+    <p class="fw-bold mb-1 text-secondary">Optional Readings</p>
+    <ul>
+      <li>
+        <strong>Aleph One.</strong> "Smashing the Stack for Fun and Profit." <em>Phrack Magazine</em>, Vol. 7, Issue 49, 1996. [<a href="http://phrack.org/issues/49/14.html" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Jonathan Pincus and Brandon Baker.</strong> "Beyond Stack Smashing: Recent Advances in Exploiting Buffer Overruns." <em>IEEE Security & Privacy</em>, 2004. [<a href="https://www.cs.jhu.edu/~fabian/courses/CS600.424/Course-Papers/BeyondStackSmashing.pdf" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Hovav Shacham, Matthew Page, Ben Pfaff, Eu-Jin Goh, Nagendra Modadugu, and Dan Boneh.</strong> "On the Effectiveness of Address-Space Randomization." <em>ACM Conference on Computer and Communications Security (CCS)</em>, 2004. [<a href="https://www.cs.utexas.edu/~shmat/courses/cs380s_fall09/shacham.pdf" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Hovav Shacham.</strong> "The Geometry of Innocent Flesh on the Bone: Return-into-libc without Function Calls (on the x86)." <em>ACM Conference on Computer and Communications Security (CCS)</em>, 2007. <em>(Canonical ROP paper)</em>. [<a href="https://hovav.net/ucsd/dist/geometry.pdf" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>László Szekeres, Mathias Payer, Tao Wei, and Dawn Song.</strong> "SoK: Eternal War in Memory." <em>IEEE Symposium on Security and Privacy (S&P)</em>, 2013. [<a href="https://www.ieee-security.org/TC/SP2013/papers/4977a048.pdf" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Kevin Z. Snow, Fabien Monrose, Lucas Davi, Alexandra Dmitrienko, Christopher Liebchen, and Ahmad-Reza Sadeghi.</strong> "Just-In-Time Code Reuse: Bypassing Exploit Mitigation on Browsers." <em>IEEE Symposium on Security and Privacy (S&P)</em>, 2013. [<a href="https://cs.unc.edu/~fabian/papers/oakland2013.pdf" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Alexander Sotirov.</strong> "Heap Feng Shui in JavaScript." <em>Black Hat USA</em>, 2007. [<a href="https://www.blackhat.com/presentations/bh-usa-07/Sotirov/Presentation/bh-usa-07-sotirov.pdf" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Andrea Bittau, Adam Belay, Ali Mashtizadeh, David Mazières, and Dan Boneh.</strong> "Hacking Blind." <em>IEEE Symposium on Security and Privacy (S&P)</em>, 2014. <em>(BROP)</em>. [<a href="https://www.scs.stanford.edu/brop/bittau-brop.pdf" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Felix Schuster, Thomas Tendyck, Christopher Liebchen, Lucas Davi, Ahmad-Reza Sadeghi, and Thorsten Holz.</strong> "Counterfeit Object-Oriented Programming: On the Difficulty of Preventing Code Reuse Attacks in C++ Applications (COOP)." <em>IEEE Symposium on Security and Privacy (S&P)</em>, 2015. [<a href="https://syssec.rub.de/media/emma/veroeffentlichungen/2015/03/28/COOP-Oakland15.pdf" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Nicholas Carlini, Antonio Barresi, Mathias Payer, David Wagner, and Thomas R. Gross.</strong> "Control-Flow Bending: On the Effectiveness of Control-Flow Integrity." <em>USENIX Security Symposium</em>, 2015. [<a href="https://www.usenix.org/conference/usenixsecurity15/technical-sessions/presentation/carlini" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Hong Hu, Shweta Shinde, Sendroiu Adrian, Zheng Leong Chua, Prateek Saxena, and Zhenkai Liang.</strong> "Data-Oriented Programming: On the Expressiveness of Non-Control Data Attacks." <em>IEEE Symposium on Security and Privacy (S&P)</em>, 2016. [<a href="https://www.comp.nus.edu.sg/~prateeks/papers/DOP.pdf" target="_blank">Paper</a>]
+      </li>
     </ul>
   </div>
 </details>

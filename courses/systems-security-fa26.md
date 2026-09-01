@@ -91,6 +91,13 @@ Short quizzes will be given after major course modules to assess understanding o
     Week 2 — September 1 & 3: Memory Safety and Exploitation
   </summary>
   <div class="card-body">
+    <div class="mb-3">
+      <a href="https://docs.google.com/presentation/d/e/2PACX-1vSvrC6oirb5vkX3-tb24r1AQi_OSANt5_uTJJ7p6GQIFEvgkIwbyGeFsBxtx-iiL_JL9FbDwuxV5nk9/pub?start=false&loop=false&delayms=3000" target="_blank" class="btn btn-sm btn-outline-primary">
+        <i class="fas fa-file-powerpoint me-1"></i> Lecture Slides: Memory Safety & Exploitation
+      </a>
+    </div>
+
+    <h6 class="fw-bold border-bottom pb-1">Topics</h6>
     <ul>
       <li>Process memory layout</li>
       <li>Stack and heap memory</li>
@@ -112,6 +119,13 @@ Short quizzes will be given after major course modules to assess understanding o
     Week 3 — September 8 & 10: Memory-Safety Defenses & Readings
   </summary>
   <div class="card-body">
+    <div class="mb-3">
+      <a href="https://docs.google.com/presentation/d/e/2PACX-1vSvrC6oirb5vkX3-tb24r1AQi_OSANt5_uTJJ7p6GQIFEvgkIwbyGeFsBxtx-iiL_JL9FbDwuxV5nk9/pub?start=false&loop=false&delayms=3000" target="_blank" class="btn btn-sm btn-outline-primary">
+        <i class="fas fa-file-powerpoint me-1"></i> Lecture Slides: Memory-Safety Defenses & Protection
+      </a>
+    </div>
+
+    <h6 class="fw-bold border-bottom pb-1">Topics</h6>
     <ul>
       <li>Stack canaries</li>
       <li>NX / DEP</li>

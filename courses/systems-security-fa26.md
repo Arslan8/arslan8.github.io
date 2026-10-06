@@ -245,11 +245,18 @@ Short quizzes will be given after major course modules to assess understanding o
   </div>
 </details>
 
-<details class="card border mb-3 shadow-sm week-dropdown">
+<details class="card border mb-3 shadow-sm week-dropdown" open>
   <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
-    Week 5 — September 22 & 24: Access Control
+    Week 5 — September 22 & 24: Access Control & Readings
   </summary>
   <div class="card-body">
+    <div class="mb-3">
+      <a href="https://docs.google.com/presentation/d/e/2PACX-1vT82agjCRYHyG2KfsQL4rRxzD97fP8SbHIBuLHKXK1YMQrMCBbt6c7R3XTeiYGiuzi4DgwX9-y5N93o/pub?start=false&loop=false&delayms=3000" target="_blank" class="btn btn-sm btn-outline-primary">
+        <i class="fas fa-file-powerpoint me-1"></i> Lecture Slides: Access Control, Privilege Escalation & LSM
+      </a>
+    </div>
+
+    <h6 class="fw-bold border-bottom pb-1">Topics</h6>
     <ul>
       <li>Access-control matrix</li>
       <li>Access Control Lists</li>
@@ -263,17 +270,47 @@ Short quizzes will be given after major course modules to assess understanding o
       <li>Capability-based security</li>
       <li>Privilege transitions</li>
     </ul>
+
+    <h6 class="fw-bold mt-4 border-bottom pb-1">Readings: Access Control and Privilege Management</h6>
+
+    <p class="fw-bold mb-1 text-primary">Required Reading</p>
+    <ul>
+      <li>
+        <strong>Hao Chen, David Wagner, and Drew Dean.</strong> "Setuid Demystified." <em>11th USENIX Security Symposium</em>, 2002. Analyzes Unix user-ID management semantics, formulates formal state-machine models for privilege transitions, and highlights subtle vulnerabilities that lead to privilege escalation. [<a href="https://www.usenix.org/conference/11th-usenix-security-symposium/setuid-demystified" target="_blank">Paper</a>]
+      </li>
+    </ul>
+
+    <p class="fw-bold mb-1 text-secondary">Optional Readings</p>
+    <ul>
+      <li>
+        <strong>Jerome H. Saltzer and Michael D. Schroeder.</strong> "The Protection of Information in Computer Systems." <em>Proceedings of the IEEE</em>, 1975. Foundational survey outlining design principles for protection mechanisms including least privilege, complete mediation, and fail-safe defaults. [<a href="https://www.cs.virginia.edu/~evans/cs551/saltzer/" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Norm Hardy.</strong> "The Confused Deputy: (or why I know that the 'substitute Programmer' is not a bug)." <em>ACM SIGOPS Operating Systems Review</em>, 1988. The classic paper identifying the confused deputy vulnerability and explaining how capability systems solve ambient-authority pitfalls in access control. [<a href="https://doi.org/10.1145/54289.848445" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Butler W. Lampson.</strong> "Protection." <em>ACM SIGOPS Operating Systems Review</em>, 1974. Introduced the foundational Access Control Matrix model formalizing subjects, objects, access rights, and domain switching. [<a href="https://doi.org/10.1145/775265.775268" target="_blank">Paper</a>]
+      </li>
+    </ul>
+
     <div class="alert alert-warning py-2 px-3 mt-3 mb-0 small">
       <strong>Important Milestone:</strong> Research-based semester project proposals are due <strong>Thursday, September 24</strong>. Students without an approved research proposal will complete the instructor-defined project.
     </div>
   </div>
 </details>
 
-<details class="card border mb-3 shadow-sm week-dropdown">
+<details class="card border mb-3 shadow-sm week-dropdown" open>
   <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
-    Week 6 — September 29 & October 1: Mandatory Access Control and SELinux
+    Week 6 — September 29 & October 1: Mandatory Access Control and SELinux & Readings
   </summary>
   <div class="card-body">
+    <div class="mb-3">
+      <a href="https://docs.google.com/presentation/d/e/2PACX-1vT82agjCRYHyG2KfsQL4rRxzD97fP8SbHIBuLHKXK1YMQrMCBbt6c7R3XTeiYGiuzi4DgwX9-y5N93o/pub?start=false&loop=false&delayms=3000" target="_blank" class="btn btn-sm btn-outline-primary">
+        <i class="fas fa-file-powerpoint me-1"></i> Lecture Slides: Access Control, Privilege Escalation & LSM
+      </a>
+    </div>
+
+    <h6 class="fw-bold border-bottom pb-1">Topics</h6>
     <ul>
       <li>Discretionary versus Mandatory Access Control</li>
       <li>Bell-LaPadula</li>
@@ -288,6 +325,38 @@ Short quizzes will be given after major course modules to assess understanding o
       <li>Landlock</li>
       <li>Reference-monitor implementation</li>
     </ul>
+
+    <h6 class="fw-bold mt-4 border-bottom pb-1">Readings: Mandatory Access Control and Kernel Security Modules</h6>
+
+    <p class="fw-bold mb-1 text-primary">Required Reading</p>
+    <ul>
+      <li>
+        <strong>Peter Loscocco and Stephen Smalley.</strong> "Integrating Flexible Support for Security Policies into the Linux Operating System." <em>USENIX Annual Technical Conference (FREENIX Track)</em>, 2001. Introduces NSA's Security-Enhanced Linux (SELinux) and the Flask architecture, separating policy enforcement mechanisms in the OS kernel from decision logic to provide fine-grained Mandatory Access Control. [<a href="https://www.usenix.org/legacy/publications/library/proceedings/freenix01/loscocco.html" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Chris Wright, Crispin Cowan, Stephen Smalley, James Morris, and Greg Kroah-Hartman.</strong> "Linux Security Modules: General Security Support for the Linux Kernel." <em>11th USENIX Security Symposium</em>, 2002. Describes the design and implementation of the Linux Security Modules (LSM) framework providing mediation hooks across kernel operations. [<a href="https://www.usenix.org/conference/11th-usenix-security-symposium/linux-security-modules-general-security-support-linux-kernel" target="_blank">Paper</a>]
+      </li>
+    </ul>
+
+    <p class="fw-bold mb-1 text-secondary">Optional Readings</p>
+    <ul>
+      <li>
+        <strong>Xiaolan Zhang, Antony Edwards, and Trent Jaeger.</strong> "Using Cqual for Static Analysis of Authorization Hook Placement." <em>11th USENIX Security Symposium</em>, 2002. Uses type qualifier analysis via Cqual to verify authorization hook placement in the Linux kernel and prove the absence of unmediated access paths in LSM. [<a href="https://www.usenix.org/conference/11th-usenix-security-symposium/using-cqual-static-analysis-authorization-hook-placement" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>David E. Bell and Leonard J. LaPadula.</strong> "Secure Computer Systems: Unified Exposition and Multics Interpretation." <em>MITRE Technical Report</em>, 1976. The foundational mathematical model for mandatory confidentiality security policies (no read-up, no write-down). [<a href="https://apps.dtic.mil/sti/citations/ADA023588" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Kenneth J. Biba.</strong> "Integrity Considerations for Secure Computer Systems." <em>MITRE Technical Report</em>, 1977. The canonical integrity reference model establishing strict integrity access rules (no read-down, no write-up). [<a href="https://apps.dtic.mil/sti/citations/ADA039324" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Stephen Smalley and Robert Craig.</strong> "Security Enhanced (SE) Android: Bringing Flexible MAC to Android." <em>Network and Distributed System Security Symposium (NDSS)</em>, 2013. Demonstrates the adaptation of SELinux and Type Enforcement to mobile computing to sandbox third-party apps and contain privilege escalation attacks. [<a href="https://www.ndss-symposium.org/ndss2013/security-enhanced-se-android-bringing-flexible-mac-android/" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Mickaël Salaün.</strong> "Landlock LSM: Unprivileged Access Control." <em>Linux Kernel Documentation & LPC</em>, 2021. Overview of the Landlock security module, allowing unprivileged processes to create scoped sandbox restrictions for filesystems and networking. [<a href="https://docs.kernel.org/security/landlock.html" target="_blank">Documentation</a>]
+      </li>
+    </ul>
+
     <div class="alert alert-secondary py-1 px-3 mt-3 mb-0 small">
       <strong>Module Quiz</strong> follows this topic.
     </div>

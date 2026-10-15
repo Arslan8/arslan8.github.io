@@ -8,21 +8,83 @@ menu:
 - {name: 'contact', url: '/contact'}
 
 people:
-- {name: 'Muhammad Hammad Bashir', title: 'PhD', department: 'Computer Science and Engineering', url: 'https://muhammadhammad001.github.io/'}
-- {name: 'Sagor Sikdar', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
-- {name: 'Changyul Lee', title: 'PhD (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'https://blog.serendipia.pe.kr/'}
-- {name: 'Colin Smith', title: 'PhD', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
-- {name: 'Muhammad Huzaifa', title: 'PhD', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
-- {name: 'Zargham Ali', title: 'PhD', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
-- {name: 'Md Nazmul Anonto', title: 'PhD', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
-- {name: 'Danielle L. Daniel', title: 'PhD (D.Eng, Currently at UNITED STATES AIR FORCE)', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
-- {name: 'Tambre Thomas', title: 'DEng', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
-- {name: 'Evan English', title: 'BS (Co-Advised with Dr. Dongyan Xu)', department: 'Computer Science at Purdue', url: 'https://arslan8.github.io/nowebsite.html'}
+  - name: "Muhammad Hammad Bashir"
+    role: "PhD"
+    department: "Computer Science & Engineering"
+    institution: "Penn State"
+    url: "https://muhammadhammad001.github.io/"
+
+  - name: "Sagor Sikdar"
+    role: "PhD"
+    co_advisor: "Co-advised with Prof. Taegyu Kim"
+    department: "Computer Science & Engineering"
+    institution: "Penn State"
+
+  - name: "Changyul Lee"
+    role: "PhD"
+    co_advisor: "Co-advised with Prof. Taegyu Kim"
+    department: "College of IST"
+    institution: "Penn State"
+    url: "https://blog.serendipia.pe.kr/"
+
+  - name: "Colin Smith"
+    role: "PhD"
+    department: "Computer Science & Engineering"
+    institution: "Penn State"
+
+  - name: "Muhammad Huzaifa"
+    role: "PhD"
+    department: "Computer Science & Engineering"
+    institution: "Penn State"
+
+  - name: "Zargham Ali"
+    role: "PhD"
+    department: "Computer Science & Engineering"
+    institution: "Penn State"
+
+  - name: "Md Nazmul Anonto"
+    role: "PhD"
+    department: "Computer Science & Engineering"
+    institution: "Penn State"
+
+  - name: "Danielle L. Daniel"
+    role: "D.Eng"
+    affiliation_note: "United States Air Force"
+    department: "Computer Science & Engineering"
+    institution: "Penn State"
+
+  - name: "Tambre Thomas"
+    role: "D.Eng"
+    department: "Computer Science & Engineering"
+    institution: "Penn State"
+
+  - name: "Evan English"
+    role: "BS"
+    co_advisor: "Co-advised with Prof. Dongyan Xu"
+    department: "Computer Science"
+    institution: "Purdue University"
 
 alums:
-- {name: 'Seongjin Kim - Now at Theori', title: 'BS (Co-Advised with Dr. Teagyu Kim)', department: 'College of Information Sciences and Technology', url: 'https://arslan8.github.io/nowebsite.html'}
-- {name: 'Nimai Patel - Now at Lucid Motors', title: 'MS', department: 'Computer Science and Engineering', url: 'https://arslan8.github.io/nowebsite.html'}
-- {name: 'Michael P. Rooney', title: 'MS (Co-Advised with Dr. Dongyan Xu)', department: 'Computer Science at Purdue', url: 'https://michaelprooney.github.io/'}
+  - name: "Seongjin Kim"
+    role: "BS"
+    next_position: "Theori"
+    co_advisor: "Co-advised with Prof. Taegyu Kim"
+    department: "College of IST"
+    institution: "Penn State"
+
+  - name: "Nimai Patel"
+    role: "MS"
+    next_position: "Lucid Motors"
+    department: "Computer Science & Engineering"
+    institution: "Penn State"
+
+  - name: "Michael P. Rooney"
+    role: "MS"
+    next_position: "Purdue"
+    co_advisor: "Co-advised with Prof. Dongyan Xu"
+    department: "Computer Science"
+    institution: "Purdue University"
+    url: "https://michaelprooney.github.io/"
 
 
 

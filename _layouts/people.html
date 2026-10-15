@@ -4,25 +4,120 @@ layout: default
 
 {{ content }}
 
-<h3 class="fw-bold border-bottom pb-3 mb-5">People</h3>
-{% for person in site.data.settings.people %}
-<div class="row g-5 mb-5">
-  <div class="col-md-6">
-    <h5>{{ person.name }}</h5>
-    <p> {{ person.title }} </p>
-    <p><a href="{{ person.url }}">Homepage</a></p>
+<div class="mb-5">
+  <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+    <h3 class="fw-bold mb-0">People</h3>
+    <span class="text-muted small">{{ site.data.settings.people | size }} members &bull; {{ site.data.settings.alums | size }} alumni</span>
   </div>
-</div>
-{% endfor %}
 
-
-<h3 class="fw-bold border-bottom pb-3 mb-5">Alumni</h3>
-{% for person in site.data.settings.alums %}
-<div class="row g-5 mb-5">
-  <div class="col-md-6">
-    <h5>{{ person.name }}</h5>
-    <p>{{ person.title }}</p>
-    <p><a href="{{ person.url }}">Homepage</a></p>
+  <!-- Prospective Students Note -->
+  <div class="alert alert-light border shadow-sm p-3 mb-4 rounded-3 d-flex align-items-center gap-3">
+    <div class="text-primary fs-4">
+      <i class="fas fa-users"></i>
+    </div>
+    <div class="small">
+      <strong>Prospective Students:</strong> Currently no open PhD positions. Penn State graduate and undergraduate students interested in systems and security research are welcome to reach out via email.
+    </div>
   </div>
+
+  <!-- Current Members -->
+  <h5 class="fw-bold text-secondary text-uppercase tracking-wider small mb-3">
+    <i class="fas fa-user-graduate me-1"></i> Current Members
+  </h5>
+
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-5">
+    {% for person in site.data.settings.people %}
+      {% assign has_url = false %}
+      {% if person.url and person.url != '' and person.url != 'https://arslan8.github.io/nowebsite.html' and person.url != '/nowebsite.html' %}
+        {% assign has_url = true %}
+      {% endif %}
+      <div class="col">
+        <div class="card h-100 border shadow-sm rounded-3 p-3 bg-white">
+          <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
+            <h6 class="fw-bold mb-0 text-truncate" style="font-size: 0.95rem;">
+              {% if has_url %}
+                <a href="{{ person.url }}" target="_blank" class="text-decoration-none text-dark">
+                  {{ person.name }} <i class="fas fa-arrow-up-right-from-square text-primary ms-1" style="font-size: 0.7rem;"></i>
+                </a>
+              {% else %}
+                {{ person.name }}
+              {% endif %}
+            </h6>
+            <span class="badge bg-light text-dark border font-monospace" style="font-size: 0.7rem;">
+              {{ person.role | default: person.title }}
+            </span>
+          </div>
+
+          <div class="text-muted small mb-1 lh-sm">
+            <i class="fas fa-university me-1 opacity-75"></i> {{ person.department }}{% if person.institution %}, {{ person.institution }}{% endif %}
+          </div>
+
+          {% if person.co_advisor %}
+            <div class="small text-secondary mt-1">
+              <i class="fas fa-user-friends me-1 text-muted"></i> {{ person.co_advisor }}
+            </div>
+          {% endif %}
+
+          {% if person.affiliation_note %}
+            <div class="small text-secondary mt-1">
+              <i class="fas fa-shield-alt me-1 text-muted"></i> {{ person.affiliation_note }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Alumni -->
+  {% if site.data.settings.alums and site.data.settings.alums.size > 0 %}
+    <h5 class="fw-bold text-secondary text-uppercase tracking-wider small mb-3">
+      <i class="fas fa-award me-1"></i> Alumni
+    </h5>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-4">
+      {% for person in site.data.settings.alums %}
+        {% assign has_url = false %}
+        {% if person.url and person.url != '' and person.url != 'https://arslan8.github.io/nowebsite.html' and person.url != '/nowebsite.html' %}
+          {% assign has_url = true %}
+        {% endif %}
+        <div class="col">
+          <div class="card h-100 border shadow-sm rounded-3 p-3 bg-white">
+            <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
+              <h6 class="fw-bold mb-0 text-truncate" style="font-size: 0.95rem;">
+                {% if has_url %}
+                  <a href="{{ person.url }}" target="_blank" class="text-decoration-none text-dark">
+                    {{ person.name }} <i class="fas fa-arrow-up-right-from-square text-primary ms-1" style="font-size: 0.7rem;"></i>
+                  </a>
+                {% else %}
+                  {{ person.name }}
+                {% endif %}
+              </h6>
+              <span class="badge bg-light text-secondary border font-monospace" style="font-size: 0.7rem;">
+                {{ person.role | default: person.title }}
+              </span>
+            </div>
+
+            <div class="text-muted small mb-1 lh-sm">
+              <i class="fas fa-university me-1 opacity-75"></i> {{ person.department }}{% if person.institution %}, {{ person.institution }}{% endif %}
+            </div>
+
+            {% if person.co_advisor %}
+              <div class="small text-secondary mt-1">
+                <i class="fas fa-user-friends me-1 text-muted"></i> {{ person.co_advisor }}
+              </div>
+            {% endif %}
+
+            {% if person.next_position %}
+              <div class="mt-2 pt-2 border-top small d-flex align-items-center gap-1">
+                <span class="text-muted">Now:</span>
+                <span class="badge bg-success-subtle text-success border border-success-subtle fw-semibold" style="font-size: 0.75rem;">
+                  <i class="fas fa-briefcase me-1"></i> {{ person.next_position }}
+                </span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 </div>
-{% endfor %}

@@ -7,22 +7,40 @@ layout: default
 <h3 class="fw-bold border-bottom pb-3 mb-5">Projects</h3>
 
 {% for project in site.data.projects %}
+{% assign project_link = project.github | default: project.paper %}
 <div class="row align-items-center mb-5 pb-4 border-bottom">
   <div class="col-md-9">
     <h4 class="fw-bold mb-2">
-      <a href="{{ project.github }}" target="_blank" class="text-decoration-none text-dark">
+      {% if project_link %}
+        <a href="{{ project_link }}" target="_blank" class="text-decoration-none text-dark">
+          {{ project.name }}
+        </a>
+      {% else %}
         {{ project.name }}
-      </a>
+      {% endif %}
     </h4>
     <p class="text-secondary mb-3">{{ project.description }}</p>
-    <a href="{{ project.github }}" target="_blank" class="btn btn-sm btn-outline-dark">
-      <i class="fab fa-github me-1"></i> GitHub Repository
-    </a>
+    <div class="d-flex flex-wrap gap-2">
+      {% if project.github %}
+        <a href="{{ project.github }}" target="_blank" class="btn btn-sm btn-outline-dark">
+          <i class="fab fa-github me-1"></i> GitHub Repository
+        </a>
+      {% endif %}
+      {% if project.paper %}
+        <a href="{{ project.paper }}" target="_blank" class="btn btn-sm btn-outline-primary">
+          <i class="fas fa-file-pdf me-1"></i> Paper {% if project.venue %}({{ project.venue }}){% endif %}
+        </a>
+      {% endif %}
+    </div>
   </div>
   <div class="col-md-3 text-center text-md-end mt-3 mt-md-0">
-    <a href="{{ project.github }}" target="_blank">
-      <img src="{{ site.github.url }}/{{ project.image }}" alt="{{ project.name }} Logo" class="img-fluid rounded" style="max-height: 95px;">
-    </a>
+    {% if project_link and project.image %}
+      <a href="{{ project_link }}" target="_blank">
+        <img src="{{ site.github.url }}/{{ project.image }}" alt="{{ project.name }} Logo" class="img-fluid rounded border shadow-sm" style="max-height: 95px; object-fit: contain;">
+      </a>
+    {% elsif project.image %}
+      <img src="{{ site.github.url }}/{{ project.image }}" alt="{{ project.name }} Logo" class="img-fluid rounded border shadow-sm" style="max-height: 95px; object-fit: contain;">
+    {% endif %}
   </div>
 </div>
 {% endfor %}

@@ -20,7 +20,7 @@ layout: default
 <div class="my-5">
   <h4 class="fw-bold border-bottom pb-2 mb-3">Recent News</h4>
   <ul class="list-unstyled">
-    {% for item in site.data.news %}
+    {% for item in site.data.news limit: 6 %}
       <li class="mb-2 d-flex align-items-baseline">
         <span class="badge bg-light text-secondary border me-3 font-monospace" style="min-width: 85px; font-weight: 500;">{{ item.date }}</span>
         <span>{{ item.content }}</span>

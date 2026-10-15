@@ -1,5 +1,7 @@
 - name: "BoardRunner"
   description: "BoardRunner is an automatic firmware rehosting framework for embedded systems powered by high-fidelity compositional device models. It combines reusable Virtual I/O (VIO) abstractions, automaton learning, and LLM-guided synthesis with FastDyn—a high-speed JIT rehosting engine—to enable scalable, high-fidelity dynamic firmware analysis and fuzzing across diverse MCU boards."
+  website: "https://boardrunner2049.github.io/"
+  github: "https://github.com/boardrunner2049"
   paper: "/publications/boardrunner.pdf"
   venue: "ACM CCS '26"
   image: "assets/img/boardrunner.png"

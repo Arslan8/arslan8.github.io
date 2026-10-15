@@ -6,6 +6,8 @@
   year: 2026
   category: "Embedded & ICS Security"
   pdf: "/publications/boardrunner.pdf"
+  website: "https://boardrunner2049.github.io/"
+  code: "https://github.com/boardrunner2049"
   bibtex: |
     @inproceedings{bashir2026boardrunner,
       title={BoardRunner: Automatic Firmware Rehosting using High-Fidelity Compositional Device Models},

@@ -95,6 +95,12 @@
                   </a>
                 {% endif %}
 
+                {% if paper.website %}
+                  <a href="{{ paper.website }}" target="_blank" class="btn btn-sm btn-outline-dark py-0 px-2" style="font-size: 0.82rem;">
+                    <i class="fas fa-globe me-1"></i> Website
+                  </a>
+                {% endif %}
+
                 {% if paper.code %}
                   <a href="{{ paper.code }}" target="_blank" class="btn btn-sm btn-outline-dark py-0 px-2" style="font-size: 0.82rem;">
                     <i class="fab fa-github me-1"></i> Code

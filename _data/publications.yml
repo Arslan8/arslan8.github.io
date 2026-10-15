@@ -1,3 +1,68 @@
+- id: "boardrunner26"
+  title: "BoardRunner: Automatic Firmware Rehosting using High-Fidelity Compositional Device Models"
+  authors: "Muhammad Hammad Bashir, Michael Rooney, Colin Smith, Dongyan Xu, and <b>Arslan Khan</b>"
+  venue: "33rd ACM Conference on Computer and Communications Security (CCS '26)"
+  location: "The Hague, Netherlands"
+  year: 2026
+  category: "Embedded & ICS Security"
+  pdf: "/publications/boardrunner.pdf"
+  bibtex: |
+    @inproceedings{bashir2026boardrunner,
+      title={BoardRunner: Automatic Firmware Rehosting using High-Fidelity Compositional Device Models},
+      author={Bashir, Muhammad Hammad and Rooney, Michael and Smith, Colin and Xu, Dongyan and Khan, Arslan},
+      booktitle={Proceedings of the 2026 ACM SIGSAC Conference on Computer and Communications Security (CCS '26)},
+      year={2026},
+      publisher={ACM}
+    }
+
+- id: "dlift26"
+  title: "D-LIFT: Fine Tuning LLM-Based Decompiler Backend for Output Code Quality and Trustworthiness"
+  authors: "Muqi Zou, Hongyu Cai, Hongwei Wu, Zion Leonahenahe Basque, <b>Arslan Khan</b>, Z. Berkay Celik, Dave (Jing) Tian, Antonio Bianchi, Ruoyu (Fish) Wang, and Dongyan Xu"
+  venue: "IEEE Conference on Trust, Privacy and Security in Intelligent Systems, and Applications (IEEE TPS '26)"
+  year: 2026
+  category: "Program Analysis & Decompilation"
+  pdf: "/publications/dlift.pdf"
+  bibtex: |
+    @inproceedings{zou2026dlift,
+      title={Fine Tuning LLM-Based Decompiler Backend for Output Code Quality and Trustworthiness},
+      author={Zou, Muqi and Cai, Hongyu and Wu, Hongwei and Basque, Zion Leonahenahe and Khan, Arslan and Celik, Z Berkay and Tian, Dave Jing and Bianchi, Antonio and Wang, Ruoyu and Xu, Dongyan},
+      booktitle={2026 IEEE Conference on Trust, Privacy and Security in Intelligent Systems, and Applications (IEEE TPS)},
+      year={2026},
+      organization={IEEE}
+    }
+
+- id: "courbet26"
+  title: "From Gazebo to FMI: A Modelica-Based Cyber-Physical Simulation Architecture for Firmware-Integrated Robotic Vehicles"
+  authors: "Minhyun Cho, Minjoon Lee, Micah K. Condie, Michael P. Rooney, Evan R. English, James M. Goppert, <b>Arslan Khan</b>, Dongyan Xu, and Inseok Hwang"
+  venue: "American Modelica & FMI Conference 2026"
+  location: "Atlanta, GA"
+  year: 2026
+  category: "Cyber-Physical & Embedded Systems"
+  pdf: "/publications/courbet.pdf"
+  bibtex: |
+    @inproceedings{cho2026gazebo,
+      title={From Gazebo to FMI: A Modelica-Based Cyber-Physical Simulation Architecture for Firmware-Integrated Robotic Vehicles},
+      author={Cho, Minhyun and Lee, Minjoon and Condie, Micah K and Rooney, Michael P and English, Evan R and Goppert, James M and Khan, Arslan and Xu, Dongyan and Hwang, Inseok},
+      booktitle={American Modelica and FMI Conference 2026},
+      year={2026}
+    }
+
+- id: "uleak26"
+  title: "µleak: Bypassing MPU Isolation on Cortex-M7 via Cache-Timing Attacks"
+  authors: "Muhammad Hammad Bashir, Taegyu Kim, <b>Arslan Khan</b>, and Kyungtae Kim"
+  venue: "17th Annual Non-Volatile Memories Workshop (NVMW 2026)"
+  location: "San Diego, CA"
+  year: 2026
+  category: "Hardware & Embedded Security"
+  pdf: "/publications/uleak.pdf"
+  bibtex: |
+    @inproceedings{bashir2026uleak,
+      title={µleak: Bypassing MPU Isolation on Cortex-M7 via Cache-Timing Attacks},
+      author={Bashir, Muhammad Hammad and Kim, Taegyu and Khan, Arslan and Kim, Kyungtae},
+      booktitle={17th Annual Non-Volatile Memories Workshop (NVMW 2026)},
+      year={2026}
+    }
+
 - id: "neuroscope25"
   title: "NeuroScope: Reverse Engineering Deep Neural Network on Edge Devices using Dynamic Analysis"
   authors: "Ruoyu Wu, Muqi Zou, <b>Arslan Khan</b>, Taegyu Kim, Dongyan Xu, Dave (Jing) Tian, and Antonio Bianchi"

@@ -35,6 +35,7 @@
       <div class="col-md-5">
         <div class="d-flex gap-1 flex-wrap justify-content-md-end" id="year-filters">
           <button class="btn btn-sm btn-dark filter-btn active" onclick="filterYear('all', this)">All</button>
+          <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterYear('2026', this)">2026</button>
           <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterYear('2025', this)">2025</button>
           <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterYear('2024', this)">2024</button>
           <button class="btn btn-sm btn-outline-secondary filter-btn" onclick="filterYear('2023', this)">2023</button>
@@ -133,6 +134,15 @@
     {% for paper in site.data.publications %}
       { title: "{{ paper.title | escape }}", id: "pub-card-{{ paper.id }}", year: "{{ paper.year }}" },
     {% endfor %}
+    { title: "BoardRunner", keyword: "BoardRunner" },
+    { title: "D-LIFT", keyword: "D-LIFT" },
+    { title: "COURBET (From Gazebo to FMI)", keyword: "COURBET" },
+    { title: "µleak", keyword: "µleak" },
+    { title: "uLeak", keyword: "uLeak" },
+    { title: "ACM CCS", keyword: "CCS" },
+    { title: "IEEE TPS", keyword: "IEEE TPS" },
+    { title: "NVMW", keyword: "NVMW" },
+    { title: "Modelica", keyword: "Modelica" },
     { title: "NeuroScope", keyword: "NeuroScope" },
     { title: "D-Helix", keyword: "D-Helix" },
     { title: "SAIN", keyword: "SAIN" },

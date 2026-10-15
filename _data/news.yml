@@ -4,8 +4,14 @@
 - date: "Oct 2026"
   content: "Paper on LLM-based decompiler backend (<em>D-LIFT</em>) accepted to <strong>IEEE TPS '26</strong>!"
 
+- date: "Oct 2026"
+  content: "Paper on cyber-physical simulation for robotic vehicles (<em>COURBET</em>) presented at the <strong>American Modelica & FMI Conference 2026</strong>!"
+
 - date: "Aug 2026"
   content: "Teaching <a href='/courses/systems-security-fa26'>CSE 544: Systems Security</a> in Fall 2026."
+
+- date: "Mar 2026"
+  content: "Paper on Cortex-M7 cache-timing attacks (<em>µleak</em>) presented at <strong>NVMW 2026</strong>!"
 
 - date: "Aug 2025"
   content: "Paper on reverse engineering DNNs on edge devices (<em>NeuroScope</em>) accepted to <strong>USENIX Security '25</strong>!"

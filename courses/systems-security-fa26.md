@@ -13,7 +13,8 @@ The course also covers compartmentalization, accelerator and heterogeneous-syste
 
 # Course Materials
 
-* GitHub: TBD
+* **Semester Project Workspace:** [slangGraph Tool Security Workspace](https://github.com/Arslan8/slanggraph/blob/course/security-modules/workspace/README.md)
+* **GitHub Repository:** [https://github.com/Arslan8/slanggraph/tree/course/security-modules](https://github.com/Arslan8/slanggraph/tree/course/security-modules)
 * Discord: TBD
 * Additional course material, code, examples, and assignments will be made available through GitHub.
 
@@ -592,15 +593,72 @@ Research projects must include a substantive technical artifact. A Work-In-Progr
 
 Research projects will be evaluated based on technical difficulty, novelty, quality of the artifact, quality of the evaluation, and demonstrated understanding of the security problem.
 
-### Option 2: Instructor-Defined Semester Project
+### Option 2: Instructor-Defined Semester Project — slangGraph Tool Security
 
-Students who do not wish to conduct a research-based project may complete the semester project provided by the instructor.
+Students who do not follow the research-based project track will complete the instructor-defined project focused on **least-privilege policy inference and capability enforcement for agentic systems**.
 
-Students who do not submit an approved research proposal by **September 24** will follow this project track.
+* **Project Specification & Workspace:** [`slangGraph Security Workspace README`](https://github.com/Arslan8/slanggraph/blob/course/security-modules/workspace/README.md)
+* **Project Branch:** [`course/security-modules`](https://github.com/Arslan8/slanggraph/tree/course/security-modules/workspace)
 
-The instructor-defined project will involve designing, implementing, analyzing, attacking, or defending a real system using techniques covered throughout the course. Detailed specifications, milestones, and evaluation criteria will be provided during the semester.
+#### Overview
 
-The instructor-defined project is not a lesser project option. Both project tracks are expected to require substantial systems-security engineering, experimentation, and technical understanding.
+In agentic AI frameworks and graph-execution runtimes (such as **slangGraph**), autonomous agents execute actions by invoking external tools. Because tools interact with the physical operating system, network endpoints, file systems, databases, and peripheral devices, granting tools excessive ambient authority introduces severe security risks.
+
+The goal of this project is to build an automated, explainable **Policy Inference Engine** that analyzes tool implementations, descriptors, and execution traces to synthesize precise, least-privilege capability manifests and enforce them at runtime using **Cedar** access control policies.
+
+#### The Workspace & Hands-on Examples
+
+The project workspace provides progressive reference examples demonstrating the runtime security contract:
+
+1. `workspace/01_quickstart.py`: Minimal execution graph and tool invocation.
+2. `workspace/02_dac_quickstart.py`: Tool-level Cedar discretionary access control.
+3. `workspace/03_dac_principal_quickstart.py`: Authenticated caller principals passed during graph invocation.
+4. `workspace/04_resource_grant_quickstart.py`: Mapping tool arguments to normalized resource operations, Cedar authorization, and exact enforceable grants.
+5. `workspace/05_custom_class_quickstart.py` & `workspace/05_pump_simulator.py`: Fine-grained device operations on a custom `pump` class over a Unix-domain socket (demonstrating that transport access does not equal device authority).
+
+#### What Students Must Build
+
+Students are tasked with building a **Policy Inference Engine** that infers what authority a tool needs. The core pipeline is:
+
+```text
+tool implementation + descriptor + examples or traces
+                         |
+                         v
+              inferred resource operations
+                         |
+                         v
+          candidate manifest with supporting evidence
+                         |
+                         v
+              review, validation, and refinement
+                         |
+                         v
+             Cedar authorization per invocation
+                         |
+                         v
+                 exact enforceable grant
+```
+
+The inference engine must determine:
+* Which resources a tool can access (filesystem paths, database tables, Unix sockets, device controls, network origins).
+* Which exact operations are performed on each resource (e.g., `inspect`, `start`, `set_flow`, `read`, `write`).
+* Which tool arguments determine resource identity, and which trusted normalizers canonicalize them.
+* Which capabilities are unconditionally required versus conditionally invoked based on input arguments or control flow.
+* Overprivilege detection: whether the inferred manifest grants more authority than the implementation requires.
+* Evidence and uncertainty: identifying code paths supported by concrete trace evidence versus untested paths.
+* Robustness against adversarial inputs: verifying whether hostile inputs can escape inferred resource boundaries.
+* Runtime grant enforcement: verifying that tool execution remains strictly within the authorized grant.
+
+#### Success Criteria
+
+A successful project must demonstrate:
+1. **Least-Privilege Precision:** Allowed calls receive only the exact operations and resource identities they need.
+2. **Fail-Closed Enforcement:** Missing or unauthorized operations prevent tool execution before dispatch.
+3. **Overprivilege Detection:** Unnecessary operations or ambient permissions are flagged and eliminated.
+4. **Resilient Normalization:** Path traversal and alternate spellings cannot bypass resource policies.
+5. **Robust Error Handling:** Malformed, unknown, or adversarial inputs fail safely with informative diagnostics.
+6. **Explainability:** Inferred policies include supporting evidence, confidence levels, and coverage gaps.
+7. **Inspectable Artifacts:** Generated Cedar schemas, policies, and grant requests can be audited independently.
 
 # Grading
 

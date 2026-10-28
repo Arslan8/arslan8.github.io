@@ -65,6 +65,24 @@
       year={2026}
     }
 
+- id: "tofu26"
+  title: "ToFu: Exploiting and Fuzzing the LLM-Orchestrator-Tool Trust Boundary"
+  authors: "Md Nazmul Islam Ananto, Pierre Prevost-Avenel, Colin Smith, Kyungtae Kim, Taegyu Kim, and <b>Arslan Khan</b>"
+  venue: "arXiv preprint arXiv:2610.13651"
+  year: 2026
+  category: "ML & AI Security"
+  pdf: "/publications/tofu.pdf"
+  bibtex: |
+    @misc{ananto2026tofu,
+      title={ToFu: Exploiting and Fuzzing the LLM-Orchestrator-Tool Trust Boundary},
+      author={Ananto, Md Nazmul Islam and Prevost-Avenel, Pierre and Smith, Colin and Kim, Kyungtae and Kim, Taegyu and Khan, Arslan},
+      year={2026},
+      eprint={2610.13651},
+      archivePrefix={arXiv},
+      primaryClass={cs.CR},
+      url={https://arxiv.org/abs/2610.13651}
+    }
+
 - id: "neuroscope25"
   title: "NeuroScope: Reverse Engineering Deep Neural Network on Edge Devices using Dynamic Analysis"
   authors: "Ruoyu Wu, Muqi Zou, <b>Arslan Khan</b>, Taegyu Kim, Dongyan Xu, Dave (Jing) Tian, and Antonio Bianchi"

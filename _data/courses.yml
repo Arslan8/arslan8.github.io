@@ -6,7 +6,7 @@
   level: "Graduate"
   location: "Leonhard Bldg 203"
   time: "TuTh 10:35AM - 11:50AM"
-  description: "Systems-oriented computer security focusing on mechanisms protecting modern operating systems, hardware isolation boundaries, SELinux, virtualization, confidential computing, Linux isolation primitives (namespaces, cgroups, seccomp), compartmentalization, accelerator security, and agentic AI systems."
+  description: "Systems-oriented computer security focusing on mechanisms protecting modern operating systems, hardware isolation boundaries, SELinux, virtualization, confidential computing, policy engines (Flask, Cedar, Rego/OPA), compartmentalization, accelerator security, and agentic AI systems."
   url: "/courses/systems-security-fa26"
   github: "https://github.com/Arslan8/slanggraph/tree/course/security-modules/workspace"
   discord: ""

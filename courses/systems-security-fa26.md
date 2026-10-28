@@ -7,9 +7,7 @@ title: "CSE 544 - Systems Security"
 
 This course provides a systems-oriented introduction to computer security, focusing on the mechanisms used to protect modern operating systems, applications, and computing platforms. The course examines how security policies are translated into concrete system mechanisms, how these mechanisms are implemented in modern systems, and how failures in software and hardware abstractions can undermine their security guarantees.
 
-The course begins with memory safety, exploitation, and modern exploit mitigations before moving into kernel security and classical protection mechanisms such as access control, mandatory access control, and SELinux. We then study virtualization and confidential computing, followed by the Linux isolation primitives underlying modern containers and sandboxes, including namespaces, cgroups, capabilities, seccomp, and filesystem isolation. Students will use these mechanisms to understand how systems such as Docker and Bubblewrap actually construct security boundaries.
-
-The course also covers compartmentalization, accelerator and heterogeneous-system security, confidential accelerators and machine-learning workloads, and emerging security challenges involving agentic systems. Throughout the course, the emphasis is on understanding the underlying mechanisms rather than treating modern security systems as black boxes.
+The course begins with memory safety, exploitation, and modern exploit mitigations before moving into kernel security and classical protection mechanisms such as access control, mandatory access control, and SELinux. We then study virtualization, confidential computing, and modern policy engines (Flask architecture, Cedar, and Rego/OPA), along with compartmentalization, accelerator and heterogeneous-system security, confidential accelerators and machine-learning workloads, and emerging security challenges involving agentic systems. Throughout the course, the emphasis is on understanding the underlying mechanisms rather than treating modern security systems as black boxes.
 
 # Course Materials
 
@@ -415,48 +413,79 @@ Short quizzes will be given after major course modules to assess understanding o
   </div>
 </details>
 
-<details class="card border mb-3 shadow-sm week-dropdown">
+<details class="card border mb-3 shadow-sm week-dropdown" open>
   <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
-    Week 9 — October 20 & 22: Linux Isolation Primitives
+    Week 9 — October 20 & 22: Policy Engines & Authorization Architectures (Flask & Cedar) & Readings
   </summary>
   <div class="card-body">
-    <p class="text-muted small">This module examines the mechanisms from which modern Linux containers and application sandboxes are constructed.</p>
+    <div class="mb-3">
+      <a href="https://docs.google.com/presentation/d/e/2PACX-1vREZvTsXgxjjJTLwXJOXJhe1h0b4byw7L37FcNJJIpEOUzDw2Yizcn_cWbuU8D9tBZKcDP3bhyKemSR/pub?start=false&loop=false&delayms=3000" target="_blank" class="btn btn-sm btn-outline-primary">
+        <i class="fas fa-file-powerpoint me-1"></i> Lecture Slides: Policy Engines (Flask, Cedar & Rego/OPA)
+      </a>
+    </div>
+
+    <h6 class="fw-bold border-bottom pb-1">Topics</h6>
     <ul>
-      <li><code>chroot</code></li>
-      <li>Filesystem isolation</li>
-      <li>Mounts and bind mounts</li>
-      <li><code>pivot_root</code></li>
-      <li>Linux namespaces (User, PID, Mount, Network, IPC, UTS)</li>
-      <li>cgroups</li>
-      <li>Linux capabilities</li>
-      <li><code>seccomp</code> and seccomp-BPF</li>
-      <li><code>no_new_privs</code></li>
-      <li><code>unshare</code> and <code>nsenter</code></li>
-      <li>Rootless isolation</li>
+      <li>Flask security architecture: separating Policy Enforcement Points (PEP / Object Managers) from Policy Decision Points (PDP / Security Server)</li>
+      <li>Access Vector Cache (AVC), dynamic policy reloads, and reference-monitor guarantees</li>
+      <li>Policy as Code and core features of modern authorization languages</li>
+      <li>Cedar authorization engine: structured Principal–Action–Resource–Context (PARC) request model</li>
+      <li>Entity hierarchies, first-class entity graphs, and attribute-based reasoning (RBAC, ABAC, ReBAC)</li>
+      <li>Cedar evaluation semantics: <code>permit</code>, <code>forbid</code>, and default-deny guarantees</li>
+      <li>Policy construction, schemas, static typechecking, and policy validation</li>
     </ul>
-    <p class="small text-muted mb-0">Students leave this module understanding the individual mechanisms behind a container rather than viewing containers as a single monolithic primitive.</p>
+
+    <h6 class="fw-bold mt-4 border-bottom pb-1">Readings: Flask Architecture and Cedar Authorization</h6>
+
+    <p class="fw-bold mb-1 text-primary">Required Reading</p>
+    <ul>
+      <li>
+        <strong>Ray Spencer, Stephen Smalley, Peter Loscocco, Mike Hibler, David Andersen, and Jay Lepreau.</strong> "The Flask Security Architecture: System Support for Diverse Security Policies." <em>8th USENIX Security Symposium</em>, 1999. Defines the foundational Flask architecture decoupling policy decision logic from enforcement mechanisms. [<a href="https://www.usenix.org/conference/8th-usenix-security-symposium/flask-security-architecture-system-support-diverse-security" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Joseph W. Cutler et al.</strong> "Cedar: A New Language for Expressive, Fast, Safe, and Analyzable Authorization." <em>OOPSLA (PACMPL)</em>, 2024. Introduces the design, formal semantics, type system, and automated verification of the Cedar policy language. [<a href="https://arxiv.org/abs/2403.04651" target="_blank">Paper</a>]
+      </li>
+    </ul>
   </div>
 </details>
 
-<details class="card border mb-3 shadow-sm week-dropdown">
+<details class="card border mb-3 shadow-sm week-dropdown" open>
   <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
-    Week 10 — October 27 & 29: Containers and Sandboxing
+    Week 10 — October 27 & 29: Declarative Policy Engines (Rego / OPA) & Policy Verification
   </summary>
   <div class="card-body">
+    <div class="mb-3">
+      <a href="https://docs.google.com/presentation/d/e/2PACX-1vREZvTsXgxjjJTLwXJOXJhe1h0b4byw7L37FcNJJIpEOUzDw2Yizcn_cWbuU8D9tBZKcDP3bhyKemSR/pub?start=false&loop=false&delayms=3000" target="_blank" class="btn btn-sm btn-outline-primary">
+        <i class="fas fa-file-powerpoint me-1"></i> Lecture Slides: Policy Engines (Flask, Cedar & Rego/OPA)
+      </a>
+    </div>
+
+    <h6 class="fw-bold border-bottom pb-1">Topics</h6>
     <ul>
-      <li>What a container actually is</li>
-      <li>Constructing containers from Linux isolation primitives</li>
-      <li>OCI container model</li>
-      <li><code>runc</code> and containerd</li>
-      <li>Docker architecture</li>
-      <li>Container root filesystems and OverlayFS</li>
-      <li>Rootless vs. Privileged containers</li>
-      <li>Container capabilities & escape vulnerabilities</li>
-      <li>Dangerous mounts and Docker socket exposure</li>
-      <li>Bubblewrap (<code>bwrap</code>), Firejail, <code>systemd-nspawn</code></li>
-      <li>Building application sandboxes from first principles</li>
-      <li>Containers versus virtual machines</li>
+      <li>Open Policy Agent (OPA) and the Rego declarative policy language</li>
+      <li>Datalog foundations, rule definitions, logical unification, and virtual documents</li>
+      <li>Evaluating policies over arbitrary JSON (<code>input</code> and <code>data</code> document hierarchies)</li>
+      <li>Architectural tradeoffs: Cedar vs. Rego (first-class entity graphs vs. arbitrary JSON; structured PARC vs. general-purpose queries)</li>
+      <li>Typing, schemas, decidability, and SMT-based formal policy verification</li>
+      <li>Applying policy engines to agentic systems and tool-execution runtimes (<code>slangGraph</code>)</li>
     </ul>
+
+    <h6 class="fw-bold mt-4 border-bottom pb-1">Readings: Declarative Policy Engines & Verification</h6>
+
+    <p class="fw-bold mb-1 text-primary">Required Reading</p>
+    <ul>
+      <li>
+        <strong>Open Policy Agent (OPA).</strong> "Policy Language (Rego) & Architecture." <em>CNCF Documentation</em>. Comprehensive guide to Rego's declarative query model, rule evaluation, and JSON document matching. [<a href="https://www.openpolicyagent.org/docs/latest/policy-language/" target="_blank">Documentation</a>]
+      </li>
+    </ul>
+
+    <p class="fw-bold mb-1 text-secondary">Optional Readings</p>
+    <ul>
+      <li>
+        <strong>Cedar Team.</strong> "Cedar Policy Language Reference & Validation Guide." Covers entity schemas, template-linked policies, and formal verification of authorization invariants. [<a href="https://docs.cedarpolicy.com/" target="_blank">Documentation</a>]
+      </li>
+    </ul>
+
     <div class="alert alert-secondary py-1 px-3 mt-3 mb-0 small">
       <strong>Module Quiz</strong> follows this topic.
     </div>

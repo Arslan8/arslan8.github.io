@@ -7,7 +7,7 @@ title: "CSE 544 - Systems Security"
 
 This course provides a systems-oriented introduction to computer security, focusing on the mechanisms used to protect modern operating systems, applications, and computing platforms. The course examines how security policies are translated into concrete system mechanisms, how these mechanisms are implemented in modern systems, and how failures in software and hardware abstractions can undermine their security guarantees.
 
-The course begins with memory safety, exploitation, and modern exploit mitigations before moving into kernel security and classical protection mechanisms such as access control, mandatory access control, and SELinux. We then study virtualization, confidential computing, and modern policy engines (Flask architecture, Cedar, and Rego/OPA), along with compartmentalization, accelerator and heterogeneous-system security, confidential accelerators and machine-learning workloads, and emerging security challenges involving agentic systems. Throughout the course, the emphasis is on understanding the underlying mechanisms rather than treating modern security systems as black boxes.
+The course begins with memory safety, exploitation, and modern exploit mitigations before moving into kernel security, classical protection mechanisms (access control, mandatory access control, SELinux/LSM), and Linux container and sandboxing isolation primitives. We then study modern policy engines (Flask architecture, Cedar, and Rego/OPA) and virtualization (hypervisors, microVMs, and TCB disaggregation), followed by accelerator and heterogeneous-system security, confidential accelerators and machine-learning workloads, and emerging security challenges involving agentic systems. Throughout the course, the emphasis is on understanding the underlying mechanisms rather than treating modern security systems as black boxes.
 
 # Course Materials
 
@@ -364,48 +364,40 @@ Short quizzes will be given after major course modules to assess understanding o
 
 <details class="card border mb-3 shadow-sm week-dropdown">
   <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
-    Week 7 — October 6 & 8: Virtualization
+    Week 7 — October 6 & 8: Extended SELinux / LSM & Linux Isolation Primitives
   </summary>
   <div class="card-body">
+    <div class="mb-3">
+      <a href="https://docs.google.com/presentation/d/e/2PACX-1vT82agjCRYHyG2KfsQL4rRxzD97fP8SbHIBuLHKXK1YMQrMCBbt6c7R3XTeiYGiuzi4DgwX9-y5N93o/pub?start=false&loop=false&delayms=3000" target="_blank" class="btn btn-sm btn-outline-primary">
+        <i class="fas fa-file-powerpoint me-1"></i> Lecture Slides: Access Control, Privilege Escalation & LSM
+      </a>
+    </div>
+    <p class="text-muted small">Continuation of Mandatory Access Control / LSM enforcement and the Linux isolation primitives from which modern containers and sandboxes are constructed.</p>
     <ul>
-      <li>Virtual machines and hypervisors</li>
-      <li>Type-1 and Type-2 hypervisors</li>
-      <li>Privileged and unprivileged execution</li>
-      <li>Hardware-assisted virtualization</li>
-      <li>VM exits</li>
-      <li>CPU virtualization</li>
-      <li>Memory virtualization</li>
-      <li>Extended/Nested Page Tables</li>
-      <li>Device virtualization</li>
-      <li>Emulated and paravirtualized devices</li>
-      <li>KVM and QEMU</li>
-      <li>VirtIO</li>
-      <li>VM isolation</li>
-      <li>VM escape attacks</li>
-      <li>Virtual machines as security boundaries</li>
+      <li>SELinux policy enforcement, domain transitions, and LSM hook mediation</li>
+      <li><code>chroot</code>, mounts, bind mounts, and <code>pivot_root</code></li>
+      <li>Linux namespaces (User, PID, Mount, Network, IPC, UTS)</li>
+      <li><code>cgroups</code> and resource isolation</li>
+      <li>Linux capabilities, <code>no_new_privs</code>, and <code>seccomp-BPF</code></li>
+      <li><code>unshare</code>, <code>nsenter</code>, and rootless isolation</li>
     </ul>
   </div>
 </details>
 
 <details class="card border mb-3 shadow-sm week-dropdown">
   <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
-    Week 8 — October 13 & 15: Confidential Computing
+    Week 8 — October 13 & 15: Containers and Application Sandboxing
   </summary>
   <div class="card-body">
     <ul>
-      <li>Threat models in cloud computing</li>
-      <li>Trusted Execution Environments</li>
-      <li>Intel SGX</li>
-      <li>Intel TDX</li>
-      <li>AMD SEV</li>
-      <li>AMD SEV-SNP</li>
-      <li>Memory encryption</li>
-      <li>Confidential virtual machines</li>
-      <li>Protecting workloads from the hypervisor</li>
-      <li>Remote attestation</li>
-      <li>Measurement and trust establishment</li>
-      <li>I/O challenges in confidential systems</li>
-      <li>Limitations of confidential computing</li>
+      <li>Constructing containers from Linux isolation primitives</li>
+      <li>OCI container model, <code>runc</code>, <code>containerd</code>, and Docker architecture</li>
+      <li>Container root filesystems and OverlayFS</li>
+      <li>Rootless vs. privileged containers</li>
+      <li>Container capability misconfigurations and escape vulnerabilities</li>
+      <li>Dangerous mounts and Docker socket exposure</li>
+      <li>Application sandboxes: Bubblewrap (<code>bwrap</code>), Firejail, and <code>systemd-nspawn</code></li>
+      <li>Containers versus virtual machines as security boundaries</li>
     </ul>
     <div class="alert alert-secondary py-1 px-3 mt-3 mb-0 small">
       <strong>Module Quiz</strong> follows this topic.
@@ -492,21 +484,65 @@ Short quizzes will be given after major course modules to assess understanding o
   </div>
 </details>
 
-<details class="card border mb-3 shadow-sm week-dropdown">
+<details class="card border mb-3 shadow-sm week-dropdown" open>
   <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
-    Week 11 — November 3 & 5: Compartmentalization
+    Week 11 — November 3 & 5: Virtualization & Hypervisor Security & Readings
   </summary>
   <div class="card-body">
+    <div class="mb-3">
+      <a href="https://docs.google.com/presentation/d/e/2PACX-1vRGzHhG9PjtHNEfKUYVufw8J6MehM19dDAMcvR5esXF_usnWR0psV1mGQVMvF_tEiA4NJylBRe0WfYW/pub?start=false&loop=false&delayms=3000" target="_blank" class="btn btn-sm btn-outline-primary">
+        <i class="fas fa-file-powerpoint me-1"></i> Lecture Slides: Virtualization
+      </a>
+    </div>
+
+    <h6 class="fw-bold border-bottom pb-1">Topics</h6>
     <ul>
-      <li>Privilege separation and least-privilege decomposition</li>
-      <li>Process-based compartmentalization</li>
-      <li>Capability-oriented systems (Capsicum, <code>pledge</code>, <code>unveil</code>)</li>
-      <li>Intel Memory Protection Keys (MPK) & ERIM</li>
-      <li>RLBox and WebAssembly sandboxing</li>
-      <li>Automatic compartmentalization</li>
-      <li>Compartment interfaces and cross-compartment communication</li>
-      <li>Attack-surface reduction and performance tradeoffs</li>
+      <li>OS vs. Hypervisor Trusted Computing Base ("Is the OS the best TCB?")</li>
+      <li>Popek and Goldberg Virtualization Theorem (privileged vs. sensitive instructions, trap-and-emulate)</li>
+      <li>Dynamic Binary Translation (DBT) for non-virtualizable architectures</li>
+      <li>Hardware-assisted virtualization (Intel VT-x / AMD-V, root vs. non-root operation, VM exits, EPT/NPT)</li>
+      <li>Paravirtualization, hypercalls, and VirtIO</li>
+      <li>Types of Virtual Machine Monitors (Type-1 vs. Type-2 hypervisors)</li>
+      <li>The TCB Disaggregation Problem across VMM architectures:
+        <ul>
+          <li><code>KVM + QEMU</code> and ARM Virtualization Host Extensions (<code>VHE</code>)</li>
+          <li><code>Xen + Dom0</code> split-driver architectures</li>
+          <li>Unikernels and library operating systems</li>
+          <li>Lightweight MicroVMs: <code>AWS Firecracker</code></li>
+          <li>Hardware-offloaded hypervisors: <code>AWS Nitro</code></li>
+        </ul>
+      </li>
+      <li>Virtualization attack vectors, emulated device vulnerabilities, and VM escape attacks</li>
     </ul>
+
+    <h6 class="fw-bold mt-4 border-bottom pb-1">Readings: Virtualization Architectures and TCB Disaggregation</h6>
+
+    <p class="fw-bold mb-1 text-primary">Required Reading</p>
+    <ul>
+      <li>
+        <strong>Keith Adams and Ole Agesen.</strong> "A Comparison of Software and Hardware Techniques for x86 Virtualization." <em>12th International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS)</em>, 2006. Analyzes classical x86 virtualization challenges, dynamic binary translation, and hardware-assisted virtualization tradeoffs. [<a href="https://dl.acm.org/doi/10.1145/1168857.1168860" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Alexandru Agache et al.</strong> "Firecracker: Lightweight Virtualization for Serverless Applications." <em>17th USENIX Symposium on Networked Systems Design and Implementation (NSDI)</em>, 2020. Examines TCB bloat in traditional QEMU/KVM stacks and introduces AWS Firecracker's minimalist microVM architecture for multi-tenant isolation. [<a href="https://www.usenix.org/conference/nsdi20/presentation/agache" target="_blank">Paper</a>]
+      </li>
+    </ul>
+
+    <p class="fw-bold mb-1 text-secondary">Optional Readings</p>
+    <ul>
+      <li>
+        <strong>Gerald J. Popek and Robert P. Goldberg.</strong> "Formal Requirements for Virtualizable Third Generation Architectures." <em>Communications of the ACM</em>, 1974. Establishes the foundational theorem characterizing instruction-set virtualizability via privileged and sensitive instructions. [<a href="https://dl.acm.org/doi/10.1145/361011.361073" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Paul Barham et al.</strong> "Xen and the Art of Virtualization." <em>19th ACM Symposium on Operating Systems Principles (SOSP)</em>, 2003. Introduces high-performance paravirtualization and the Xen hypervisor + Dom0 management architecture. [<a href="https://www.cl.cam.ac.uk/research/srg/netos/papers/2003-xensosp.pdf" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Patrick Colp et al.</strong> "Breaking Up is Hard to Do: Security and Functionality in a Commodity Hypervisor." <em>23rd ACM Symposium on Operating Systems Principles (SOSP)</em>, 2011. Tackles the Xen Dom0 TCB disaggregation problem by decomposing the monolithic control VM into single-purpose service VMs (Xoar). [<a href="https://dl.acm.org/doi/10.1145/2043556.2043575" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Anil Madhavapeddy et al.</strong> "Unikernels: Library Operating Systems for the Cloud." <em>ASPLOS</em>, 2013. Demonstrates extreme TCB reduction by compiling applications with minimal library OS kernels directly atop a hypervisor. [<a href="https://dl.acm.org/doi/10.1145/2451116.2451167" target="_blank">Paper</a>]
+      </li>
+    </ul>
+
     <div class="alert alert-secondary py-1 px-3 mt-3 mb-0 small">
       <strong>Module Quiz</strong> follows this topic.
     </div>

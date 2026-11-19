@@ -569,28 +569,72 @@ Short quizzes will be given after major course modules to assess understanding o
   </div>
 </details>
 
-<details class="card border mb-3 shadow-sm week-dropdown">
+<details class="card border mb-3 shadow-sm week-dropdown" open>
   <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
-    Week 13 — November 17 & 19: Confidential Accelerators and Agentic Systems
+    Week 13 — November 17 & 19: Agentic AI Security & Readings
   </summary>
   <div class="card-body">
-    <h6 class="fw-bold border-bottom pb-1">Confidential Accelerators & ML Systems</h6>
+    <div class="mb-3">
+      <a href="https://docs.google.com/presentation/d/e/2PACX-1vSfeVV_-njIxaE4GCCtrxFi__ZxeR01bEjJQHrcukNVlguGi-F4TIj9bGo3XDNTIcg1P7Go2ZhrI_0k/pub?start=false&loop=false&delayms=3000" target="_blank" class="btn btn-sm btn-outline-primary">
+        <i class="fas fa-file-powerpoint me-1"></i> Lecture Slides: Agentic AI Security
+      </a>
+    </div>
+
+    <h6 class="fw-bold border-bottom pb-1">Topics</h6>
     <ul>
-      <li>Confidential GPU computing & accelerator attestation</li>
-      <li>Confidential VMs with accelerators (Intel TDX, AMD SEV-SNP)</li>
-      <li>Protected CPU-GPU communication & Trusted I/O</li>
-      <li>Model confidentiality, training-data confidentiality</li>
-      <li>Confidential inference and training</li>
+      <li>LLM foundations: embeddings, tokenization, context assembly, recency bias, and prompt injection fundamentals</li>
+      <li>Agent architectures: stateless LLMs, Reason-and-Act (<code>ReAct</code>) loops, and agent orchestration runtimes</li>
+      <li>Agent memory hierarchies: short-term session state vs. long-term memory vs. Retrieval-Augmented Generation (RAG) & query rewriting (<code>Event &gt; State &gt; Memory</code>)</li>
+      <li>Indirect prompt injection, RAG knowledge corruption (<code>PoisonedRAG</code>), and persistent memory poisoning</li>
+      <li>Multi-agent systems (e.g., <code>CrewAI</code>), delegation chains, and cross-agent trust boundaries</li>
+      <li>Systems vulnerabilities in LLM-integrated applications and frameworks: RCE exploits (<code>LLMSmith</code>), serialization flaws (<code>LangGrinch</code>), and the LLM-orchestrator-tool trust boundary (<code>ToFu</code>)</li>
+      <li>Defense mechanisms and architectures:
+        <ul>
+          <li>Safety evaluation sandboxes (<code>ToolEmu</code>) and input/output guardrails (<code>LlamaGuard</code>)</li>
+          <li>Channel separation: <code>Spotlighting</code> (delimiting, datamarking, encoding) and <code>Structured Queries (StruQ)</code></li>
+          <li>Model-level alignment: <code>Instruction Hierarchy</code> and <code>Constitutional AI</code></li>
+          <li>System-level execution isolation: <code>SecGPT</code> (<code>IsolateGPT</code>) and capability-enforced tool runtimes</li>
+        </ul>
+      </li>
     </ul>
 
-    <h6 class="fw-bold border-bottom pb-1 mt-3">Agentic Systems Security</h6>
+    <h6 class="fw-bold mt-4 border-bottom pb-1">Readings: Agentic AI Security, Prompt Injection & Execution Isolation</h6>
+
+    <p class="fw-bold mb-1 text-primary">Required Reading</p>
     <ul>
-      <li>Agent architectures & LLM-to-tool trust boundaries</li>
-      <li>Tool permissions, capabilities, and agent sandboxing</li>
-      <li>Untrusted tool outputs & prompt injections into agent loop</li>
-      <li>Persistent agent state and memory security</li>
-      <li>Multi-agent trust boundaries & autonomous action risks</li>
+      <li>
+        <strong>Yuhao Wu, Franziska Roesner, Tadayoshi Kohno, Ning Zhang, and Umar Farooq.</strong> "IsolateGPT: An Execution Isolation Architecture for LLM-Based Agentic Systems." <em>Network and Distributed System Security Symposium (NDSS)</em>, 2025. Introduces system-level execution isolation (SecGPT / IsolateGPT) separating untrusted apps, data channels, and tool execution in LLM agent platforms. [<a href="https://arxiv.org/abs/2403.04960" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Md Nazmul Islam Ananto, Pierre Prevost-Avenel, Colin Smith, Kyungtae Kim, Taegyu Kim, and Arslan Khan.</strong> "ToFu: Exploiting and Fuzzing the LLM-Orchestrator-Tool Trust Boundary." <em>arXiv preprint arXiv:2610.13651</em>, 2026. Analyzes the LLM-orchestrator-tool trust boundary across MCP servers and automatically derives CWE-guided semantic checks and fuzzing harnesses for LLM tools. [<a href="https://arxiv.org/abs/2610.13651" target="_blank">Paper</a>]
+      </li>
     </ul>
+
+    <p class="fw-bold mb-1 text-secondary">Optional Readings</p>
+    <ul>
+      <li>
+        <strong>Kai Greshake, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, and Mario Fritz.</strong> "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection." <em>AISec @ ACM CCS</em>, 2023. Establishes indirect prompt injection across external data sources and tool outputs. [<a href="https://arxiv.org/abs/2302.12173" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Wei Zou, Runpeng Geng, Binghui Wang, and Jinyuan Jia.</strong> "PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models." <em>34th USENIX Security Symposium (USENIX Security '25)</em>, 2025. Demonstrates knowledge-database poisoning attacks against RAG pipelines. [<a href="https://arxiv.org/abs/2402.07867" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Tong Liu, Zizhuang Deng, Guozhu Meng, Yuekang Li, and Kai Chen.</strong> "Demystifying RCE Vulnerabilities in LLM-Integrated Apps." <em>ACM Conference on Computer and Communications Security (CCS)</em>, 2024. Systematically analyzes remote code execution vulnerabilities (LLMSmith) across real-world LLM orchestration frameworks. [<a href="https://arxiv.org/abs/2309.02926" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Sizhe Chen, Julien Piet, Chawin Sitawarin, and David Wagner.</strong> "StruQ: Defending Against Prompt Injection with Structured Queries." <em>34th USENIX Security Symposium (USENIX Security '25)</em>, 2025. Separates instructions and untrusted data channels using structured query interfaces and front-end filtering. [<a href="https://arxiv.org/abs/2402.06363" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Keegan Hines et al.</strong> "Defending Against Indirect Prompt Injection Attacks With Spotlighting." <em>CAMLIS</em>, 2024. Introduces datamarking, encoding, and delimiting transformations to help LLMs distinguish untrusted data from system instructions. [<a href="https://arxiv.org/abs/2403.14720" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Eric Wallace, Kai Xiao, Reimar Leike, Lilian Weng, Johannes Heidecke, and Alex Beutel.</strong> "The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions." <em>arXiv preprint arXiv:2404.13208</em>, 2024. Defines explicit privilege levels across system prompts, user messages, and untrusted tool outputs. [<a href="https://arxiv.org/abs/2404.13208" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Yangjun Ruan et al.</strong> "Identifying the Risks of LM Agents with an LM-Emulated Sandbox (ToolEmu)." <em>ICLR</em>, 2024. Evaluates unsafe tool execution and failure modes of language-model agents using an emulated sandbox. [<a href="https://arxiv.org/abs/2309.15817" target="_blank">Paper</a>]
+      </li>
+    </ul>
+
     <div class="alert alert-secondary py-1 px-3 mt-3 mb-0 small">
       <strong>Module Quiz</strong> follows this topic.
     </div>

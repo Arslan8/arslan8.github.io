@@ -786,13 +786,55 @@ A successful project must demonstrate:
 6. **Explainability:** Inferred policies include supporting evidence, confidence levels, and coverage gaps.
 7. **Inspectable Artifacts:** Generated Cedar schemas, policies, and grant requests can be audited independently.
 
+### Semester Project Evaluation Rubric
+
+The semester project (70% of the overall course grade) will be evaluated according to the following rubric:
+
+<div class="table-responsive my-3">
+  <table class="table table-bordered align-middle mb-2">
+    <thead class="table-light">
+      <tr>
+        <th style="width: 28%;">Component</th>
+        <th style="width: 12%;">Weight</th>
+        <th>Evaluation Criteria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Novelty</strong></td>
+        <td><strong>40%</strong></td>
+        <td>Originality and technical depth of the approach, nontrivial design insights beyond baseline heuristics, and clear advancement or differentiation relative to existing solutions.</td>
+      </tr>
+      <tr>
+        <td><strong>Implementation</strong></td>
+        <td><strong>30%</strong></td>
+        <td>Completeness, soundness, and reproducibility of the working software artifact, end-to-end enforcement/evaluation pipeline, and engineering quality.</td>
+      </tr>
+      <tr>
+        <td><strong>Report</strong></td>
+        <td><strong>20%</strong></td>
+        <td>Clarity and technical rigor of the written report, explicit threat model, system architecture, empirical evaluation, and discussion of limitations and edge cases.</td>
+      </tr>
+      <tr>
+        <td><strong>Presentation</strong></td>
+        <td><strong>10%</strong></td>
+        <td>Clarity of the in-class presentation, live artifact demonstration during Weeks 14–15, and ability to defend technical decisions during Q&amp;A.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="alert alert-danger py-2 px-3 mb-4">
+  <strong>Strict Working-Implementation Policy:</strong> <strong>No marks will be awarded for non-working implementations.</strong> All project submissions must include a functional, demonstrable implementation; projects whose implementation does not work will receive no credit.
+</div>
+
 # Grading
 
 There are **no traditional midterm or final exams** for this course.
 
 Your final grade will be determined as follows:
 
-* **Semester Project: 70%**
+* **Semester Project: 70%** *(Novelty: 40%, Implementation: 30%, Report: 20%, Presentation: 10% — **no marks for non-working implementations**)*
 * **Module Quizzes: 30%**
 
 Quizzes will be given after major course modules and will focus on understanding the concepts, mechanisms, attacks, and design tradeoffs discussed in class.

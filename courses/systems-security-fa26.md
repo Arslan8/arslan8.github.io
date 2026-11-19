@@ -7,7 +7,7 @@ title: "CSE 544 - Systems Security"
 
 This course provides a systems-oriented introduction to computer security, focusing on the mechanisms used to protect modern operating systems, applications, and computing platforms. The course examines how security policies are translated into concrete system mechanisms, how these mechanisms are implemented in modern systems, and how failures in software and hardware abstractions can undermine their security guarantees.
 
-The course begins with memory safety, exploitation, and modern exploit mitigations before moving into kernel security, classical protection mechanisms (access control, mandatory access control, SELinux/LSM), and Linux container and sandboxing isolation primitives. We then study modern policy engines (Flask architecture, Cedar, and Rego/OPA) and virtualization (hypervisors, microVMs, and TCB disaggregation), followed by accelerator and heterogeneous-system security, confidential accelerators and machine-learning workloads, and emerging security challenges involving agentic systems. Throughout the course, the emphasis is on understanding the underlying mechanisms rather than treating modern security systems as black boxes.
+The course begins with memory safety, exploitation, and modern exploit mitigations before moving into kernel security, classical protection mechanisms (access control, mandatory access control, SELinux/LSM), and Linux container and sandboxing isolation primitives. We then study modern policy engines (Flask architecture, Cedar, and Rego/OPA) and virtualization (hypervisors, microVMs, and TCB disaggregation), followed by an in-depth module on agentic AI security (LLM orchestration, RAG and memory poisoning, multi-agent systems, tool trust boundaries, and execution isolation defenses). Throughout the course, the emphasis is on understanding the underlying mechanisms rather than treating modern security systems as black boxes.
 
 # Course Materials
 
@@ -549,29 +549,9 @@ Short quizzes will be given after major course modules to assess understanding o
   </div>
 </details>
 
-<details class="card border mb-3 shadow-sm week-dropdown">
-  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
-    Week 12 — November 10 & 12: Accelerators and Heterogeneous-System Security
-  </summary>
-  <div class="card-body">
-    <p class="text-muted small">Modern applications, particularly machine-learning systems, increasingly depend on GPUs and other accelerators.</p>
-    <ul>
-      <li>CPU-accelerator architecture & GPU execution model</li>
-      <li>Host and device memory & GPU virtual memory</li>
-      <li>GPU runtimes, drivers, and PCIe communication</li>
-      <li>Direct Memory Access (DMA) & IOMMUs</li>
-      <li>Device assignment and passthrough</li>
-      <li>Accelerator multi-tenancy & GPU process isolation</li>
-      <li>SR-IOV, MIG, and hardware partitioning</li>
-      <li>Accelerator drivers as part of the Trusted Computing Base</li>
-      <li>CPU-GPU trust boundaries & isolation failures</li>
-    </ul>
-  </div>
-</details>
-
 <details class="card border mb-3 shadow-sm week-dropdown" open>
   <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
-    Week 13 — November 17 & 19: Agentic AI Security & Readings
+    Week 12 — November 10 & 12: Agentic AI Security I — Architectures, Memory & Attack Surfaces & Readings
   </summary>
   <div class="card-body">
     <div class="mb-3">
@@ -582,15 +562,58 @@ Short quizzes will be given after major course modules to assess understanding o
 
     <h6 class="fw-bold border-bottom pb-1">Topics</h6>
     <ul>
-      <li>LLM foundations: embeddings, tokenization, context assembly, recency bias, and prompt injection fundamentals</li>
-      <li>Agent architectures: stateless LLMs, Reason-and-Act (<code>ReAct</code>) loops, and agent orchestration runtimes</li>
-      <li>Agent memory hierarchies: short-term session state vs. long-term memory vs. Retrieval-Augmented Generation (RAG) & query rewriting (<code>Event &gt; State &gt; Memory</code>)</li>
-      <li>Indirect prompt injection, RAG knowledge corruption (<code>PoisonedRAG</code>), and persistent memory poisoning</li>
+      <li>What makes an LLM: embeddings, tokenization, context assembly, next-token sampling, and recency bias</li>
+      <li>Prompt Injection 101: direct vs. indirect prompt injection and instruction/data conflation</li>
+      <li>What is an agent? Stateless LLMs, Reason-and-Act (<code>ReAct</code>) loops, and agent orchestration runtimes</li>
+      <li>Components of agent orchestration: short-term session memory vs. long-term memory</li>
+      <li>Retrieval-Augmented Generation (RAG), query rewriting, condensed prompts, and why <code>RAG != Long-Term Memory</code> (<code>Event &gt; State &gt; Memory</code>)</li>
+      <li>Attack surfaces in agent memory and retrieval: indirect prompt injection, knowledge corruption (<code>PoisonedRAG</code>), and persistent memory poisoning</li>
       <li>Multi-agent systems (e.g., <code>CrewAI</code>), delegation chains, and cross-agent trust boundaries</li>
-      <li>Systems vulnerabilities in LLM-integrated applications and frameworks: RCE exploits (<code>LLMSmith</code>), serialization flaws (<code>LangGrinch</code>), and the LLM-orchestrator-tool trust boundary (<code>ToFu</code>)</li>
-      <li>Defense mechanisms and architectures:
+    </ul>
+
+    <h6 class="fw-bold mt-4 border-bottom pb-1">Readings: Agentic Architectures, Prompt Injection & Memory Poisoning</h6>
+
+    <p class="fw-bold mb-1 text-primary">Required Reading</p>
+    <ul>
+      <li>
+        <strong>Kai Greshake, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, and Mario Fritz.</strong> "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection." <em>AISec @ ACM CCS</em>, 2023. Establishes indirect prompt injection across external data sources, retrieval pipelines, and tool outputs. [<a href="https://arxiv.org/abs/2302.12173" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Wei Zou, Runpeng Geng, Binghui Wang, and Jinyuan Jia.</strong> "PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models." <em>34th USENIX Security Symposium (USENIX Security '25)</em>, 2025. Demonstrates knowledge-database poisoning attacks against RAG pipelines. [<a href="https://arxiv.org/abs/2402.07867" target="_blank">Paper</a>]
+      </li>
+    </ul>
+
+    <p class="fw-bold mb-1 text-secondary">Optional Readings</p>
+    <ul>
+      <li>
+        <strong>Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao.</strong> "ReAct: Synergizing Reasoning and Acting in Language Models." <em>ICLR</em>, 2023. Introduces the foundational Reason-and-Act loop underlying modern tool-calling LLM agents. [<a href="https://arxiv.org/abs/2210.03629" target="_blank">Paper</a>]
+      </li>
+      <li>
+        <strong>Zhaorun Chen et al.</strong> "AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases." <em>NeurIPS</em>, 2024. Examines how poisoning long-term memory or RAG stores hijacks autonomous agent decision-making. [<a href="https://arxiv.org/abs/2407.12784" target="_blank">Paper</a>]
+      </li>
+    </ul>
+  </div>
+</details>
+
+<details class="card border mb-3 shadow-sm week-dropdown" open>
+  <summary class="card-header bg-light fw-bold py-2" style="cursor: pointer;">
+    Week 13 — November 17 & 19: Agentic AI Security II — Systems Vulnerabilities & Defenses & Readings
+  </summary>
+  <div class="card-body">
+    <div class="mb-3">
+      <a href="https://docs.google.com/presentation/d/e/2PACX-1vSfeVV_-njIxaE4GCCtrxFi__ZxeR01bEjJQHrcukNVlguGi-F4TIj9bGo3XDNTIcg1P7Go2ZhrI_0k/pub?start=false&loop=false&delayms=3000" target="_blank" class="btn btn-sm btn-outline-primary">
+        <i class="fas fa-file-powerpoint me-1"></i> Lecture Slides: Agentic AI Security
+      </a>
+    </div>
+
+    <h6 class="fw-bold border-bottom pb-1">Topics</h6>
+    <ul>
+      <li>Systems aspect of agentic systems: bridging untrusted LLM outputs to privileged system execution</li>
+      <li>Remote code execution and framework vulnerabilities in LLM-integrated apps: <code>LLMSmith</code> and serialization exploits (<code>LangGrinch</code>)</li>
+      <li>Exploiting and fuzzing the LLM-orchestrator-tool trust boundary (<code>ToFu</code>)</li>
+      <li>Evaluating and defending agentic systems:
         <ul>
-          <li>Safety evaluation sandboxes (<code>ToolEmu</code>) and input/output guardrails (<code>LlamaGuard</code>)</li>
+          <li>Model evaluation and emulated sandboxes (<code>ToolEmu</code>) and safety classifiers (<code>LlamaGuard</code>)</li>
           <li>Channel separation: <code>Spotlighting</code> (delimiting, datamarking, encoding) and <code>Structured Queries (StruQ)</code></li>
           <li>Model-level alignment: <code>Instruction Hierarchy</code> and <code>Constitutional AI</code></li>
           <li>System-level execution isolation: <code>SecGPT</code> (<code>IsolateGPT</code>) and capability-enforced tool runtimes</li>
@@ -598,7 +621,7 @@ Short quizzes will be given after major course modules to assess understanding o
       </li>
     </ul>
 
-    <h6 class="fw-bold mt-4 border-bottom pb-1">Readings: Agentic AI Security, Prompt Injection & Execution Isolation</h6>
+    <h6 class="fw-bold mt-4 border-bottom pb-1">Readings: Agentic Systems Vulnerabilities, Channel Separation & Execution Isolation</h6>
 
     <p class="fw-bold mb-1 text-primary">Required Reading</p>
     <ul>
@@ -612,12 +635,6 @@ Short quizzes will be given after major course modules to assess understanding o
 
     <p class="fw-bold mb-1 text-secondary">Optional Readings</p>
     <ul>
-      <li>
-        <strong>Kai Greshake, Sahar Abdelnabi, Shailesh Mishra, Christoph Endres, Thorsten Holz, and Mario Fritz.</strong> "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection." <em>AISec @ ACM CCS</em>, 2023. Establishes indirect prompt injection across external data sources and tool outputs. [<a href="https://arxiv.org/abs/2302.12173" target="_blank">Paper</a>]
-      </li>
-      <li>
-        <strong>Wei Zou, Runpeng Geng, Binghui Wang, and Jinyuan Jia.</strong> "PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models." <em>34th USENIX Security Symposium (USENIX Security '25)</em>, 2025. Demonstrates knowledge-database poisoning attacks against RAG pipelines. [<a href="https://arxiv.org/abs/2402.07867" target="_blank">Paper</a>]
-      </li>
       <li>
         <strong>Tong Liu, Zizhuang Deng, Guozhu Meng, Yuekang Li, and Kai Chen.</strong> "Demystifying RCE Vulnerabilities in LLM-Integrated Apps." <em>ACM Conference on Computer and Communications Security (CCS)</em>, 2024. Systematically analyzes remote code execution vulnerabilities (LLMSmith) across real-world LLM orchestration frameworks. [<a href="https://arxiv.org/abs/2309.02926" target="_blank">Paper</a>]
       </li>
